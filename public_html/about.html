@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Me vs. Collector — Who We Are & Why We Built This</title>
+<meta name="description" content="Me vs. Collector exists because 77 million Americans are being harassed by debt collectors who know the federal watchdog is gone. We close the information gap.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%231a1a1a'/%3E%3Crect x='0' y='28' width='32' height='4' fill='%23d4870a'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='16' font-weight='bold' fill='%23f5a623'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0d0d0d;--page:#f5f2ec;--paper:#fffdf8;--amber:#d4870a;--amber-light:#f5a623;--amber-pale:#fef3dc;--red:#c0392b;--red-pale:#fdecea;--green:#1a6b3c;--green-pale:#e6f4ed;--charcoal:#1a1a1a;--muted:#6b6b6b;--border:#e0dbd0;--rule:#d0ccc0;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--page);color:var(--ink);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--charcoal);border-bottom:2px solid var(--amber);padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:#fff;text-decoration:none;letter-spacing:-.5px}
+.nav-logo span{color:var(--amber-light)}
+.nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center}
+.nav-links a{color:#ccc;text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.5px;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--amber-light)}
+.nav-cta{background:var(--amber)!important;color:#fff!important;padding:.45rem 1.1rem;border-radius:3px}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .25s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-nav{display:none;position:fixed;inset:0;z-index:190;background:var(--charcoal);flex-direction:column;align-items:center;justify-content:center;gap:2rem;padding:2rem}
+.mobile-nav.open{display:flex}
+.mobile-nav a{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:#fff;text-decoration:none}
+.mobile-nav .mob-cta{background:var(--amber);color:#fff!important;padding:.9rem 2.5rem;border-radius:4px;font-family:var(--sans);font-size:1rem!important;font-weight:700}
+.page-hero{background:var(--charcoal);color:#fff;padding:110px 2rem 70px;border-bottom:2px solid var(--amber)}
+.page-hero-inner{max-width:760px;margin:0 auto}
+.hero-eyebrow{font-size:.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber-light);margin-bottom:1rem}
+.page-hero h1{font-family:var(--serif);font-size:clamp(2rem,4.5vw,3.2rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:1rem}
+.page-hero p{font-size:1.1rem;color:#aaa;line-height:1.7;font-weight:300;max-width:580px}
+.about-wrap{max-width:760px;margin:0 auto;padding:4rem 2rem 6rem}
+.mission-block{background:var(--charcoal);color:#fff;border-radius:6px;padding:2.5rem 3rem;margin-bottom:4rem;border-left:4px solid var(--amber)}
+.mission-label{font-size:.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber-light);margin-bottom:1rem}
+.mission-text{font-family:var(--serif);font-size:1.45rem;font-weight:700;line-height:1.4;color:#fff}
+.mission-text em{font-style:italic;color:var(--amber-light)}
+.about-body h2{font-family:var(--serif);font-size:1.8rem;font-weight:700;line-height:1.2;letter-spacing:-.3px;margin:3rem 0 .75rem;color:var(--ink)}
+.about-body p{font-size:1.02rem;color:#1e1e1e;line-height:1.8;margin-bottom:1.25rem}
+.about-body strong{font-weight:600}
+.rule{border:none;border-top:1px solid var(--rule);margin:3rem 0}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden;margin:2.5rem 0}
+.stat-cell{background:var(--paper);padding:1.5rem;text-align:center}
+.stat-num{font-family:var(--serif);font-size:2.2rem;font-weight:900;color:var(--amber);line-height:1;margin-bottom:.25rem}
+.stat-desc{font-size:.8rem;color:var(--muted);line-height:1.4}
+.principles{display:flex;flex-direction:column;gap:0;margin:2.5rem 0}
+.principle{display:flex;gap:1.25rem;padding:1.5rem 0;border-bottom:1px solid var(--rule)}
+.principle:last-child{border-bottom:none}
+.p-icon{width:42px;height:42px;border-radius:4px;background:var(--charcoal);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;margin-top:2px}
+.p-body h4{font-family:var(--serif);font-size:1.05rem;font-weight:700;margin-bottom:.3rem}
+.p-body p{font-size:.9rem;color:var(--muted);line-height:1.6;margin-bottom:0}
+.team-card{background:var(--paper);border:1px solid var(--border);border-radius:6px;padding:2rem;margin:2.5rem 0;display:flex;gap:1.75rem;align-items:flex-start}
+.team-avatar{width:70px;height:70px;border-radius:50%;background:var(--charcoal);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.6rem;font-weight:700;color:var(--amber-light);flex-shrink:0}
+.team-name{font-family:var(--serif);font-size:1.15rem;font-weight:700;margin-bottom:.15rem}
+.team-role{font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--amber);margin-bottom:.5rem}
+.team-bio{font-size:.9rem;color:var(--muted);line-height:1.65}
+.attorney-box{background:var(--amber-pale);border:1px solid #e8c47a;border-radius:6px;padding:2rem;margin:2.5rem 0}
+.atty-label{font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#9a5c00;margin-bottom:.75rem}
+.atty-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;margin-bottom:.5rem}
+.atty-body{font-size:.9rem;color:#5a3800;line-height:1.7;margin-bottom:1rem}
+.atty-cta{display:inline-block;background:var(--amber);color:#fff;padding:.8rem 1.75rem;border-radius:4px;text-decoration:none;font-weight:700;font-size:.9rem;transition:background .2s}
+.atty-cta:hover{background:var(--amber-light);color:#fff}
+.sources{background:#f0ece3;border:1px solid var(--border);border-radius:4px;padding:1.5rem 1.75rem;margin:2.5rem 0}
+.sources-label{font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem}
+.sources ul{list-style:none}
+.sources li{font-size:.82rem;color:var(--muted);padding:.3rem 0;border-bottom:1px solid var(--rule);display:flex;gap:.5rem;align-items:flex-start;line-height:1.45}
+.sources li:last-child{border-bottom:none}
+.sources li::before{content:'→';color:var(--amber);flex-shrink:0}
+.about-cta{background:var(--charcoal);color:#fff;border-radius:6px;padding:2.5rem;text-align:center;margin-top:3rem}
+.about-cta h3{font-family:var(--serif);font-size:1.6rem;font-weight:700;margin-bottom:.6rem}
+.about-cta p{color:#999;font-size:.95rem;margin-bottom:1.5rem;line-height:1.6}
+.about-cta a{display:inline-block;background:var(--amber);color:#fff;padding:.9rem 2rem;border-radius:4px;text-decoration:none;font-weight:700;font-size:1rem;transition:background .2s}
+.about-cta a:hover{background:var(--amber-light);color:#fff}
+.page-disclaimer{background:#f0ece3;border:1px solid var(--border);border-radius:4px;padding:1.25rem 1.5rem;margin-top:2rem;font-size:.8rem;color:var(--muted);line-height:1.65}
+.page-disclaimer strong{color:var(--ink);font-size:.72rem;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:.25rem}
+footer{background:#111;color:#888;padding:2.5rem 2rem}
+.footer-inner{max-width:960px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap}
+.footer-brand{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:#fff}
+.footer-brand span{color:var(--amber-light)}
+.footer-links{display:flex;gap:1.5rem;list-style:none;flex-wrap:wrap}
+.footer-links a{color:#777;text-decoration:none;font-size:.85rem;transition:color .2s}
+.footer-links a:hover{color:var(--amber-light)}
+.footer-copy{max-width:960px;margin:1.5rem auto 0;padding-top:1.25rem;border-top:1px solid #222;font-size:.75rem;color:#555}
+@media(max-width:700px){.nav-links{display:none}.hamburger{display:flex}.stats-grid{grid-template-columns:1fr}.team-card{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html" onclick="closeMobileNav()">Home</a>
+  <a href="index.html#checker" onclick="closeMobileNav()">Check My Case</a>
+  <a href="index.html#rights" onclick="closeMobileNav()">FDCPA Guide</a>
+  <a href="blog.html" onclick="closeMobileNav()">Blog</a>
+  <a href="glossary.html" onclick="closeMobileNav()">Glossary</a>
+  <a href="about.html" onclick="closeMobileNav()">About</a>
+  <a href="index.html#checker" class="mob-cta" onclick="closeMobileNav()">Get Free Review</a>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">Me <span>vs.</span> Collector</a>
+  <ul class="nav-links">
+    <li><a href="index.html#checker">Check My Rights</a></li>
+    <li><a href="index.html#rights">FDCPA Guide</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="glossary.html">Glossary</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="index.html#checker" class="nav-cta">Free Review &#x2192;</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="hero-eyebrow">About Me vs. Collector</div>
+    <h1>We built the resource<br>the CFPB used to be.</h1>
+    <p>Plain-English rights, real federal law, and a direct path to free legal help — for the 77 million Americans getting harassed who have no idea they can fight back.</p>
+  </div>
+</div>
+
+<div class="about-wrap">
+
+  <div class="mission-block">
+    <div class="mission-label">Our one-sentence mission</div>
+    <div class="mission-text">"We are the plain-language FDCPA rights guide for the 77 million Americans being harassed by debt collectors — helping them discover that the collector may have <em>already broken the law</em>, and that fighting back is completely free."</div>
+  </div>
+
+  <div class="about-body">
+
+    <h2>Why this exists</h2>
+
+    <p>Debt collectors break federal law thousands of times every single day. They call before 8am. They threaten arrest for civil debts. They harass people at work. They lie about how much is owed. They call family members. They do all of this because it works — and because they're counting on you not knowing your rights.</p>
+
+    <p>The federal agency built to stop them — the Consumer Financial Protection Bureau — directed staff in 2025 to halt all supervision, enforcement, rulemaking, investigations, and public communications. The cop left. Complaint volumes nearly doubled in one year. Collectors knew it immediately.</p>
+
+    <p>But here's what nobody is saying out loud: <strong>the FDCPA doesn't need the CFPB to work.</strong> It's an Act of Congress. It gives you, personally, the right to sue a debt collector for violations — and the law requires the collector to pay your attorney fees when they lose. The lawsuit costs you nothing. Attorneys take these cases because the fee structure makes it viable for them, not out of charity.</p>
+
+    <p>The gap between what's legally available to people and what they actually know is enormous. That gap is this website.</p>
+
+    <div class="stats-grid">
+      <div class="stat-cell"><div class="stat-num">77M</div><div class="stat-desc">Americans with debt in collections right now</div></div>
+      <div class="stat-cell"><div class="stat-num">208K</div><div class="stat-desc">FDCPA complaints filed in 2024 — up from 110K the year before</div></div>
+      <div class="stat-cell"><div class="stat-num">$0</div><div class="stat-desc">What it costs to sue under the FDCPA when you win</div></div>
+    </div>
+
+    <h2>What we actually do</h2>
+
+    <p>Me vs. Collector is an educational platform. We are not a law firm and we don't give legal advice. We translate the Fair Debt Collection Practices Act — a real federal law on the books since 1978 — into language a person who just got a threatening call at 11pm can understand and act on right now.</p>
+
+    <p>Then we connect people with licensed FDCPA attorneys who offer free consultations and take qualifying cases on contingency. The collector pays if they lose. The person we helped pays nothing.</p>
+
+    <p>Information in. Action out. Zero cost to the person who needed help.</p>
+
+    <hr class="rule">
+
+    <h2>How we operate</h2>
+
+    <div class="principles">
+      <div class="principle">
+        <div class="p-icon">📖</div>
+        <div class="p-body">
+          <h4>Plain English — always</h4>
+          <p>Everything on this site is written for a person getting calls at midnight, not a law school classroom. If we can't explain something clearly without jargon, we don't publish it until we can.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-icon">⚖️</div>
+        <div class="p-body">
+          <h4>Real law, cited every time</h4>
+          <p>Every claim cites the actual federal statute it comes from. The FDCPA is public law — you can verify everything we say. We don't exaggerate what the law provides.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-icon">⏱️</div>
+        <div class="p-body">
+          <h4>Built for urgency</h4>
+          <p>FDCPA claims have a one-year filing window from each violation. Every resource, tool, and next step on this site is designed to be actionable immediately — because the clock is already running.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-icon">🚫</div>
+        <div class="p-body">
+          <h4>Zero relationship with collectors</h4>
+          <p>Our revenue comes from attorney referrals, consumer-friendly affiliate partnerships, and educational products. We have no relationship with any debt collection company and never will.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="p-icon">🔒</div>
+        <div class="p-body">
+          <h4>Your information stays private</h4>
+          <p>Information you submit through our attorney referral form is shared only with the reviewing attorney. We never sell personal data. Trust is the only thing that matters here.</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="rule">
+
+    <h2>Who writes this</h2>
+
+    <p>Me vs. Collector is written by a small team of researchers and consumer advocates with backgrounds in financial journalism and legal education. We are not attorneys. Every piece of content is reviewed for accuracy against the FDCPA text and relevant case law before it's published.</p>
+
+    <div class="team-card">
+      <div class="team-avatar">M</div>
+      <div>
+        <div class="team-name">The Editorial Team</div>
+        <div class="team-role">Me vs. Collector — Founded 2026</div>
+        <p class="team-bio">Me vs. Collector was founded after noticing a persistent gap: millions of people were experiencing FDCPA violations that were legally actionable, free to pursue, and completely unknown to the people experiencing them. The site was built to close that gap — one case at a time. Our editorial process cross-references every claim against the FDCPA statute, FTC guidance, and CFPB complaint data, and content is updated when laws and regulations change.</p>
+      </div>
+    </div>
+
+    <hr class="rule">
+
+    <h2>How attorney referrals work</h2>
+
+    <div class="attorney-box">
+      <div class="atty-label">Our attorney network</div>
+      <div class="atty-title">Free case reviews from licensed FDCPA attorneys</div>
+      <p class="atty-body">When you submit through Me vs. Collector, your information goes to a licensed FDCPA attorney who evaluates your situation at no charge. If they take your case, they work on contingency — you pay nothing unless they win, and if they win, the collector pays their fees under FDCPA § 813(a).</p>
+      <p class="atty-body">Our attorney partners pay a referral fee only when a qualified case match is made. This is how the site stays free for users. We vet our partners and do not work with attorneys who charge upfront fees for FDCPA representation.</p>
+      <a href="index.html#checker" class="atty-cta">Start with the free violation checker →</a>
+    </div>
+
+    <hr class="rule">
+
+    <h2>Sources</h2>
+
+    <div class="sources">
+      <div class="sources-label">Where our data comes from</div>
+      <ul>
+        <li>Fair Debt Collection Practices Act, 15 U.S.C. § 1692 et seq.</li>
+        <li>CFPB Annual Debt Collection Report — complaint data and enforcement history</li>
+        <li>Urban Institute: "Debt in America" — 77 million Americans figure</li>
+        <li>Consumer Finance Monitor — 2024 FDCPA complaint volume (207,800)</li>
+        <li>Regulation F (12 CFR § 1006) — CFPB 2021 call frequency rule</li>
+        <li>FTC guidelines and enforcement actions on FDCPA compliance</li>
+        <li>Federal Reserve / Experian — total consumer debt figures ($18.8T, Q4 2025)</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="about-cta">
+    <h3>Ready to find out if your collector broke the law?</h3>
+    <p>10 questions. 2 minutes. Completely free. If they violated the FDCPA, you may have a free federal case against them.</p>
+    <a href="index.html#checker">Run the Free Violation Checker →</a>
+  </div>
+
+  <div class="page-disclaimer">
+    <strong>Legal Disclaimer</strong>
+    Me vs. Collector is not a law firm and does not provide legal advice. All content is for educational purposes only, based on publicly available federal law (15 U.S.C. § 1692 et seq.) and regulatory guidance. Nothing on this site creates an attorney-client relationship. Consult a licensed attorney for advice specific to your situation.
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Me <span>vs.</span> Collector</div>
+    <ul class="footer-links">
+      <li><a href="index.html#checker">Violation Checker</a></li>
+      <li><a href="index.html#rights">FDCPA Guide</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="glossary.html">Glossary</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
+  <div class="footer-copy">© 2026 Me vs. Collector. Not a law firm. Not legal advice.</div>
+</footer>
+
+<script>
+function toggleMobileNav(){const n=document.getElementById('mobile-nav'),b=document.getElementById('hamburger');n.classList.toggle('open');b.classList.toggle('open');document.body.style.overflow=n.classList.contains('open')?'hidden':'';}
+function closeMobileNav(){document.getElementById('mobile-nav').classList.remove('open');document.getElementById('hamburger').classList.remove('open');document.body.style.overflow='';}
+</script>
+</body>
+</html>

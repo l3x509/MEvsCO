@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Federal Watchdog Has Been Defanged. Here's What I Found Out. | Me vs. Collector</title>
+<meta name="description" content="The CFPB still exists — but its mission has shifted, its staff cut by two-thirds, its headquarters closed. Here's what I pieced together about what happened and what it means for people being harassed by collectors right now.">
+<link rel="canonical" href="https://mevscollector.com/blog/cfpb-shutdown-explained.html" />
+
+<!-- Open Graph -->
+<meta property="og:type"         content="article" />
+<meta property="og:url"          content="https://mevscollector.com/blog/cfpb-shutdown-explained.html" />
+<meta property="og:site_name"    content="Me vs. Collector" />
+<meta property="og:title"        content="The Federal Watchdog Has Been Defanged. Here's What I Found Out." />
+<meta property="og:description"  content="The CFPB still exists — but its mission has shifted, its staff cut, its headquarters closed. Here's what happened and what it means for people being harassed by collectors right now." />
+<meta property="og:image"        content="https://mevscollector.com/og-image-final.png" />
+<meta property="og:image:width"  content="1200" />
+<meta property="og:image:height" content="630" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card"        content="summary_large_image" />
+<meta name="twitter:url"         content="https://mevscollector.com/blog/cfpb-shutdown-explained.html" />
+<meta name="twitter:title"       content="The Federal Watchdog Has Been Defanged. Here's What I Found Out." />
+<meta name="twitter:description" content="The CFPB still exists — but its mission has shifted and its staff gutted. Here's what happened and what it means for debt collection victims." />
+<meta name="twitter:image"       content="https://mevscollector.com/og-image-final.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='8' fill='%23F59E0B'/><text y='72' x='50' text-anchor='middle' font-size='58' font-family='serif' font-weight='900' fill='%231a1a1a'>M</text></svg>">
+<style>
+  :root {
+    --charcoal:#1a1a1a;--charcoal-mid:#242424;--charcoal-light:#2e2e2e;
+    --amber:#F59E0B;--amber-dark:#D97706;--cream:#F5F0E8;
+    --muted:#888;--text-body:#D4CFC6;--text-light:#A09B92;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--charcoal);color:var(--text-body);font-family:'DM Sans',sans-serif;line-height:1.7;font-size:1.05rem;}
+  a{color:var(--amber);text-decoration:none;}a:hover{text-decoration:underline;}
+
+  nav{background:var(--charcoal);border-bottom:1px solid #333;position:sticky;top:0;z-index:100;}
+  .nav-inner{max-width:1100px;margin:0 auto;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;}
+  .nav-brand{font-family:'Playfair Display',serif;font-weight:900;font-size:1.25rem;color:var(--cream);}
+  .nav-brand span{color:var(--amber);}
+  .nav-links{display:flex;gap:2rem;list-style:none;}
+  .nav-links a{font-size:0.85rem;font-weight:500;letter-spacing:0.5px;color:var(--text-light);text-transform:uppercase;text-decoration:none;transition:color 0.2s;}
+  .nav-links a:hover{color:var(--cream);}
+  .nav-cta{background:var(--amber);color:var(--charcoal)!important;padding:0.4rem 1rem;border-radius:4px;font-weight:700!important;}
+
+  .post-header{background:var(--charcoal-mid);border-bottom:1px solid #333;padding:4rem 2rem 3rem;}
+  .post-header-inner{max-width:780px;margin:0 auto;}
+  .post-label{display:inline-block;font-size:0.7rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--amber);border:1px solid var(--amber);padding:0.25rem 0.6rem;border-radius:2px;margin-bottom:1.5rem;}
+  .post-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.15;color:var(--cream);margin-bottom:1.25rem;}
+  .post-title em{font-style:italic;color:var(--amber);}
+  .post-deck{font-size:1.15rem;color:var(--text-light);line-height:1.65;margin-bottom:2rem;max-width:680px;}
+  .post-byline{display:flex;align-items:center;gap:1rem;padding-top:1.5rem;border-top:1px solid #333;}
+  .author-avatar{width:40px;height:40px;border-radius:50%;background:var(--amber);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:900;font-size:1rem;color:var(--charcoal);flex-shrink:0;}
+  .byline-text{font-size:0.85rem;color:var(--text-light);}
+  .byline-text strong{color:var(--cream);}
+
+  .post-layout{max-width:1100px;margin:0 auto;padding:3rem 2rem 5rem;display:grid;grid-template-columns:1fr 300px;gap:4rem;align-items:start;}
+
+  .post-body h2{font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:700;color:var(--cream);margin:2.5rem 0 1rem;line-height:1.25;}
+  .post-body p{margin-bottom:1.5rem;}
+  .post-body p:first-of-type{font-size:1.2rem;color:var(--cream);line-height:1.7;}
+
+  .pull-quote{border-left:4px solid var(--amber);margin:2.5rem 0;padding:1.25rem 1.5rem;background:var(--charcoal-light);border-radius:0 4px 4px 0;}
+  .pull-quote p{font-family:'Playfair Display',serif;font-size:1.3rem;font-style:italic;color:var(--cream);margin:0 0 0.5rem;}
+  .pull-quote cite{font-size:0.8rem;color:var(--muted);font-style:normal;letter-spacing:1px;text-transform:uppercase;}
+
+  .personal-note{background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.25);border-radius:6px;padding:1.5rem;margin:2rem 0;}
+  .personal-note .note-label{font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:0.5rem;}
+  .personal-note p{color:var(--cream);margin:0;font-size:1rem;line-height:1.65;}
+
+  .alert-box{background:rgba(220,38,38,0.1);border:1px solid rgba(220,38,38,0.4);border-radius:6px;padding:1.5rem;margin:2rem 0;}
+  .alert-box .alert-label{font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#EF4444;margin-bottom:0.5rem;}
+  .alert-box p{color:var(--cream);margin:0;font-size:1rem;}
+
+  .good-box{background:rgba(22,163,74,0.1);border:1px solid rgba(22,163,74,0.4);border-radius:6px;padding:1.5rem;margin:2rem 0;}
+  .good-box .good-label{font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#4ADE80;margin-bottom:0.5rem;}
+  .good-box p{color:var(--cream);margin:0;font-size:1rem;}
+
+  .stat-callout{text-align:center;padding:2.5rem 2rem;background:var(--charcoal-light);border-radius:8px;margin:2.5rem 0;border:1px solid #333;}
+  .stat-number{font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:900;color:var(--amber);line-height:1;display:block;margin-bottom:0.5rem;}
+  .stat-label{font-size:0.9rem;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;}
+
+  .two-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2.5rem 0;}
+  .two-stats .stat-callout{margin:0;}
+
+  .timeline{margin:2rem 0;position:relative;padding-left:1.5rem;border-left:2px solid #333;}
+  .timeline-item{margin-bottom:2rem;position:relative;}
+  .timeline-item::before{content:'';position:absolute;left:-1.6rem;top:0.4rem;width:10px;height:10px;border-radius:50%;background:var(--amber);border:2px solid var(--charcoal);}
+  .timeline-date{font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:0.3rem;}
+  .timeline-title{font-weight:600;color:var(--cream);margin-bottom:0.35rem;font-size:0.95rem;}
+  .timeline-desc{font-size:0.9rem;color:var(--text-light);line-height:1.6;}
+
+  .action-list{list-style:none;margin:1.5rem 0 2rem;padding:0;counter-reset:steps;}
+  .action-list li{display:flex;gap:1rem;margin-bottom:1.25rem;align-items:flex-start;}
+  .action-list li::before{counter-increment:steps;content:counter(steps);min-width:28px;height:28px;border-radius:50%;background:var(--amber);color:var(--charcoal);font-weight:700;font-size:0.8rem;display:flex;align-items:center;justify-content:center;margin-top:0.1rem;flex-shrink:0;}
+
+  .post-rule{border:none;border-top:1px solid #333;margin:3rem 0;}
+
+  .post-sidebar{position:sticky;top:88px;}
+  .sidebar-card{background:var(--charcoal-mid);border:1px solid #333;border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;}
+  .sidebar-card h4{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--cream);margin-bottom:0.75rem;}
+  .sidebar-card p{font-size:0.88rem;color:var(--text-light);line-height:1.6;margin-bottom:1rem;}
+  .sidebar-btn{display:block;background:var(--amber);color:var(--charcoal);text-align:center;padding:0.75rem 1rem;border-radius:4px;font-weight:700;font-size:0.88rem;text-decoration:none;transition:background 0.2s;}
+  .sidebar-btn:hover{background:var(--amber-dark);text-decoration:none;}
+
+  .sidebar-toc h4{font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;}
+  .sidebar-toc ol{padding-left:1.25rem;list-style:decimal;}
+  .sidebar-toc li{margin-bottom:0.5rem;}
+  .sidebar-toc a{font-size:0.85rem;color:var(--text-light);text-decoration:none;line-height:1.4;}
+  .sidebar-toc a:hover{color:var(--amber);}
+
+  .sol-warn{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);border-radius:6px;padding:1.25rem;margin-bottom:1.5rem;text-align:center;}
+  .sol-warn .sol-icon{font-size:1.5rem;display:block;margin-bottom:0.4rem;}
+  .sol-warn p{font-size:0.82rem;color:var(--text-light);margin:0;line-height:1.5;}
+  .sol-warn strong{color:var(--amber);}
+
+  .related-grid{display:grid;gap:1rem;margin-top:1rem;}
+  .related-card{background:var(--charcoal-mid);border:1px solid #333;border-radius:6px;padding:1rem;text-decoration:none;transition:border-color 0.2s;display:block;}
+  .related-card:hover{border-color:var(--amber);text-decoration:none;}
+  .related-tag{font-size:0.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:0.35rem;}
+  .related-title{font-size:0.9rem;color:var(--cream);line-height:1.4;font-weight:500;}
+
+  .post-disclaimer{background:var(--charcoal-light);border:1px solid #333;border-radius:6px;padding:1.25rem 1.5rem;font-size:0.8rem;color:var(--muted);line-height:1.6;margin-top:3rem;}
+  .post-disclaimer strong{color:var(--text-light);}
+
+  .updated-badge{display:inline-block;background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.4);color:var(--amber);font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:0.2rem 0.6rem;border-radius:2px;margin-bottom:1rem;}
+
+  footer{background:var(--charcoal-mid);border-top:1px solid #333;padding:2.5rem 2rem;text-align:center;}
+  .footer-brand{font-family:'Playfair Display',serif;font-weight:900;font-size:1.1rem;color:var(--cream);margin-bottom:1rem;}
+  .footer-brand span{color:var(--amber);}
+  .footer-links{display:flex;justify-content:center;flex-wrap:wrap;gap:1.5rem;list-style:none;margin-bottom:1.5rem;}
+  .footer-links a{font-size:0.82rem;color:var(--text-light);text-decoration:none;text-transform:uppercase;letter-spacing:0.5px;}
+  .footer-copy{font-size:0.78rem;color:var(--muted);line-height:1.6;}
+
+  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:0.25rem;}
+  .hamburger span{display:block;width:22px;height:2px;background:var(--cream);margin:5px 0;}
+
+  @media(max-width:900px){.post-layout{grid-template-columns:1fr;}.post-sidebar{position:static;}.two-stats{grid-template-columns:1fr;}}
+  @media(max-width:680px){.nav-links{display:none;}.hamburger{display:block;}.post-header{padding:2.5rem 1.25rem 2rem;}.post-layout{padding:2rem 1.25rem 4rem;}.stat-number{font-size:2.5rem;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">Me <span>vs.</span> Collector</a>
+    <ul class="nav-links">
+      <li><a href="/#checker">Violation Checker</a></li>
+      <li><a href="/#rights">FDCPA Guide</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/glossary.html">Glossary</a></li>
+      <li><a href="/#checker" class="nav-cta">Free Review</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<header class="post-header">
+  <div class="post-header-inner">
+    <span class="post-label">What I Found Out</span>
+    <h1 class="post-title">The Federal Watchdog Has Been <em>Defanged.</em><br>Here's What I Found Out.</h1>
+    <p class="post-deck">The CFPB still exists — technically. But its headquarters lease has been terminated, its staff cut by nearly two-thirds, and its stated mission quietly changed from enforcing consumer protection laws to merely "promoting" them. Here's what I pieced together about what happened, where things stand now, and what still works for people being harassed by collectors.</p>
+    <div class="post-byline">
+      <div class="author-avatar">M</div>
+      <div class="byline-text">
+        <strong>Me vs. Collector</strong> — Written by a consumer, not an attorney<br>
+        <span class="updated-badge">Updated April 2026</span> · 9 min read
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="post-layout">
+  <article class="post-body">
+
+    <p>When the calls started, I did what most people do. I panicked, avoided, and eventually went looking online for answers. One of the first things I found was that there was supposed to be a whole federal agency whose job was protecting people like me from collectors like the one blowing up my phone. It was called the Consumer Financial Protection Bureau — the CFPB. What I discovered next was more complicated than I expected.</p>
+
+    <p>The CFPB hasn't been eliminated. Courts have repeatedly blocked the most aggressive attempts to shut it down, and as of right now it's still technically operating — it published a new rule as recently as April 22, 2026. But what I found when I dug deeper is that "still operating" can mean a lot of things. The agency that exists today looks very different from the one that was created to protect consumers. I want to share what I learned, because I think the details matter for anyone who's dealing with a debt collector right now.</p>
+
+    <div class="personal-note">
+      <div class="note-label">Before we go further</div>
+      <p>I built this site as a consumer who went through harassment, not as an attorney or anyone with legal expertise. Nothing here is legal advice. If a collector is harassing you right now, the most useful thing I can point you toward is a free consultation with an actual FDCPA attorney — I'll link to that throughout. They cost nothing upfront and they know things I don't.</p>
+    </div>
+
+    <h2 id="what-was-it">What the CFPB Was Built to Do</h2>
+
+    <p>After the 2008 financial crisis, Congress created the CFPB to be a single agency focused entirely on protecting consumers in the financial system. Before it existed, responsibility for consumer protection was scattered across multiple regulators, and the gaps between them were where people got hurt. The CFPB was supposed to close those gaps.</p>
+
+    <p>For people dealing with debt collectors specifically, the CFPB mattered. It had authority to investigate companies, sue them, force refunds, and issue fines. It ran a complaint database where ordinary people could report problems and actually get responses. Over its active years, it returned more than $21 billion to consumers through enforcement actions, refunds, and cancelled debts.</p>
+
+    <div class="stat-callout">
+      <span class="stat-number">$21B</span>
+      <span class="stat-label">Returned to consumers during the CFPB's active enforcement years — refunds, cancelled debts, and settlements</span>
+    </div>
+
+    <p>When I found out what had been happening to the agency, I wanted to understand it clearly — not as a political story, but as a practical one. If the watchdog that was protecting me has changed, I need to know how and in what ways.</p>
+
+    <h2 id="what-happened">What I Found Out Happened — And When</h2>
+
+    <p>The administration began trying to dismantle the CFPB in early 2025. Courts pushed back repeatedly. What emerged is an agency that technically still exists but has been dramatically hollowed out. Here's the timeline I pieced together from news coverage:</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">February 3, 2025</div>
+        <div class="timeline-title">Director fired. Operations frozen immediately.</div>
+        <div class="timeline-desc">The administration fired Director Rohit Chopra and named Treasury Secretary Scott Bessent as acting director. Bessent immediately ordered staff to halt almost all operations — no new rules, no public statements, no court filings.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">February 7–10, 2025</div>
+        <div class="timeline-title">Headquarters physically closed. Staff told to do nothing at all.</div>
+        <div class="timeline-desc">Russell Vought replaced Bessent and expanded the freeze. The Washington D.C. headquarters was closed. The Department of Government Efficiency accessed the agency's internal systems and deleted its social media accounts. Staff received written instructions to perform no work tasks whatsoever.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">February 14, 2025</div>
+        <div class="timeline-title">Federal court temporarily blocks the shutdown.</div>
+        <div class="timeline-desc">A judge ordered a pause on firings and formal closure. But most staff were placed on administrative leave and couldn't perform their jobs. The agency was functionally dark even while legally open.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">April 2025</div>
+        <div class="timeline-title">Layoff notices sent to nearly 90% of staff.</div>
+        <div class="timeline-desc">About 1,500 employees — roughly 88% of the workforce — received reduction-in-force notices. Courts challenged the move almost immediately, creating months of legal back-and-forth that is still ongoing.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">June 2025</div>
+        <div class="timeline-title">The enforcement chief resigns and says the bureau won't enforce the law.</div>
+        <div class="timeline-desc">The acting head of enforcement resigned publicly, writing in her farewell email that leadership had "no intention to enforce the law in any meaningful way." She was the second person in that role to resign in protest.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">July 2025</div>
+        <div class="timeline-title">Congress cuts the budget nearly in half.</div>
+        <div class="timeline-desc">A budget reconciliation bill reduced the amount the CFPB could draw from the Federal Reserve by nearly half. Courts were keeping the agency alive on paper while Congress was draining its resources from the other direction.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">December 31, 2025</div>
+        <div class="timeline-title">Mass furloughs. Active enforcement cases transferred to the DOJ.</div>
+        <div class="timeline-desc">Much of the remaining staff was furloughed. Ongoing lawsuits against major banks were handed to the Department of Justice. People inside the agency worried publicly that those cases would simply be dropped.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">February 2026</div>
+        <div class="timeline-title">Headquarters lease terminated six years early.</div>
+        <div class="timeline-desc">The lease on the CFPB's Washington D.C. headquarters was terminated early and the property transferred to another government agency, according to records obtained by Reuters. The agency had already physically closed it — now it officially doesn't have one.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">March 2026</div>
+        <div class="timeline-title">New strategic plan redefines the agency's mission.</div>
+        <div class="timeline-desc">The CFPB released a draft 2026–2030 strategic plan that explicitly changes its mission from "enforcing" consumer financial laws to "promoting" compliance with them. That's not a minor word choice. It represents a fundamental shift in what the agency sees as its job.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">April 2026</div>
+        <div class="timeline-title">Administration seeks court approval to cut staff by more than half again.</div>
+        <div class="timeline-desc">Administration attorneys asked a federal appeals court for permission to reduce the current workforce of about 1,174 to just 556 — less than a third of the 1,758 employees the agency had in 2024. The legal fight continues.</div>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      <p>"The CFPB never stopped all the bad actors. But it stopped enough of them, and it held enough companies accountable, that people in debt trouble had someone in their corner. That corner is getting smaller."</p>
+      <cite>— Steve Rhode, GetOutOfDebt.org, April 2026</cite>
+    </div>
+
+    <h2 id="the-mission-change">The Part That Surprised Me Most</h2>
+
+    <p>I expected to find budget cuts and staffing reductions. What I didn't expect was the mission change. The CFPB's new draft strategic plan explicitly changes the agency's purpose from enforcing consumer financial laws to promoting compliance with them. That distinction turns out to matter a lot.</p>
+
+    <p>Enforcement means the agency goes after companies that break the rules. Promotion means it tells companies what the rules are and hopes they follow them. One has teeth. The other doesn't.</p>
+
+    <div class="alert-box">
+      <div class="alert-label">What the new plan actually says</div>
+      <p>The CFPB's 2026–2030 strategic plan frames the agency's mission as "promoting" (not enforcing) compliance with federal consumer financial laws. It also explicitly prioritizes cases with "identifiable victims with material and measurable damages" — which means smaller, harder-to-prove violations may simply go unaddressed. From what I read, the agency still plans to act on clear-cut fraud and scams, but the broad oversight role it used to play appears to be gone.</p>
+    </div>
+
+    <p>The complaint database is another thing I noticed. It still exists — over 800,000 complaints are logged in it. But the enforcement staff that used to follow up on those complaints has been gutted. From what I found, it now functions more as a record than a resolution tool.</p>
+
+    <div class="two-stats">
+      <div class="stat-callout">
+        <span class="stat-number">1,758</span>
+        <span class="stat-label">CFPB employees in 2024</span>
+      </div>
+      <div class="stat-callout">
+        <span class="stat-number">556</span>
+        <span class="stat-label">Employees the administration is now seeking court approval to reduce to</span>
+      </div>
+    </div>
+
+    <h2 id="what-got-dropped">The Cases That Got Dropped</h2>
+
+    <p>While the legal fights over the agency's survival played out, more than 22 active enforcement cases were quietly abandoned. These weren't hypothetical investigations — they were cases already in motion, representing real money that was supposed to go back to real people.</p>
+
+    <p>From the news coverage I read, the dropped cases included a lawsuit against Capital One over $2 billion in allegedly withheld interest, a case against Zelle and several major banks over fraud protection failures, and a $95 million settlement with Navy Federal Credit Union that was abandoned without explanation. Rules that would have removed medical debt from credit reports were suspended. Rules capping overdraft fees were shelved.</p>
+
+    <h2 id="what-still-works">What I Found That Still Works</h2>
+
+    <div class="good-box">
+      <div class="good-label">The important thing</div>
+      <p>The Fair Debt Collection Practices Act is still fully in effect. The CFPB being weakened doesn't change that. The law exists, the rights exist, and the private enforcement mechanism that lets you sue collectors and have them pay your attorney's fees — that still exists. The difference is that you're now more on your own in using it.</p>
+    </div>
+
+    <p><strong>The FDCPA itself.</strong> The law is intact and unchanged. I'm not the right person to walk you through all of it — an attorney can do that in a free consultation — but the protections are real and currently enforceable.</p>
+
+    <p><strong>FDCPA attorneys.</strong> This is the most important thing I found. There are attorneys who take these cases on contingency — you pay nothing upfront. If they win or settle, the collector pays their fees. With the CFPB sidelined, private attorneys are now the most direct enforcement mechanism available to individual consumers.</p>
+
+    <p><strong>State attorneys general.</strong> Many states have their own consumer protection laws and the authority to pursue collector violations. Some states' laws are actually stronger than the FDCPA. Twenty-one states and D.C. are currently suing to block the CFPB's full defunding.</p>
+
+    <p><strong>The FTC.</strong> The Federal Trade Commission retains some jurisdiction over debt collector conduct, though its focus is broader and its capacity in this specific area is more limited than the CFPB's was.</p>
+
+    <p><strong>The CFPB complaint database.</strong> It still exists and complaints are still being logged. It may not trigger enforcement the way it once did, but it creates a record — and that record can support private legal action.</p>
+
+    <h2 id="what-this-means">What This Means in Practice</h2>
+
+    <p>Here's the honest version of what I think changed. Before, a debt collector who was systematically breaking the law risked a federal agency noticing a pattern across thousands of complaints and launching an investigation that could cost them millions. That kind of industry-wide oversight is effectively gone for now.</p>
+
+    <p>What remains is case-by-case enforcement — meaning each individual person has to stand up for themselves. The private FDCPA lawsuit mechanism was always there, but the CFPB used to backstop it. Now it's the primary option. That's a worse deal for consumers, and a better deal for collectors who count on most people not knowing their rights. That's the whole reason this site exists.</p>
+
+    <h2 id="what-to-do">What I'd Tell Someone in My Position</h2>
+
+    <ul class="action-list">
+      <li><strong>Write everything down, right now.</strong> Dates, times, what was said, phone numbers. Your memory fades fast. A collector counting on you having no documentation is counting on something very real.</li>
+      <li><strong>There's a one-year deadline most people don't know about.</strong> The time limit on FDCPA cases is one year from the date of the violation. I didn't know this until I looked it up. If something happened recently, that clock is already running.</li>
+      <li><strong>Get a free consultation with an FDCPA attorney.</strong> It costs nothing. They'll tell you in about ten minutes whether what happened was illegal and whether you have a case. That conversation clarified more for me than hours of reading online.</li>
+      <li><strong>File a complaint anyway.</strong> The CFPB complaint database still exists. The FTC takes complaints at ReportFraud.ftc.gov. Your state AG's office is a third option. These create a paper trail even when no one acts on them immediately.</li>
+      <li><strong>A written cease-and-desist changes what they're allowed to do.</strong> Once you send one, there are specific rules about what contact a collector can make. An attorney can help you send one that actually holds up.</li>
+    </ul>
+
+    <hr class="post-rule">
+
+    <div class="post-disclaimer">
+      <strong>What this site is and isn't:</strong> I built Me vs. Collector as a consumer who went through harassment from a debt collector. I have no legal training. Nothing here is legal advice, and nothing here should replace talking to a licensed FDCPA attorney. I share what I've researched and what I've learned, and I connect people with attorneys who actually know what they're doing. I try to keep this updated as things change — which with the CFPB situation, they do.
+    </div>
+
+    <hr class="post-rule">
+    <p style="font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;">More from Me vs. Collector</p>
+    <div class="related-grid">
+      <a href="arrest-threat-illegal.html" class="related-card">
+        <span class="related-tag">My Experience</span>
+        <div class="related-title">They Threatened to Arrest Me for Not Paying a Debt. Here's What I Found Out.</div>
+      </a>
+      <a href="#" class="related-card">
+        <span class="related-tag">What I Learned</span>
+        <div class="related-title">How I sent a cease-and-desist letter — and what happened next</div>
+      </a>
+      <a href="/glossary.html" class="related-card">
+        <span class="related-tag">Reference</span>
+        <div class="related-title">Every debt collection term I had to look up, explained in plain English</div>
+      </a>
+    </div>
+
+  </article>
+
+  <aside class="post-sidebar">
+    <div class="sol-warn">
+      <span class="sol-icon">⏱</span>
+      <p>One thing I wish I'd known sooner: there's a <strong>1-year deadline</strong> on FDCPA cases from the date of the violation. If something happened recently, that clock is already running.</p>
+    </div>
+    <div class="sidebar-card">
+      <h4>Did They Cross a Line?</h4>
+      <p>I put together a quick checker based on what I researched. Takes about 2 minutes. If they violated the law, you may have a free federal case.</p>
+      <a href="/#checker" class="sidebar-btn">Run the Free Checker →</a>
+    </div>
+    <div class="sidebar-card">
+      <h4>Talk to an Actual Attorney</h4>
+      <p>Free consultation. Nothing upfront. If they violated the FDCPA, the collector pays the attorney's fees — not you.</p>
+      <a href="/#intake" class="sidebar-btn">Get a Free Review →</a>
+    </div>
+    <div class="sidebar-card sidebar-toc">
+      <h4>In This Article</h4>
+      <ol>
+        <li><a href="#what-was-it">What the CFPB Was Built to Do</a></li>
+        <li><a href="#what-happened">What Happened — And When</a></li>
+        <li><a href="#the-mission-change">The Mission Change That Surprised Me</a></li>
+        <li><a href="#what-got-dropped">The Cases That Got Dropped</a></li>
+        <li><a href="#what-still-works">What Still Works</a></li>
+        <li><a href="#what-this-means">What This Means in Practice</a></li>
+        <li><a href="#what-to-do">What I'd Tell Someone in My Position</a></li>
+      </ol>
+    </div>
+  </aside>
+
+</div>
+
+<footer>
+  <div class="footer-brand">Me <span>vs.</span> Collector</div>
+  <ul class="footer-links">
+    <li><a href="/#checker">Violation Checker</a></li>
+    <li><a href="/#rights">FDCPA Guide</a></li>
+    <li><a href="/blog.html">Blog</a></li>
+    <li><a href="/glossary.html">Glossary</a></li>
+    <li><a href="/about.html">About</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Me vs. Collector. Written by a consumer, not a lawyer. Not legal advice.<br>Sources: Consumer Reports · ABA Banking Journal · InsideARM · GetOutOfDebt.org · NPR · CNN Business · Government Executive</div>
+</footer>
+
+<script>
+function toggleMobileNav(){document.getElementById('hamburger').classList.toggle('open');}
+</script>
+</body>
+</html>

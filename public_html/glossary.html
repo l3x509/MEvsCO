@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Debt Collection Glossary | Me vs. Collector — Every Term Explained in Plain English</title>
+<meta name="description" content="Charge-off, statute of limitations, debt validation, cease-and-desist, Reg F — every debt collection and FDCPA term explained in plain English with no jargon.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%231a1a1a'/%3E%3Crect x='0' y='28' width='32' height='4' fill='%23d4870a'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='16' font-weight='bold' fill='%23f5a623'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0d0d0d;--page:#f5f2ec;--paper:#fffdf8;--amber:#d4870a;--amber-light:#f5a623;--amber-pale:#fef3dc;--red:#c0392b;--red-pale:#fdecea;--green:#1a6b3c;--green-pale:#e6f4ed;--charcoal:#1a1a1a;--muted:#6b6b6b;--border:#e0dbd0;--rule:#d0ccc0;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--page);color:var(--ink);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--charcoal);border-bottom:2px solid var(--amber);padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:#fff;text-decoration:none;letter-spacing:-.5px}
+.nav-logo span{color:var(--amber-light)}
+.nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center}
+.nav-links a{color:#ccc;text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.5px;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--amber-light)}
+.nav-cta{background:var(--amber)!important;color:#fff!important;padding:.45rem 1.1rem;border-radius:3px}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .25s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-nav{display:none;position:fixed;inset:0;z-index:190;background:var(--charcoal);flex-direction:column;align-items:center;justify-content:center;gap:2rem;padding:2rem}
+.mobile-nav.open{display:flex}
+.mobile-nav a{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:#fff;text-decoration:none}
+.mobile-nav .mob-cta{background:var(--amber);color:#fff!important;padding:.9rem 2.5rem;border-radius:4px;font-family:var(--sans);font-size:1rem!important;font-weight:700}
+
+/* HERO */
+.page-hero{background:var(--charcoal);color:#fff;padding:110px 2rem 70px;border-bottom:2px solid var(--amber)}
+.page-hero-inner{max-width:960px;margin:0 auto}
+.hero-eyebrow{font-size:.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber-light);margin-bottom:1rem}
+.page-hero h1{font-family:var(--serif);font-size:clamp(2rem,4.5vw,3rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:1rem}
+.page-hero p{font-size:1.05rem;color:#aaa;line-height:1.7;font-weight:300;max-width:560px}
+
+/* ALPHA NAV */
+.alpha-nav{background:var(--paper);border-bottom:1px solid var(--border);padding:.75rem 2rem;position:sticky;top:60px;z-index:100;overflow-x:auto}
+.alpha-nav-inner{max-width:960px;margin:0 auto;display:flex;gap:.25rem;flex-wrap:wrap}
+.alpha-btn{background:none;border:none;font-family:var(--sans);font-size:.85rem;font-weight:700;color:var(--muted);cursor:pointer;padding:.35rem .55rem;border-radius:3px;transition:all .15s;text-transform:uppercase}
+.alpha-btn:hover{background:var(--amber-pale);color:var(--amber)}
+.alpha-btn.has-terms{color:var(--ink)}
+.alpha-btn.has-terms:hover{background:var(--amber-pale);color:var(--amber)}
+
+/* SEARCH */
+.search-bar{max-width:960px;margin:0 auto;padding:2rem 2rem 0}
+.search-wrap{position:relative}
+.search-icon{position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:var(--muted);font-size:1rem;pointer-events:none}
+.search-input{width:100%;padding:.9rem 1rem .9rem 2.75rem;background:var(--paper);border:1px solid var(--border);border-radius:4px;font-family:var(--sans);font-size:1rem;color:var(--ink);outline:none;transition:border-color .2s}
+.search-input:focus{border-color:var(--amber)}
+.search-input::placeholder{color:#bbb}
+.search-count{font-size:.8rem;color:var(--muted);margin-top:.5rem;padding-left:.25rem}
+
+/* GLOSSARY LAYOUT */
+.glossary-layout{max-width:960px;margin:0 auto;padding:2rem 2rem 5rem;display:grid;grid-template-columns:1fr 260px;gap:4rem;align-items:start}
+@media(max-width:750px){.glossary-layout{grid-template-columns:1fr;gap:2rem}}
+
+/* TERM SECTIONS */
+.letter-section{margin-bottom:1rem}
+.letter-anchor{font-family:var(--serif);font-size:2.5rem;font-weight:900;color:var(--amber);line-height:1;padding:.75rem 0 .5rem;border-bottom:2px solid var(--amber);margin-bottom:1.25rem}
+.term-card{background:var(--paper);border:1px solid var(--border);border-radius:4px;padding:1.5rem 1.75rem;margin-bottom:.75rem;transition:border-color .2s;scroll-margin-top:130px}
+.term-card:hover{border-color:#c0b89a}
+.term-name{font-family:var(--serif);font-size:1.2rem;font-weight:700;margin-bottom:.4rem;line-height:1.2;display:flex;align-items:flex-start;gap:.6rem;flex-wrap:wrap}
+.term-badge{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:.15rem .5rem;border-radius:2px;margin-top:2px;flex-shrink:0}
+.badge-violation{background:var(--red-pale);color:var(--red)}
+.badge-legal{background:var(--green-pale);color:var(--green)}
+.badge-key{background:var(--amber-pale);color:#9a5c00}
+.badge-process{background:#e8e6ff;color:#4a3e9e}
+.term-plain{font-size:1rem;color:#1e1e1e;line-height:1.75;margin-bottom:.75rem}
+.term-example{background:#f5f2ec;border-left:3px solid var(--amber);padding:.75rem 1rem;margin:.75rem 0;border-radius:0 3px 3px 0}
+.term-example-label{font-size:.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:.25rem}
+.term-example p{font-size:.88rem;color:var(--muted);line-height:1.6;margin:0;font-style:italic}
+.term-law{font-size:.78rem;color:#bbb;margin-top:.5rem}
+.term-law a{color:var(--amber);text-decoration:none}
+.no-results{text-align:center;padding:4rem 2rem;color:var(--muted);display:none}
+.no-results h3{font-family:var(--serif);font-size:1.4rem;font-weight:700;margin-bottom:.5rem;color:var(--ink)}
+
+/* SIDEBAR */
+.glossary-sidebar{position:sticky;top:120px;display:flex;flex-direction:column;gap:1.5rem}
+.sidebar-card{background:var(--paper);border:1px solid var(--border);border-radius:4px;padding:1.5rem}
+.sidebar-label{font-size:.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid var(--rule)}
+.checker-sidebar{background:var(--charcoal);color:#fff;border-radius:4px;padding:1.75rem}
+.checker-sidebar .sidebar-label{color:var(--amber-light);border-bottom-color:rgba(255,255,255,.1)}
+.checker-prompt{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:.5rem}
+.checker-sub{font-size:.85rem;color:#888;line-height:1.6;margin-bottom:1.25rem}
+.checker-btn{display:block;background:var(--amber);color:#fff;text-align:center;padding:.85rem 1rem;border-radius:4px;text-decoration:none;font-weight:700;font-size:.9rem}
+.checker-btn:hover{background:var(--amber-light);color:#fff}
+.checker-note{text-align:center;font-size:.72rem;color:#666;margin-top:.5rem}
+.quick-links{display:flex;flex-direction:column;gap:.25rem}
+.quick-link{display:flex;align-items:center;gap:.5rem;padding:.5rem .25rem;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--ink);font-size:.875rem;transition:color .2s}
+.quick-link:last-child{border-bottom:none}
+.quick-link:hover{color:var(--amber)}
+.quick-link-arrow{color:var(--amber);font-size:.7rem}
+.sol-sidebar{background:var(--red-pale);border:1px solid rgba(192,57,43,.2);border-radius:4px;padding:1.25rem}
+.sol-sidebar .sidebar-label{color:var(--red);border-bottom-color:rgba(192,57,43,.15)}
+.sol-number{font-family:var(--serif);font-size:2.5rem;font-weight:900;color:var(--red);line-height:1;margin-bottom:.25rem}
+.sol-text{font-size:.85rem;color:#8a2020;line-height:1.55}
+
+/* DISCLAIMER */
+.glossary-disclaimer{background:#f0ece3;border:1px solid var(--border);border-radius:4px;padding:1.25rem 1.5rem;margin-top:3rem;font-size:.8rem;color:var(--muted);line-height:1.65}
+.glossary-disclaimer strong{color:var(--ink);font-size:.72rem;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:.25rem}
+
+/* FOOTER */
+footer{background:#111;color:#888;padding:2.5rem 2rem}
+.footer-inner{max-width:960px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap}
+.footer-brand{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:#fff}
+.footer-brand span{color:var(--amber-light)}
+.footer-links{display:flex;gap:1.5rem;list-style:none;flex-wrap:wrap}
+.footer-links a{color:#777;text-decoration:none;font-size:.85rem;transition:color .2s}
+.footer-links a:hover{color:var(--amber-light)}
+.footer-copy{max-width:960px;margin:1.5rem auto 0;padding-top:1.25rem;border-top:1px solid #222;font-size:.75rem;color:#555}
+@media(max-width:700px){.nav-links{display:none}.hamburger{display:flex}}
+</style>
+</head>
+<body>
+
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html" onclick="closeMobileNav()">Home</a>
+  <a href="index.html#checker" onclick="closeMobileNav()">Check My Case</a>
+  <a href="index.html#rights" onclick="closeMobileNav()">FDCPA Guide</a>
+  <a href="blog.html" onclick="closeMobileNav()">Blog</a>
+  <a href="glossary.html" onclick="closeMobileNav()">Glossary</a>
+  <a href="about.html" onclick="closeMobileNav()">About</a>
+  <a href="index.html#checker" class="mob-cta" onclick="closeMobileNav()">Get Free Review</a>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">Me <span>vs.</span> Collector</a>
+  <ul class="nav-links">
+    <li><a href="index.html#checker">Check My Rights</a></li>
+    <li><a href="index.html#rights">FDCPA Guide</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="glossary.html" class="active">Glossary</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#checker" class="nav-cta">Free Review &#x2192;</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="hero-eyebrow">Plain-English Glossary</div>
+    <h1>Every debt collection term<br>explained like a human.</h1>
+    <p>No legalese. No condescension. Just clear definitions for every term you'll encounter when a debt collector comes calling — and what each one means for you.</p>
+  </div>
+</div>
+
+<!-- ALPHA NAV -->
+<div class="alpha-nav">
+  <div class="alpha-nav-inner" id="alpha-nav-inner">
+    <!-- Built by JS -->
+  </div>
+</div>
+
+<!-- SEARCH -->
+<div class="search-bar">
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" class="search-input" id="search-input" placeholder="Search any term — e.g. 'charge-off' or 'statute'" oninput="filterTerms()">
+  </div>
+  <p class="search-count" id="search-count"></p>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="glossary-layout">
+  <main id="glossary-main">
+    <!-- Built by JS -->
+    <div class="no-results" id="no-results">
+      <h3>No terms match that search.</h3>
+      <p>Try a shorter word, or browse by letter above.</p>
+    </div>
+  </main>
+
+  <aside class="glossary-sidebar">
+    <div class="checker-sidebar">
+      <div class="sidebar-label">Free Tool</div>
+      <div class="checker-prompt">Did your collector break the law?</div>
+      <p class="checker-sub">10 questions. 2 minutes. Any "yes" = potential federal violation.</p>
+      <a href="index.html#checker" class="checker-btn">Run the Free Checker →</a>
+      <p class="checker-note">No account. Instant results.</p>
+    </div>
+
+    <div class="sol-sidebar">
+      <div class="sidebar-label">Critical Deadline</div>
+      <div class="sol-number">1 Year</div>
+      <p class="sol-text">You have exactly one year from each FDCPA violation to file a lawsuit. The clock started the moment they broke the law.</p>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-label">Key Terms to Know First</div>
+      <div class="quick-links">
+        <a href="#fdcpa" class="quick-link"><span class="quick-link-arrow">→</span>FDCPA</a>
+        <a href="#statute-of-limitations" class="quick-link"><span class="quick-link-arrow">→</span>Statute of Limitations</a>
+        <a href="#cease-and-desist" class="quick-link"><span class="quick-link-arrow">→</span>Cease &amp; Desist</a>
+        <a href="#debt-validation" class="quick-link"><span class="quick-link-arrow">→</span>Debt Validation</a>
+        <a href="#charge-off" class="quick-link"><span class="quick-link-arrow">→</span>Charge-Off</a>
+        <a href="#original-creditor" class="quick-link"><span class="quick-link-arrow">→</span>Original Creditor vs. Collector</a>
+        <a href="#contingency" class="quick-link"><span class="quick-link-arrow">→</span>Contingency Fee</a>
+        <a href="#reg-f" class="quick-link"><span class="quick-link-arrow">→</span>Regulation F</a>
+      </div>
+    </div>
+
+    <div class="glossary-disclaimer">
+      <strong>Not Legal Advice</strong>
+      These definitions are for educational purposes. They explain the law in plain English but do not substitute for legal advice. For advice specific to your situation, connect with a licensed FDCPA attorney — free consultation.
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Me <span>vs.</span> Collector</div>
+    <ul class="footer-links">
+      <li><a href="index.html#checker">Violation Checker</a></li>
+      <li><a href="index.html#rights">FDCPA Guide</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="glossary.html">Glossary</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
+  <div class="footer-copy">© 2026 Me vs. Collector. Not a law firm. Not legal advice. | Sources: 15 U.S.C. § 1692 et seq., CFPB, FTC.</div>
+</footer>
+
+<script>
+const terms = [
+  {
+    id: 'actual-damages',
+    letter: 'A',
+    name: 'Actual Damages',
+    badge: 'key',
+    badgeLabel: 'Key Term',
+    plain: "Money you can recover in an FDCPA lawsuit for real harm the collector caused you — not just a set legal penalty, but compensation for what actually happened. Lost wages because their calls got you fired. Medical bills because the harassment caused an anxiety attack. Emotional distress that a doctor documented. Actual damages are on top of the $1,000 statutory limit and can be substantial.",
+    example: "A collector called your workplace repeatedly despite being asked to stop. You were terminated. Your lost wages are actual damages — recoverable in your FDCPA claim in addition to statutory damages.",
+    law: "FDCPA § 813(a)(1)"
+  },
+  {
+    id: 'attorney-fees',
+    letter: 'A',
+    name: 'Attorney Fees (FDCPA)',
+    badge: 'key',
+    badgeLabel: 'Key Term',
+    plain: "The reason suing a debt collector costs you nothing. If you win an FDCPA case — or the collector settles — federal law requires the collector to pay your attorney's fees and court costs. Your attorney works on contingency, fronts everything, and gets paid when the collector pays. You put in zero dollars.",
+    example: "Your attorney spends 40 hours on your case, wins, and bills $8,000 in fees. Under FDCPA § 813(a)(3), the debt collector writes that check. You get your damages. Your attorney gets paid. You owed nothing throughout.",
+    law: "FDCPA § 813(a)(3)"
+  },
+  {
+    id: 'cease-and-desist',
+    letter: 'C',
+    name: 'Cease and Desist (Letter)',
+    badge: 'process',
+    badgeLabel: 'Action',
+    plain: "A written letter you send to a debt collector telling them to stop contacting you. Once they receive it, the FDCPA requires them to stop — with only two exceptions: they may contact you once to confirm they've received it, and they may contact you to notify you of a specific legal action they intend to take. That's it. Calling you again after that is a federal violation.",
+    example: "You mail a cease-and-desist letter via certified mail on Monday. They call you Thursday. That Thursday call is an FDCPA violation — documentation of the certified mail receipt is your proof.",
+    law: "FDCPA § 805(c)"
+  },
+  {
+    id: 'cfpb',
+    letter: 'C',
+    name: 'CFPB (Consumer Financial Protection Bureau)',
+    badge: 'process',
+    badgeLabel: 'Agency',
+    plain: "The federal agency created after the 2008 financial crisis to oversee financial companies and protect consumers. The CFPB used to enforce the FDCPA and process complaints against debt collectors. In 2025, it was directed to halt all supervision, enforcement, rulemaking, investigations, and public communications. The agency still exists on paper, but enforcement has collapsed. The important thing: the FDCPA still works without the CFPB — your private right to sue is unchanged.",
+    example: "Filing an FDCPA lawsuit doesn't require the CFPB. You, through an attorney, can sue the collector directly in federal or state court under 15 U.S.C. § 1692k, regardless of what the CFPB is or isn't doing.",
+    law: null
+  },
+  {
+    id: 'charge-off',
+    letter: 'C',
+    name: 'Charge-Off',
+    badge: 'process',
+    badgeLabel: 'Accounting Term',
+    plain: "When a creditor writes off your debt as a loss on their books after you've missed payments for 6 months or more. Here's what a charge-off is NOT: forgiveness. You still legally owe the money. The creditor just stopped expecting to collect it directly and either sells the debt or sends it to collections. A charge-off on your credit report is damaging, but it doesn't erase the debt.",
+    example: "Your credit card company charges off your $3,400 balance. They sell it to a debt buyer for $340 (10 cents on the dollar). That debt buyer now calls you — and the full FDCPA applies to every call they make.",
+    law: null
+  },
+  {
+    id: 'contingency',
+    letter: 'C',
+    name: 'Contingency Fee',
+    badge: 'legal',
+    badgeLabel: 'Legal Process',
+    plain: "The payment structure FDCPA attorneys use that makes suing a collector free to you. The attorney takes your case without charging upfront — they only get paid if you win or settle. In FDCPA cases specifically, the attorney's fee comes from the collector, not from your recovery. You don't give up a percentage of your damages to pay your lawyer. The collector pays both.",
+    example: "Your FDCPA attorney wins $800 in damages for you and bills $4,000 in attorney fees. You receive $800. The collector pays $4,800 total. Your net cost: $0.",
+    law: "FDCPA § 813(a)(3)"
+  },
+  {
+    id: 'debt-buyer',
+    letter: 'D',
+    name: 'Debt Buyer',
+    badge: 'process',
+    badgeLabel: 'Entity Type',
+    plain: "A company that purchases unpaid debts from original creditors, usually for pennies on the dollar. They then try to collect the full amount themselves. Debt buyers are covered by the FDCPA — they must follow the same rules as any other third-party collector. In fact, debt buyers are common violators because they often have incomplete records and may pursue debts that are time-barred, disputed, or simply wrong.",
+    example: "Discover sells your charged-off $2,000 balance to Midland Credit Management for $200. Midland is now the debt buyer and calls you seeking the full $2,000. Every call Midland makes is subject to the FDCPA.",
+    law: "15 U.S.C. § 1692a(6)"
+  },
+  {
+    id: 'debt-validation',
+    letter: 'D',
+    name: 'Debt Validation',
+    badge: 'process',
+    badgeLabel: 'Your Right',
+    plain: "Your right to force a collector to prove the debt is yours and the amount is correct. If you send a written validation request within 30 days of their first contact, they must stop collection activity until they send you written verification of the debt. If they can't verify it, they can't legally collect it. Most people never exercise this right. It's one of the most powerful tools available.",
+    example: "A collector contacts you about a $1,847 medical debt you don't recognize. You mail a validation request within 30 days. They cannot call again or report the debt to credit bureaus until they prove it's yours and the amount is accurate.",
+    law: "FDCPA § 809(b)"
+  },
+  {
+    id: 'dunning-letter',
+    letter: 'D',
+    name: 'Dunning Letter',
+    badge: 'process',
+    badgeLabel: 'Collection Practice',
+    plain: "The written notice a debt collector is required to send you within 5 days of first contact. It must state the amount of the debt, the name of the creditor, and your right to dispute the debt within 30 days. It must also tell you that if you dispute the debt in writing, they'll provide verification. If a collector skips this — or makes it unclear — that's itself a potential violation.",
+    example: "A collector calls you on January 3rd but never sends a dunning letter. By January 8th they were legally required to mail one. Failure to send it within 5 days of first contact is an FDCPA violation.",
+    law: "FDCPA § 809(a)"
+  },
+  {
+    id: 'fdcpa',
+    letter: 'F',
+    name: 'FDCPA (Fair Debt Collection Practices Act)',
+    badge: 'key',
+    badgeLabel: 'The Law',
+    plain: "The federal law that is the entire foundation of this website. Passed by Congress in 1978, it prohibits third-party debt collectors from using abusive, deceptive, or unfair practices. It covers what collectors can say, when they can call, who they can contact, and how they can behave. Critically, it gives you the private right to sue any collector who violates it — and requires them to pay your attorney fees when you win.",
+    example: "A collector threatens arrest (§ 807(4) violation), calls at 11pm (§ 805(a)(1) violation), and discusses your debt with your mother (§ 805(b) violation). That's three separate FDCPA violations in one day — each potentially worth up to $1,000 in statutory damages.",
+    law: "15 U.S.C. § 1692 et seq."
+  },
+  {
+    id: 'ftc',
+    letter: 'F',
+    name: 'FTC (Federal Trade Commission)',
+    badge: 'process',
+    badgeLabel: 'Agency',
+    plain: "The federal agency that originally enforced the FDCPA before the CFPB was created. The FTC still has some enforcement authority over debt collectors, particularly regarding deceptive practices under the FTC Act. However, your most direct and powerful tool isn't either agency — it's your private right to sue under the FDCPA itself.",
+    example: null,
+    law: null
+  },
+  {
+    id: 'garnishment',
+    letter: 'G',
+    name: 'Wage Garnishment',
+    badge: 'process',
+    badgeLabel: 'Legal Process',
+    plain: "A court-ordered process where money is taken directly from your paycheck to pay a debt. This can only happen after a collector sues you and wins in court — it does not happen automatically or because a collector threatened it. A collector threatening immediate garnishment without a court judgment is likely lying, which may itself be an FDCPA violation.",
+    example: "A collector says 'We will garnish your wages starting next week if you don't pay.' They have not sued you. They have no court order. This threat is likely false and may violate § 807's prohibition on false representations.",
+    law: "FDCPA § 807(4), § 807(5)"
+  },
+  {
+    id: 'original-creditor',
+    letter: 'O',
+    name: 'Original Creditor vs. Debt Collector',
+    badge: 'key',
+    badgeLabel: 'Critical Distinction',
+    plain: "The original creditor is the company you borrowed money from — your credit card company, hospital, bank, or phone carrier. Third-party debt collectors are separate companies hired to collect or who bought the debt. The FDCPA applies to third-party collectors, NOT to original creditors collecting their own debt. This distinction matters: if Chase calls you about your Chase card, the FDCPA may not apply. If a collection agency calls about that same debt, it does.",
+    example: "Your Chase credit card goes unpaid. Chase calls you themselves — FDCPA may not protect you. Chase sells the debt to Cavalry Portfolio Services — every Cavalry call is now subject to FDCPA.",
+    law: "15 U.S.C. § 1692a(3), § 1692a(6)"
+  },
+  {
+    id: 'reg-f',
+    letter: 'R',
+    name: 'Regulation F',
+    badge: 'legal',
+    badgeLabel: 'Rule',
+    plain: "The CFPB's 2021 rule that updated and clarified FDCPA requirements. The most important thing Reg F added: a bright-line call frequency limit. Collectors cannot call you more than 7 times in any 7-consecutive-day period. They also cannot call within 7 days of having a conversation with you. This was new — before 2021, 'excessive calling' was subjective. Now there's a clear number.",
+    example: "A collector calls you Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, and Sunday — 7 times. If they call again on Monday, that 8th call in 7 days is a Regulation F violation, regardless of what was said.",
+    law: "12 CFR § 1006.14(b)(2)"
+  },
+  {
+    id: 'rosenthal-act',
+    letter: 'R',
+    name: 'Rosenthal Act (California)',
+    badge: 'legal',
+    badgeLabel: 'State Law',
+    plain: "California's state-level debt collection law, which is stronger than the federal FDCPA in several ways. The Rosenthal Act extends FDCPA-style protections to original creditors — meaning even your original credit card company must follow debt collection rules in California. Many states have similar laws that add protections on top of the FDCPA. Always worth knowing your state's rules.",
+    example: "In California, if your own bank makes abusive collection calls, the Rosenthal Act may protect you even though the federal FDCPA wouldn't apply (since it only covers third-party collectors).",
+    law: "Cal. Civil Code § 1788 et seq."
+  },
+  {
+    id: 'statute-of-limitations',
+    letter: 'S',
+    name: 'Statute of Limitations (on Debt)',
+    badge: 'key',
+    badgeLabel: 'Critical Concept',
+    plain: "The deadline after which a collector can no longer sue you in court to force repayment of a debt. This varies by state and debt type — typically 3 to 6 years, sometimes longer. Critically: the debt still exists after the deadline, and collectors can still ask you to pay. But they CANNOT legally threaten to sue, and in some states, threatening suit on time-barred debt is an FDCPA violation. Also critical: making even a small payment or acknowledging the debt in writing may restart the clock in some states.",
+    example: "You have a 5-year-old credit card debt in a state with a 4-year statute of limitations. A collector threatens to sue you. That threat may be an FDCPA violation — they know or should know the debt is time-barred.",
+    law: "Varies by state; FDCPA § 807 for threats"
+  },
+  {
+    id: 'statute-of-limitations-fdcpa',
+    letter: 'S',
+    name: 'Statute of Limitations (FDCPA Filing Deadline)',
+    badge: 'violation',
+    badgeLabel: 'Deadline — Urgent',
+    plain: "Completely separate from the debt's statute of limitations: this is YOUR deadline to sue the collector for FDCPA violations. You have exactly one year from the date of each violation to file. If a collector threatened arrest in January 2026, you have until January 2027 to file a claim for that specific violation. This deadline does not pause. It does not extend. The day the collector breaks the law, your clock starts.",
+    example: "A collector called your boss on March 15, 2026 after you asked them not to. Your deadline to file an FDCPA lawsuit for that violation is March 15, 2027. If you miss it, that particular violation is gone.",
+    law: "FDCPA § 813(d)"
+  },
+  {
+    id: 'statutory-damages',
+    letter: 'S',
+    name: 'Statutory Damages',
+    badge: 'key',
+    badgeLabel: 'Key Term',
+    plain: "The set penalty the FDCPA awards for violations — up to $1,000 per lawsuit (not per violation). You don't have to prove actual harm to get statutory damages. If the collector violated the FDCPA, the law entitles you to up to $1,000 regardless of whether you can document that you suffered. This is on top of any actual damages and attorney fees the court awards.",
+    example: "A collector called you twice after receiving your written cease-and-desist letter. You can't prove it caused you specific harm, but you can prove the violations happened. You're entitled to up to $1,000 in statutory damages — plus attorney fees the collector pays.",
+    law: "FDCPA § 813(a)(2)"
+  },
+  {
+    id: 'third-party-disclosure',
+    letter: 'T',
+    name: 'Third-Party Disclosure',
+    badge: 'violation',
+    badgeLabel: 'Violation Type',
+    plain: "When a collector reveals your debt to someone who isn't you, your spouse, or your attorney. Collectors are allowed to contact third parties — but only to try to find out how to reach you. They cannot say why they're calling. They cannot mention the debt. They cannot say they're a debt collector. Disclosing your debt to a parent, sibling, friend, neighbor, or employer is a federal violation.",
+    example: "A collector leaves a voicemail on your mother's phone saying 'This message is for [your name] regarding an unpaid debt. Please have them call us.' That disclosure to a third party may be an FDCPA violation under § 805(b).",
+    law: "FDCPA § 805(b)"
+  },
+  {
+    id: 'time-barred-debt',
+    letter: 'T',
+    name: 'Time-Barred Debt',
+    badge: 'key',
+    badgeLabel: 'Key Concept',
+    plain: "A debt that is past the state's statute of limitations for lawsuits. The collector can still ask you to pay — but they cannot legally threaten to sue. And in many states, they must proactively tell you the debt is too old to sue on. Some courts have held that threatening legal action on time-barred debt, without disclosing it's time-barred, is deceptive under the FDCPA.",
+    example: "Your state has a 4-year statute of limitations on credit card debt. The debt is 6 years old. A collector threatens to 'take legal action.' Depending on how the threat was phrased and your state's law, this may be an FDCPA violation.",
+    law: "FDCPA § 807; varies by state"
+  },
+  {
+    id: 'validation-notice',
+    letter: 'V',
+    name: 'Validation Notice',
+    badge: 'process',
+    badgeLabel: 'Required Notice',
+    plain: "The written notice a collector must send you within 5 days of first contact, telling you the amount of the debt, who the creditor is, and your rights to dispute and request verification. Many people never know they received one — it often arrives as a standard-looking letter. Look for it. The 30-day clock to dispute the debt in writing starts when you receive this notice.",
+    example: "A collector calls you on the 1st. You should receive a validation notice by the 6th. If it never arrives, the collector may have violated § 809(a)'s 5-day requirement — another potential FDCPA violation.",
+    law: "FDCPA § 809(a)"
+  },
+  {
+    id: 'verbal-dispute',
+    letter: 'V',
+    name: 'Verbal vs. Written Dispute',
+    badge: 'process',
+    badgeLabel: 'Practical Tip',
+    plain: "If you dispute a debt on the phone, it's almost meaningless legally. Disputes must be in WRITING to trigger the FDCPA's strongest protections — specifically, the collector's obligation to stop collection activity and provide verification. Saying 'that's not my debt' on a call gets you nowhere. Mailing or emailing a written dispute starts the legal clock on their obligation to verify.",
+    example: "You tell a collector over the phone that you've already paid this debt. They keep calling. They're not legally obligated to verify based on a verbal dispute. Send a written dispute via certified mail — now they must stop and verify.",
+    law: "FDCPA § 809(b)"
+  }
+];
+
+// Group by letter
+function buildGlossary(filter = '') {
+  const main = document.getElementById('glossary-main');
+  const noResults = document.getElementById('no-results');
+  const searchCount = document.getElementById('search-count');
+
+  const filtered = filter
+    ? terms.filter(t =>
+        t.name.toLowerCase().includes(filter.toLowerCase()) ||
+        t.plain.toLowerCase().includes(filter.toLowerCase())
+      )
+    : terms;
+
+  // Clear main content (except no-results div)
+  Array.from(main.children).forEach(el => {
+    if (el.id !== 'no-results') el.remove();
+  });
+
+  if (filtered.length === 0) {
+    noResults.style.display = 'block';
+    searchCount.textContent = '';
+    return;
+  }
+
+  noResults.style.display = 'none';
+
+  if (filter) {
+    searchCount.textContent = filtered.length + ' term' + (filtered.length === 1 ? '' : 's') + ' found';
+  } else {
+    searchCount.textContent = '';
+  }
+
+  // Group by letter
+  const byLetter = {};
+  filtered.forEach(t => {
+    if (!byLetter[t.letter]) byLetter[t.letter] = [];
+    byLetter[t.letter].push(t);
+  });
+
+  const letters = Object.keys(byLetter).sort();
+  const frag = document.createDocumentFragment();
+
+  letters.forEach(letter => {
+    const section = document.createElement('div');
+    section.className = 'letter-section';
+    section.id = 'letter-' + letter;
+
+    const anchor = document.createElement('div');
+    anchor.className = 'letter-anchor';
+    anchor.textContent = letter;
+    section.appendChild(anchor);
+
+    byLetter[letter].forEach(term => {
+      const card = document.createElement('div');
+      card.className = 'term-card';
+      card.id = term.id;
+      card.setAttribute('data-name', term.name.toLowerCase());
+
+      const badgeColors = {
+        violation: 'badge-violation', key: 'badge-key',
+        legal: 'badge-legal', process: 'badge-process'
+      };
+
+      card.innerHTML = `
+        <div class="term-name">
+          ${term.name}
+          <span class="term-badge ${badgeColors[term.badge] || 'badge-key'}">${term.badgeLabel}</span>
+        </div>
+        <p class="term-plain">${term.plain}</p>
+        ${term.example ? `<div class="term-example">
+          <div class="term-example-label">Real-world example</div>
+          <p>${term.example}</p>
+        </div>` : ''}
+        ${term.law ? `<div class="term-law">Source: ${term.law}</div>` : ''}
+      `;
+      section.appendChild(card);
+    });
+
+    frag.appendChild(section);
+  });
+
+  main.insertBefore(frag, noResults);
+}
+
+function buildAlphaNav() {
+  const container = document.getElementById('alpha-nav-inner');
+  const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  const hasTerms = new Set(terms.map(t => t.letter));
+
+  letters.forEach(l => {
+    const btn = document.createElement('button');
+    btn.className = 'alpha-btn' + (hasTerms.has(l) ? ' has-terms' : '');
+    btn.textContent = l;
+    if (hasTerms.has(l)) {
+      btn.onclick = () => {
+        document.getElementById('search-input').value = '';
+        buildGlossary();
+        setTimeout(() => {
+          const el = document.getElementById('letter-' + l);
+          if (el) el.scrollIntoView({behavior: 'smooth', block: 'start'});
+        }, 50);
+      };
+    }
+    container.appendChild(btn);
+  });
+}
+
+function filterTerms() {
+  const q = document.getElementById('search-input').value.trim();
+  buildGlossary(q);
+}
+
+/* Mobile nav */
+function toggleMobileNav(){const n=document.getElementById('mobile-nav'),b=document.getElementById('hamburger');n.classList.toggle('open');b.classList.toggle('open');document.body.style.overflow=n.classList.contains('open')?'hidden':'';}
+function closeMobileNav(){document.getElementById('mobile-nav').classList.remove('open');document.getElementById('hamburger').classList.remove('open');document.body.style.overflow='';}
+
+// Init
+buildAlphaNav();
+buildGlossary();
+
+// Handle hash links
+if (window.location.hash) {
+  setTimeout(() => {
+    const el = document.querySelector(window.location.hash);
+    if (el) el.scrollIntoView({behavior:'smooth',block:'start'});
+  }, 300);
+}
+</script>
+</body>
+</html>

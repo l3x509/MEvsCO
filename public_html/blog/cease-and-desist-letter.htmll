@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>How to Send a Cease and Desist Letter to a Debt Collector | Me vs. Collector</title>
+  <meta name="description" content="I sent a cease and desist letter to stop debt collector calls — and it worked. Here's exactly what I wrote, what happened next, and what the law says they have to do." />
+  <link rel="canonical" href="https://mevscollector.com/blog/cease-and-desist-letter.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="How to Send a Cease and Desist Letter to a Debt Collector" />
+  <meta property="og:description" content="I sent a cease and desist letter to stop debt collector calls — and it worked. Here's exactly what I wrote, what happened next, and what the law says they have to do." />
+  <meta property="og:url" content="https://mevscollector.com/blog/cease-and-desist-letter.html" />
+  <meta property="og:site_name" content="Me vs. Collector" />
+  <meta property="og:image" content="https://mevscollector.com/assets/og-cease-desist.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to Send a Cease and Desist Letter to a Debt Collector" />
+  <meta name="twitter:description" content="I sent a cease and desist letter to stop the calls — and it worked. Here's what I wrote and what happened next." />
+
+  <!-- Article metadata -->
+  <meta name="author" content="MEvsCO" />
+  <meta name="article:published_time" content="2026-05-03" />
+  <meta name="article:section" content="Debt Collection Rights" />
+  <meta name="article:tag" content="cease and desist letter, debt collector, FDCPA, stop collection calls" />
+
+  <!-- Schema: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Send a Cease and Desist Letter to a Debt Collector",
+    "description": "A first-person guide to sending a cease and desist letter that legally forces debt collectors to stop calling — including exact language, delivery method, and what happens after.",
+    "author": { "@type": "Person", "name": "MEvsCO", "url": "https://mevscollector.com/about.html" },
+    "publisher": { "@type": "Organization", "name": "Me vs. Collector", "url": "https://mevscollector.com" },
+    "datePublished": "2026-05-03",
+    "dateModified": "2026-05-03",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://mevscollector.com/blog/cease-and-desist-letter.html" },
+    "keywords": ["cease and desist letter debt collector", "how to stop debt collector calls", "FDCPA cease and desist", "debt collection harassment stop"]
+  }
+  </script>
+
+  <!-- Schema: Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mevscollector.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mevscollector.com/blog.html" },
+      { "@type": "ListItem", "position": 3, "name": "Cease and Desist Letter", "item": "https://mevscollector.com/blog/cease-and-desist-letter.html" }
+    ]
+  }
+  </script>
+
+  <!-- Schema: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does a cease and desist letter actually stop debt collectors?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — under the FDCPA, once a debt collector receives a written cease and desist request, they are legally required to stop all contact. The only exceptions are to notify you that contact is ceasing or to inform you of a specific action like filing a lawsuit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does a cease and desist letter have to be certified mail?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The FDCPA does not require certified mail, but using it gives you a dated paper trail that proves the collector received your letter. That proof matters if they violate the law after receiving it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a debt collector sue me after I send a cease and desist letter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. A cease and desist stops communication — not the underlying debt or any legal action they might take. A collector can still sue you to collect the debt; they just can't keep calling, texting, or writing to you."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if a collector keeps calling after receiving my cease and desist letter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every contact after a valid cease and desist is a separate FDCPA violation. Each violation can result in statutory damages up to $1,000, plus actual damages and attorney fees — which the collector pays, not you."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does sending a cease and desist letter hurt my credit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Sending a cease and desist letter has no direct effect on your credit report. The underlying debt may already appear on your report, but the letter itself does not change that."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is a cease and desist the same as a debt validation letter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No — they do different things. A debt validation letter demands proof that the debt is real and that the collector has the right to collect it. A cease and desist tells them to stop contacting you entirely. You can send both, and in many cases it makes sense to."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ─── Tokens ─── */
+    :root {
+      --charcoal:   #1c1c1e;
+      --charcoal-2: #2a2a2d;
+      --charcoal-3: #3a3a3e;
+      --amber:      #e8a020;
+      --amber-dim:  #c47f0a;
+      --cream:      #f5f0e8;
+      --cream-2:    #ede7db;
+      --text-main:  #f0ece4;
+      --text-muted: #a8a094;
+      --text-dark:  #1c1c1e;
+      --border:     rgba(232,160,32,0.2);
+      --radius:     6px;
+    }
+
+    /* ─── Reset ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--charcoal);
+      color: var(--text-main);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    /* ─── Type ─── */
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap');
+
+    h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.2; }
+    h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; }
+    h2 { font-size: clamp(1.35rem, 3vw, 1.75rem); font-weight: 700; margin-top: 2.5rem; margin-bottom: .75rem; color: var(--cream); }
+    h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: .4rem; color: var(--amber); }
+    p  { margin-bottom: 1.2rem; }
+    a  { color: var(--amber); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    strong { color: var(--cream); font-weight: 600; }
+
+    /* ─── Layout ─── */
+    .container { max-width: 760px; margin: 0 auto; padding: 0 1.25rem; }
+    .container--wide { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
+
+    /* ─── Nav ─── */
+    nav {
+      background: var(--charcoal-2);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .9rem 1.25rem;
+      max-width: 1100px; margin: 0 auto;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900; font-size: 1.1rem;
+      color: var(--amber); letter-spacing: -.5px;
+    }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a { color: var(--text-muted); font-size: .88rem; font-weight: 500; transition: color .2s; }
+    .nav-links a:hover { color: var(--cream); text-decoration: none; }
+    .nav-cta {
+      background: var(--amber); color: var(--text-dark);
+      padding: .45rem 1rem; border-radius: var(--radius);
+      font-weight: 600; font-size: .85rem;
+    }
+    .nav-cta:hover { background: var(--amber-dim); text-decoration: none; color: var(--text-dark); }
+
+    /* ─── Breadcrumb ─── */
+    .breadcrumb {
+      padding: 1rem 0 0;
+      font-size: .82rem;
+      color: var(--text-muted);
+    }
+    .breadcrumb a { color: var(--text-muted); }
+    .breadcrumb a:hover { color: var(--amber); }
+    .breadcrumb span { margin: 0 .4rem; }
+
+    /* ─── Hero ─── */
+    .post-hero { padding: 2.5rem 0 2rem; border-bottom: 1px solid var(--border); }
+    .post-tag {
+      display: inline-block;
+      background: rgba(232,160,32,0.12);
+      color: var(--amber);
+      font-size: .75rem; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      padding: .3rem .8rem; border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+    .post-hero h1 { color: var(--cream); margin-bottom: 1rem; }
+    .post-meta {
+      display: flex; align-items: center; gap: 1rem;
+      font-size: .83rem; color: var(--text-muted);
+      flex-wrap: wrap;
+    }
+    .post-meta .dot { opacity: .4; }
+
+    /* ─── Disclaimer ─── */
+    .disclaimer-bar {
+      background: rgba(232,160,32,0.07);
+      border-left: 3px solid var(--amber);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: .9rem 1.1rem;
+      margin: 2rem 0;
+      font-size: .88rem;
+      color: var(--text-muted);
+    }
+    .disclaimer-bar strong { color: var(--amber); }
+
+    /* ─── Article body ─── */
+    .post-body { padding: 2rem 0 3rem; }
+
+    /* ─── Stat callout ─── */
+    .stat-block {
+      background: var(--charcoal-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.5rem;
+      margin: 2rem 0;
+      display: flex; gap: 1.2rem; align-items: flex-start;
+    }
+    .stat-block .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem; font-weight: 900;
+      color: var(--amber); line-height: 1;
+      flex-shrink: 0;
+    }
+    .stat-block .stat-copy { font-size: .95rem; color: var(--text-muted); }
+    .stat-block .stat-copy strong { color: var(--text-main); }
+
+    /* ─── Template box ─── */
+    .template-box {
+      background: var(--charcoal-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      font-size: .93rem;
+    }
+    .template-box .template-label {
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--amber); margin-bottom: 1rem;
+    }
+    .template-box .template-text {
+      font-family: 'DM Mono', 'Courier New', monospace;
+      font-size: .88rem;
+      line-height: 1.8;
+      color: var(--cream-2);
+      white-space: pre-wrap;
+    }
+    .template-box .template-text em {
+      color: var(--amber);
+      font-style: italic;
+    }
+
+    /* ─── Step list ─── */
+    .step-list { list-style: none; padding: 0; margin: 1.5rem 0; }
+    .step-list li {
+      display: flex; gap: 1.2rem; align-items: flex-start;
+      margin-bottom: 1.4rem;
+    }
+    .step-num {
+      background: var(--amber);
+      color: var(--text-dark);
+      font-weight: 900; font-size: .88rem;
+      width: 2rem; height: 2rem;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: .15rem;
+    }
+    .step-content { flex: 1; }
+    .step-content strong { display: block; margin-bottom: .25rem; color: var(--cream); font-size: 1rem; }
+
+    /* ─── Warning box ─── */
+    .warning-box {
+      background: rgba(220,60,60,0.08);
+      border: 1px solid rgba(220,60,60,0.3);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.4rem;
+      margin: 2rem 0;
+      font-size: .93rem;
+    }
+    .warning-box .warning-label {
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: #e05555; margin-bottom: .6rem;
+    }
+
+    /* ─── Tip box ─── */
+    .tip-box {
+      background: rgba(232,160,32,0.06);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.4rem;
+      margin: 2rem 0;
+      font-size: .93rem;
+    }
+    .tip-box .tip-label {
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--amber); margin-bottom: .6rem;
+    }
+
+    /* ─── Comparison table ─── */
+    .compare-table {
+      width: 100%; border-collapse: collapse;
+      margin: 2rem 0; font-size: .9rem;
+    }
+    .compare-table thead { background: var(--charcoal-3); }
+    .compare-table th {
+      padding: .8rem 1rem; text-align: left;
+      font-size: .78rem; font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase;
+      color: var(--amber); border-bottom: 2px solid var(--border);
+    }
+    .compare-table td {
+      padding: .75rem 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      color: var(--text-muted); vertical-align: top;
+    }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table .td-label { color: var(--cream); font-weight: 600; }
+    .yes { color: #4caf7d; font-weight: 600; }
+    .no  { color: #e05555; font-weight: 600; }
+
+    /* ─── FAQ ─── */
+    .faq-section { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+    .faq-section h2 { margin-top: 0; }
+    .faq-item { margin-bottom: 1.5rem; }
+    .faq-q {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem; font-weight: 700;
+      color: var(--cream); margin-bottom: .5rem;
+    }
+    .faq-a { font-size: .95rem; color: var(--text-muted); }
+    .faq-a strong { color: var(--text-main); }
+
+    /* ─── CTA banner ─── */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--charcoal-2) 0%, var(--charcoal-3) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem 1.75rem;
+      margin: 3rem 0 1rem;
+      text-align: center;
+    }
+    .cta-banner h2 { margin-top: 0; font-size: 1.5rem; }
+    .cta-banner p { color: var(--text-muted); font-size: .95rem; margin-bottom: 1.25rem; }
+    .btn {
+      display: inline-block;
+      background: var(--amber); color: var(--text-dark);
+      font-weight: 700; font-size: .95rem;
+      padding: .75rem 1.75rem; border-radius: var(--radius);
+      transition: background .2s;
+    }
+    .btn:hover { background: var(--amber-dim); text-decoration: none; color: var(--text-dark); }
+    .btn-secondary {
+      display: inline-block;
+      border: 1px solid var(--border); color: var(--text-muted);
+      font-weight: 500; font-size: .88rem;
+      padding: .65rem 1.4rem; border-radius: var(--radius);
+      margin-left: .75rem; transition: all .2s;
+    }
+    .btn-secondary:hover { border-color: var(--amber); color: var(--cream); text-decoration: none; }
+
+    /* ─── Post nav ─── */
+    .post-nav {
+      display: flex; justify-content: space-between;
+      gap: 1rem; margin-top: 3rem; padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .post-nav a {
+      font-size: .88rem; color: var(--text-muted); max-width: 48%;
+    }
+    .post-nav a:hover { color: var(--amber); }
+    .post-nav .nav-dir {
+      font-size: .72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .08em;
+      display: block; color: var(--charcoal-3);
+      margin-bottom: .2rem;
+    }
+    .post-nav .nav-dir.fwd { color: var(--amber); text-align: right; }
+
+    /* ─── Footer ─── */
+    footer {
+      background: var(--charcoal-2);
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 0;
+      margin-top: 4rem;
+      font-size: .83rem;
+      color: var(--text-muted);
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 1.25rem;
+      display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 2rem; flex-wrap: wrap;
+    }
+    .footer-brand .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900; font-size: 1rem; color: var(--amber);
+      display: block; margin-bottom: .5rem;
+    }
+    .footer-tagline { color: var(--text-muted); max-width: 260px; line-height: 1.5; }
+    .footer-links { display: flex; gap: 3rem; flex-wrap: wrap; }
+    .footer-col h4 {
+      font-size: .72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .1em;
+      color: var(--amber); margin-bottom: .75rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: .45rem; }
+    .footer-col a { color: var(--text-muted); }
+    .footer-col a:hover { color: var(--cream); }
+    .footer-bottom {
+      margin-top: 2rem; padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      text-align: center; font-size: .78rem;
+      color: var(--charcoal-3);
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 620px) {
+      .nav-links { display: none; }
+      .stat-block { flex-direction: column; gap: .5rem; }
+      .stat-block .stat-num { font-size: 2rem; }
+      .post-nav a { max-width: 100%; }
+      .footer-inner { flex-direction: column; }
+      .footer-links { gap: 1.5rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Me vs. Collector home">Me vs. Collector</a>
+      <ul class="nav-links" role="list">
+        <li><a href="/index.html#checker">Violation Checker</a></li>
+        <li><a href="/glossary.html">FDCPA Guide</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/glossary.html">Glossary</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+      <a href="/index.html#free-review" class="nav-cta">Free Review</a>
+    </div>
+  </nav>
+
+  <!-- ═══ MAIN ═══ -->
+  <main id="main-content">
+    <div class="container">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">›</span>
+        <a href="/blog.html">Blog</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Cease and Desist Letter</span>
+      </nav>
+
+      <!-- ─── Post Hero ─── -->
+      <header class="post-hero">
+        <div class="post-tag">Your Rights</div>
+        <h1>I Sent a Cease and Desist Letter to a Debt Collector. The Calls Stopped.</h1>
+        <div class="post-meta">
+          <time datetime="2026-05-03">May 3, 2026</time>
+          <span class="dot" aria-hidden="true">·</span>
+          <span>9 min read</span>
+          <span class="dot" aria-hidden="true">·</span>
+          <span>MEvsCO</span>
+        </div>
+      </header>
+
+      <!-- ─── Post Body ─── -->
+      <article class="post-body" aria-label="Article content">
+
+        <p>For two weeks, the same number called me every day. Sometimes twice a day. I didn't know who it was the first few times. Then I picked up, and it was a debt collector — someone claiming I owed money on an old account I didn't even recognize.</p>
+
+        <p>I hung up. They called back the next morning. I started letting it go to voicemail. The voicemails started piling up.</p>
+
+        <p>I eventually went looking for a way to make it stop without pretending I didn't exist. What I found was a cease and desist letter — something I'd heard of but assumed was complicated legal stuff. It's not. I wrote one, mailed it, and the calls stopped.</p>
+
+        <p>Here's exactly what I learned about how this works, what to write, and what happens after you send it.</p>
+
+        <!-- Disclaimer -->
+        <aside class="disclaimer-bar" role="note" aria-label="Important disclaimer">
+          <strong>Quick note:</strong> I'm not a lawyer, and none of this is legal advice. What I'm sharing is what I found in my own research. Your situation may be different — if things get serious, an FDCPA attorney can review your case for free (and if they take it, the collector pays their fees, not you).
+        </aside>
+
+        <!-- Section 1 -->
+        <h2 id="what-is-cease-desist">What a Cease and Desist Letter Actually Does</h2>
+
+        <p>The phrase "cease and desist" gets thrown around a lot, but in the debt collection context it has a specific legal meaning. Under the Fair Debt Collection Practices Act — the federal law that governs third-party debt collectors — you have the right to demand in writing that a collector stop contacting you. Once they receive that written request, they're legally required to stop.</p>
+
+        <p>That's it. You don't need a lawyer to write the letter. You don't need to file anything with a court. You write it, send it, and the law does the rest.</p>
+
+        <div class="stat-block" aria-label="Key statistic">
+          <div class="stat-num">77M</div>
+          <div class="stat-copy">
+            <strong>Americans have debt in collections.</strong> Most don't know they can end collector contact with a single letter — or that continued calls after that letter are federal violations worth up to $1,000 each.
+          </div>
+        </div>
+
+        <p>There are two exceptions — the only times a collector can contact you after receiving a cease and desist:</p>
+
+        <ol style="margin: 1rem 0 1.2rem 1.5rem; color: var(--text-muted);">
+          <li style="margin-bottom: .6rem;">To confirm that they're stopping contact — a one-time acknowledgment.</li>
+          <li style="margin-bottom: .6rem;">To notify you of a specific action they intend to take, like filing a lawsuit.</li>
+        </ol>
+
+        <p>Those are the only two. Everything else — follow-up calls, texts, letters, emails — is a violation of federal law.</p>
+
+        <!-- Section 2 -->
+        <h2 id="what-to-write">What to Actually Write</h2>
+
+        <p>The letter doesn't need to be long. It doesn't need formal legal language. It just needs to be in writing and clearly state that you want them to stop contacting you.</p>
+
+        <p>This is roughly what mine said — and what I'd use again:</p>
+
+        <div class="template-box" role="region" aria-label="Cease and desist letter template">
+          <div class="template-label">Sample Cease and Desist Letter</div>
+          <div class="template-text"><em>[Your Full Name]</em>
+<em>[Your Address]</em>
+<em>[City, State, ZIP]</em>
+<em>[Date]</em>
+
+<em>[Collector's Name or Company]</em>
+<em>[Collector's Address]</em>
+
+Re: Account Number <em>[Account # if known]</em>
+
+To Whom It May Concern:
+
+I am writing to formally request that your company cease all further communication with me regarding the above-referenced account, pursuant to my rights under the Fair Debt Collection Practices Act, 15 U.S.C. § 1692c(c).
+
+This request applies to all forms of contact — phone calls, text messages, letters, emails, and contact through any third party.
+
+I am aware that you may contact me one final time to confirm that communication will stop, or to inform me of a specific legal action you intend to take. No other contact is authorized.
+
+If you continue to contact me after receiving this letter, I will treat each contact as a separate violation of the FDCPA and pursue all remedies available to me under the law.
+
+Sincerely,
+<em>[Your Signature]</em>
+<em>[Your Printed Name]</em></div>
+        </div>
+
+        <p>You can adjust the wording — what matters is that the request is unambiguous. Phrases like "please stop calling" in a text or voicemail probably won't carry the same legal weight as a written letter that explicitly references your FDCPA rights. Put it in writing.</p>
+
+        <!-- Section 3 -->
+        <h2 id="how-to-send-it">How to Send It (This Part Matters)</h2>
+
+        <p>The FDCPA doesn't require any particular delivery method. But the moment a collector claims they never received your letter, your legal position gets complicated. So I'd send it two ways:</p>
+
+        <ul class="step-list" aria-label="Delivery steps" role="list">
+          <li>
+            <div class="step-num" aria-hidden="true">1</div>
+            <div class="step-content">
+              <strong>Certified mail, return receipt requested</strong>
+              At the post office, ask for USPS certified mail with return receipt. You'll get a green card back once the collector signs for it — that card is your proof of delivery, with a date. Keep it.
+            </div>
+          </li>
+          <li>
+            <div class="step-num" aria-hidden="true">2</div>
+            <div class="step-content">
+              <strong>Regular first-class mail</strong>
+              Send a second copy the same day by standard mail. If the certified copy gets lost or refused, this backup matters.
+            </div>
+          </li>
+          <li>
+            <div class="step-num" aria-hidden="true">3</div>
+            <div class="step-content">
+              <strong>Keep copies of everything</strong>
+              Photograph or scan the letter before you mail it. Keep the tracking number, the signed return receipt, and any envelopes. If they violate the law later, this file is evidence.
+            </div>
+          </li>
+        </ul>
+
+        <div class="tip-box" role="note" aria-label="Pro tip">
+          <div class="tip-label">Worth knowing</div>
+          If you have an FDCPA attorney looking at your case, they'll sometimes draft and send the cease and desist on your behalf — on firm letterhead. In my experience, that gets faster results.
+        </div>
+
+        <!-- Section 4 -->
+        <h2 id="what-happens-after">What Happens After You Send It</h2>
+
+        <p>In most cases: the contact stops. The collector's compliance department receives the letter, flags the account, and the calls end. They may send one final written notice confirming they're stopping — that's allowed.</p>
+
+        <p>What they cannot do:</p>
+
+        <ul style="margin: 1rem 0 1.2rem 1.5rem; color: var(--text-muted);">
+          <li style="margin-bottom: .5rem;">Call you again (even "just to check in")</li>
+          <li style="margin-bottom: .5rem;">Text you</li>
+          <li style="margin-bottom: .5rem;">Send letters about the debt (other than the one-time termination notice)</li>
+          <li style="margin-bottom: .5rem;">Contact your employer, family, or neighbors</li>
+          <li style="margin-bottom: .5rem;">Contact you through a different collector to get around the letter</li>
+        </ul>
+
+        <p>If they do any of those things after a verified receipt, each instance is a separate FDCPA violation. Under the law, each violation can carry statutory damages of up to $1,000 — plus actual damages and attorney fees. And the collector pays those fees, not you.</p>
+
+        <div class="warning-box" role="alert" aria-label="Important warning">
+          <div class="warning-label">Don't confuse "stop calling" with "debt erased"</div>
+          A cease and desist letter stops communication — it doesn't eliminate the debt or prevent the collector from suing you. If they decide to take legal action, they can still file a lawsuit. The letter is about your right to not be harassed. It's a separate question from whether the debt is valid.
+        </div>
+
+        <!-- Section 5 -->
+        <h2 id="cease-desist-vs-validation">Cease and Desist vs. Debt Validation: Which One Do You Need?</h2>
+
+        <p>These two letters are often confused. They do completely different things. You might want one, the other, or both — depending on where you are.</p>
+
+        <table class="compare-table" aria-label="Comparison of cease and desist vs debt validation letter">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Cease &amp; Desist</th>
+              <th scope="col">Debt Validation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-label">What it does</td>
+              <td>Stops all collector contact</td>
+              <td>Forces them to prove the debt is real</td>
+            </tr>
+            <tr>
+              <td class="td-label">Must be in writing?</td>
+              <td class="yes">Yes</td>
+              <td class="yes">Yes</td>
+            </tr>
+            <tr>
+              <td class="td-label">Time limit to send it?</td>
+              <td>Any time</td>
+              <td>Within 30 days of first contact</td>
+            </tr>
+            <tr>
+              <td class="td-label">Stops calls?</td>
+              <td class="yes">Yes</td>
+              <td>Temporarily, while they verify</td>
+            </tr>
+            <tr>
+              <td class="td-label">Makes debt disappear?</td>
+              <td class="no">No</td>
+              <td class="no">No — but proves it or kills the contact</td>
+            </tr>
+            <tr>
+              <td class="td-label">Best used when</td>
+              <td>You just want the harassment to stop</td>
+              <td>You don't recognize the debt or suspect errors</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>I didn't recognize the debt they were calling me about. In that case, I should have sent the validation letter first — and in many situations you'd send both. The validation letter says "prove this is real." The cease and desist says "stop contacting me." Together, they're a complete response to harassment. <a href="/blog/debt-validation-letter.html">Read the full guide to debt validation letters →</a></p>
+
+        <!-- Section 6 -->
+        <h2 id="if-they-keep-calling">If They Keep Calling After the Letter</h2>
+
+        <p>Document everything. The date, the time, the phone number, whether they left a voicemail. If you have the voicemail, save it. Screenshot your call log. Write it down the same day it happens.</p>
+
+        <p>What I'd do next: contact an FDCPA attorney. Not because it's necessarily complicated, but because every illegal call after a valid cease and desist is money. The attorney takes the case, the collector pays the legal fees, and you don't pay anything out of pocket. The FDCPA was written specifically so that collectors face real consequences for ignoring cease and desists.</p>
+
+        <p>The collectors who keep calling after receiving a letter often know exactly what they're doing. They're betting you won't do anything about it.</p>
+
+        <!-- FAQ -->
+        <section class="faq-section" aria-label="Frequently asked questions">
+          <h2>Questions I Had (And You Probably Do Too)</h2>
+
+          <div class="faq-item">
+            <div class="faq-q">Does a cease and desist letter actually work?</div>
+            <div class="faq-a">Yes — for collectors who follow the law, it works immediately. Once they receive your written request, they're legally required to stop. The challenge is collectors who don't follow the law, which is exactly when having a paper trail matters most.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">Does it have to be certified mail?</div>
+            <div class="faq-a">The FDCPA doesn't require it — but I'd do it anyway. <strong>Certified mail gives you proof they received it.</strong> That proof is what separates "I asked them to stop" from "I can prove I asked them to stop and they kept going." The $7 for certified mail is cheap insurance.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">Can they sue me after I send a cease and desist letter?</div>
+            <div class="faq-a">Yes. The cease and desist stops communication — not legal action. A collector can still file a lawsuit to try to collect the debt. If that happens, you'll receive formal legal notice, which is the one type of contact still allowed after a cease and desist. Don't ignore a lawsuit notice.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">What if they send a new collector after me?</div>
+            <div class="faq-a"><strong>A cease and desist applies to that specific collector — not the debt.</strong> If the original creditor sells or assigns the account to a new collection agency, that new agency can legally contact you. You'd need to send a new letter. This is one reason debt validation can be useful too — it slows down the whole process and forces them to verify before doing anything.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">Will it hurt my credit score?</div>
+            <div class="faq-a">No. Sending a cease and desist letter has no direct effect on your credit report. The underlying debt may already appear as a collection account — but the letter itself doesn't add anything to your report or flag you negatively.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">Does this apply to original creditors, or just collectors?</div>
+            <div class="faq-a">This is an important one. <strong>The FDCPA covers third-party debt collectors — not the original creditor</strong> (like the bank or hospital you originally owed money to). If your original creditor is calling you, they aren't bound by the FDCPA cease and desist rules. Some states have their own laws that go further. If you're unsure who's calling, ask them directly: are they the original creditor, or a collection agency?</div>
+          </div>
+        </section>
+
+        <!-- CTA Banner -->
+        <aside class="cta-banner" aria-label="Free case review">
+          <h2>Not Sure If Your Rights Were Violated?</h2>
+          <p>If a collector kept calling after a cease and desist — or did anything else that felt wrong — an FDCPA attorney can tell you whether you have a case. Reviews are free, and if they sue on your behalf, their fees come from the collector.</p>
+          <a href="/index.html#free-review" class="btn">Get a Free Review</a>
+          <a href="/glossary.html" class="btn-secondary">Read the FDCPA Guide</a>
+        </aside>
+
+        <!-- Post Nav -->
+        <nav class="post-nav" aria-label="Post navigation">
+          <a href="/blog/can-they-do-that.html">
+            <span class="nav-dir">← Previous</span>
+            6 Things I Googled When a Collector Came After Me
+          </a>
+          <a href="/blog/debt-validation-letter.html" style="text-align: right;">
+            <span class="nav-dir fwd">Next →</span>
+            They Said I Owed It. I Asked Them to Prove It.
+          </a>
+        </nav>
+
+      </article>
+    </div>
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">Me vs. Collector</a>
+        <p class="footer-tagline">Consumer voices on debt collection. Real rights, plain language.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <div class="footer-col">
+          <h4>Tools</h4>
+          <ul role="list">
+            <li><a href="/index.html#checker">Violation Checker</a></li>
+            <li><a href="/index.html#free-review">Free Review</a></li>
+            <li><a href="/glossary.html">FDCPA Guide</a></li>
+            <li><a href="/glossary.html">Glossary</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Blog</h4>
+          <ul role="list">
+            <li><a href="/blog/can-they-do-that.html">Can They Do That?</a></li>
+            <li><a href="/blog/cfpb-shutdown-explained.html">CFPB Shutdown</a></li>
+            <li><a href="/blog/arrest-threat-illegal.html">Arrest Threats</a></li>
+            <li><a href="/blog/cease-and-desist-letter.html">Cease &amp; Desist</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Site</h4>
+          <ul role="list">
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/blog.html">All Posts</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>Me vs. Collector is not a law firm and does not provide legal advice. Content reflects personal research and experience. For legal guidance, consult a licensed attorney. FDCPA rights vary by situation.</p>
+      <p style="margin-top:.5rem;">© 2026 Me vs. Collector. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
