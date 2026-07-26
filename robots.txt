@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /_archive/
 Disallow: /blog.htmll
 Disallow: /blog.htmllll
 Disallow: /blogb4json.html
