@@ -37,6 +37,12 @@
     --red-pale: #fdecea;
     --green: #1a6b3c;
     --green-pale: #e6f4ed;
+    --blue: #2f6690;
+    --blue-pale: #e9f1f6;
+    --purple: #6a4c93;
+    --purple-pale: #f1ecf7;
+    --teal: #1b7f79;
+    --teal-pale: #e5f4f3;
     --charcoal: #1a1a1a;
     --muted: #6b6b6b;
     --border: #e0dbd0;
@@ -116,7 +122,7 @@
   }
 
   .blog-header-inner {
-    max-width: 960px;
+    max-width: 1180px;
     margin: 0 auto;
   }
 
@@ -146,20 +152,30 @@
     line-height: 1.65;
   }
 
-  /* ── FILTER TABS ── */
+  /* ── FILTER + SEARCH BAR ── */
   .filter-bar {
+    position: sticky;
+    top: 60px;
+    z-index: 90;
     background: var(--paper);
     border-bottom: 1px solid var(--border);
     padding: 0 2rem;
     display: flex;
-    gap: 0;
-    overflow-x: auto;
+    align-items: center;
+    gap: 1.5rem;
     max-width: 100%;
   }
 
+  .filter-tabs {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    flex: 1;
+  }
+
   .filter-tab {
-    padding: 1rem 1.25rem;
-    font-size: 0.82rem;
+    padding: 1rem 1.1rem;
+    font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -178,18 +194,56 @@
   .filter-tab:hover { color: var(--ink); }
   .filter-tab.active { color: var(--amber); border-bottom-color: var(--amber); }
 
+  .search-wrap {
+    flex-shrink: 0;
+    position: relative;
+    padding: 0.6rem 0;
+  }
+
+  .search-input {
+    width: 200px;
+    padding: 0.55rem 0.85rem 0.55rem 2.1rem;
+    background: var(--page);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s, width 0.2s;
+  }
+
+  .search-input:focus { border-color: var(--amber); width: 230px; }
+
+  .search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    color: var(--muted);
+    pointer-events: none;
+  }
+
+  @media (max-width: 750px) {
+    .filter-bar { flex-wrap: wrap; padding: 0.5rem 1.25rem; top: 0; }
+    .search-wrap { width: 100%; }
+    .search-input { width: 100%; }
+  }
+
   /* ── MAIN LAYOUT ── */
   .blog-layout {
-    max-width: 960px;
+    max-width: 1180px;
     margin: 0 auto;
     padding: 3rem 2rem 5rem;
     display: grid;
     grid-template-columns: 1fr 300px;
-    gap: 4rem;
+    gap: 3.5rem;
     align-items: start;
   }
 
-  @media (max-width: 750px) {
+  @media (max-width: 900px) {
     .blog-layout { grid-template-columns: 1fr; gap: 2.5rem; }
   }
 
@@ -199,7 +253,7 @@
     border: 1px solid var(--border);
     border-radius: 4px;
     overflow: hidden;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     border-top: 4px solid var(--amber);
     text-decoration: none;
     color: var(--ink);
@@ -278,10 +332,106 @@
     margin-left: auto;
   }
 
-  /* ── POST LIST ── */
-  .section-divider {
+  /* Share row */
+  .featured-share-row {
+    margin-top: 1rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--rule);
     display: flex;
     align-items: center;
+    gap: 0.5rem;
+  }
+
+  .share-label-text {
+    font-size: 0.72rem;
+    color: var(--muted);
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+
+  .share-wrap { position: relative; display: inline-block; }
+
+  .share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: var(--sans);
+    font-size: 0.73rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 0.3rem 0.7rem;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .share-btn:hover { border-color: var(--amber); color: var(--amber); }
+
+  .icon { width: 13px; height: 13px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 2.2; }
+  .icon-sm { width: 15px; height: 15px; flex-shrink: 0; fill: currentColor; }
+
+  .share-dropdown {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 0;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    min-width: 170px;
+    z-index: 200;
+    overflow: hidden;
+  }
+
+  .share-dropdown.open { display: block; }
+
+  .share-dropdown-title {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0.6rem 0.85rem 0.4rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .share-option {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 0.85rem;
+    font-size: 0.83rem;
+    font-weight: 500;
+    color: var(--ink);
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    background: none;
+    font-family: var(--sans);
+    width: 100%;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .share-option:hover { background: var(--amber-pale); color: var(--amber); }
+  .share-option.copied { color: var(--green); }
+
+  .post-share-row {
+    margin-top: 0.85rem;
+    padding-top: 0.7rem;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+  }
+
+  /* ── POST GRID ── */
+  .section-divider {
+    display: flex;
+    align-items: baseline;
     justify-content: space-between;
     font-size: 0.68rem;
     font-weight: 700;
@@ -293,165 +443,104 @@
     border-bottom: 1px solid var(--rule);
   }
 
-  .sort-link {
-    background: none;
-    border: none;
-    font-family: inherit;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--amber);
-    cursor: pointer;
-    padding: 0;
-    transition: opacity .2s;
-    white-space: nowrap;
-  }
-  .sort-link:hover { opacity: 0.75; }
-  .sort-link.active-sort { color: var(--muted); }
-  .sort-link.active-sort::after { content: ' (editorial order)'; }
-
-  /* ── All Posts Panel ── */
-  #all-posts-panel {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    margin-bottom: 1.5rem;
-    overflow: hidden;
-  }
-  .all-posts-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.75rem 1.1rem;
-    background: rgba(255,255,255,0.03);
-    border-bottom: 1px solid var(--border);
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  .all-posts-close {
-    background: none;
-    border: none;
-    color: var(--muted);
-    font-size: 0.75rem;
+  #results-count {
+    font-size: 0.7rem;
     font-weight: 600;
-    cursor: pointer;
-    letter-spacing: 1px;
-    padding: 0;
-    transition: color .15s;
-  }
-  .all-posts-close:hover { color: var(--amber); }
-  .all-posts-item {
-    display: block;
-    padding: 0.9rem 1.1rem;
-    border-bottom: 1px solid var(--rule);
-    text-decoration: none;
-    transition: background .15s;
-  }
-  .all-posts-item:last-child { border-bottom: none; }
-  .all-posts-item:hover { background: rgba(255,255,255,0.03); }
-  .all-posts-tag {
-    display: inline-block;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--amber);
-    margin-bottom: 0.25rem;
-  }
-  .all-posts-title {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--text);
-    line-height: 1.35;
-    margin-bottom: 0.25rem;
-  }
-  .all-posts-desc {
-    font-size: 0.82rem;
-    color: var(--muted);
-    line-height: 1.5;
-    margin-bottom: 0.25rem;
-  }
-  .all-posts-meta {
-    font-size: 0.75rem;
-    color: var(--muted);
-    opacity: 0.6;
+    letter-spacing: 0.5px;
+    text-transform: none;
+    color: #a89f8e;
   }
 
-  .post-list {
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .post-card {
     display: flex;
     flex-direction: column;
-    gap: 0;
-  }
-
-  .post-item {
-    display: flex;
-    gap: 1.25rem;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.4rem;
     text-decoration: none;
     color: var(--ink);
-    align-items: flex-start;
-    transition: background 0.1s;
+    transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
   }
 
-  .post-item:last-child { border-bottom: none; }
-  .post-item:hover .post-item-title { color: var(--amber); }
-
-  .post-item-num {
-    font-family: var(--serif);
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--border);
-    line-height: 1;
-    width: 36px;
-    flex-shrink: 0;
-    padding-top: 2px;
+  .post-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+    border-color: var(--amber);
   }
 
-  .post-item-body { flex: 1; }
+  .post-card:hover .post-card-title { color: var(--amber); }
 
-  .post-item-tag {
-    font-size: 0.65rem;
+  .post-card-tag {
+    align-self: flex-start;
+    font-size: 0.63rem;
     font-weight: 700;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.2px;
     text-transform: uppercase;
-    color: var(--amber);
-    margin-bottom: 0.3rem;
-    display: block;
+    padding: 0.2rem 0.55rem;
+    border-radius: 2px;
+    margin-bottom: 0.7rem;
   }
 
-  .post-item-tag.red { color: var(--red); }
-  .post-item-tag.green { color: var(--green); }
+  .post-card-tag.red    { background: var(--red-pale);    color: var(--red); }
+  .post-card-tag.amber  { background: var(--amber-pale);  color: var(--amber); }
+  .post-card-tag.green  { background: var(--green-pale);  color: var(--green); }
+  .post-card-tag.blue   { background: var(--blue-pale);   color: var(--blue); }
+  .post-card-tag.purple { background: var(--purple-pale); color: var(--purple); }
+  .post-card-tag.teal   { background: var(--teal-pale);   color: var(--teal); }
+  .post-card-tag.grey   { background: var(--border);      color: var(--muted); }
 
-  .post-item-title {
+  .post-card-title {
     font-family: var(--serif);
     font-size: 1.05rem;
     font-weight: 700;
-    line-height: 1.3;
-    margin-bottom: 0.3rem;
+    line-height: 1.32;
+    margin-bottom: 0.55rem;
     transition: color 0.2s;
   }
 
-  .post-item-desc {
-    font-size: 0.875rem;
+  .post-card-desc {
+    font-size: 0.85rem;
     color: var(--muted);
     line-height: 1.55;
     margin-bottom: 0.4rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
-  .post-item-meta {
-    font-size: 0.75rem;
-    color: #bbb;
+  .post-card-meta {
+    margin-top: auto;
+    font-size: 0.73rem;
+    color: #b3a998;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--rule);
   }
+
+  .post-card .post-share-row .share-btn { font-size: 0.68rem; padding: 0.25rem 0.55rem; }
+
+  .no-results {
+    display: none;
+    grid-column: 1 / -1;
+    padding: 3rem 1rem;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .no-results.show { display: block; }
 
   /* ── SIDEBAR ── */
   .sidebar {
     position: sticky;
-    top: 80px;
+    top: 120px;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -532,11 +621,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     padding: 0.6rem 0;
     border-bottom: 1px solid var(--rule);
     text-decoration: none;
     color: var(--ink);
     font-size: 0.88rem;
+    background: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    font-family: var(--sans);
+    cursor: pointer;
     transition: color 0.2s;
   }
 
@@ -600,7 +696,7 @@
   }
 
   .footer-inner {
-    max-width: 960px;
+    max-width: 1180px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -642,111 +738,19 @@
     border-top: 1px solid #222;
     margin-top: 0.5rem;
   }
-
-  /* ── SHARE BUTTON ── */
-  .share-wrap {
-    position: relative;
-    display: inline-block;
-  }
-
-  .share-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    background: none;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    font-family: var(--sans);
-    font-size: 0.73rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    padding: 0.3rem 0.7rem;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: border-color 0.2s, color 0.2s;
-  }
-
-  .share-btn:hover { border-color: var(--amber); color: var(--amber); }
-
-  .share-btn svg { width: 13px; height: 13px; flex-shrink: 0; }
-
-  .share-dropdown {
-    display: none;
-    position: absolute;
-    bottom: calc(100% + 6px);
-    left: 0;
-    background: var(--paper);
-    border: 1px solid var(--border);
-    border-radius: 5px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-    min-width: 170px;
-    z-index: 200;
-    overflow: hidden;
-  }
-
-  .share-dropdown.open { display: block; }
-
-  .share-dropdown-title {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--muted);
-    padding: 0.6rem 0.85rem 0.4rem;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .share-option {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    padding: 0.6rem 0.85rem;
-    font-size: 0.83rem;
-    font-weight: 500;
-    color: var(--ink);
-    cursor: pointer;
-    text-decoration: none;
-    border: none;
-    background: none;
-    font-family: var(--sans);
-    width: 100%;
-    transition: background 0.15s, color 0.15s;
-  }
-
-  .share-option:hover { background: var(--amber-pale); color: var(--amber); }
-
-  .share-option svg { width: 15px; height: 15px; flex-shrink: 0; }
-
-  .share-option.copied { color: var(--green); }
-
-  /* Featured post share row */
-  .featured-share-row {
-    margin-top: 1rem;
-    padding-top: 0.85rem;
-    border-top: 1px solid var(--rule);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .share-label-text {
-    font-size: 0.72rem;
-    color: var(--muted);
-    font-weight: 500;
-    letter-spacing: 0.3px;
-  }
-
-  /* Post item share row */
-  .post-share-row {
-    margin-top: 0.55rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
 </style>
 </head>
 <body>
+
+<!-- Icon sprite (avoids repeating raw SVG paths on every card) -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="icon-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></symbol>
+  <symbol id="icon-twitter" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></symbol>
+  <symbol id="icon-facebook" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></symbol>
+  <symbol id="icon-linkedin" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
+  <symbol id="icon-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+</svg>
 
 <nav>
   <a href="/" class="nav-logo">Me <span>vs.</span> Collector</a>
@@ -770,15 +774,22 @@
   </div>
 </div>
 
-<!-- FILTER TABS -->
+<!-- FILTER TABS + SEARCH -->
 <div class="filter-bar">
-  <button id="tab-all"        class="filter-tab active" onclick="filterPosts('all', this)">All Posts</button>
-  <button id="tab-violation"  class="filter-tab" onclick="filterPosts('violation', this)">Violations</button>
-  <button id="tab-strategy"   class="filter-tab" onclick="filterPosts('strategy', this)">Strategy</button>
-  <button id="tab-lawsuit"    class="filter-tab" onclick="filterPosts('lawsuit', this)">Lawsuits</button>
-  <button id="tab-debt-types" class="filter-tab" onclick="filterPosts('debt-types', this)">Debt Types</button>
-  <button id="tab-state"      class="filter-tab" onclick="filterPosts('state', this)">State Laws</button>
-  <button id="tab-news"       class="filter-tab" onclick="filterPosts('news', this)">News &amp; Context</button>
+  <div class="filter-tabs" id="filter-tabs">
+    <button class="filter-tab active" data-cat="all" onclick="filterPosts('all', this)">All Posts</button>
+    <button class="filter-tab" data-cat="violation" onclick="filterPosts('violation', this)">Violations</button>
+    <button class="filter-tab" data-cat="strategy" onclick="filterPosts('strategy', this)">Strategy</button>
+    <button class="filter-tab" data-cat="lawsuit" onclick="filterPosts('lawsuit', this)">Lawsuits</button>
+    <button class="filter-tab" data-cat="debt-types" onclick="filterPosts('debt-types', this)">Debt Types</button>
+    <button class="filter-tab" data-cat="state" onclick="filterPosts('state', this)">State Laws</button>
+    <button class="filter-tab" data-cat="sol" onclick="filterPosts('sol', this)">Statute of Limitations</button>
+    <button class="filter-tab" data-cat="news" onclick="filterPosts('news', this)">News &amp; Context</button>
+  </div>
+  <div class="search-wrap">
+    <svg class="search-icon icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" class="search-input" id="post-search" placeholder="Search all posts…" oninput="searchPosts(this.value)">
+  </div>
 </div>
 
 <!-- MAIN LAYOUT -->
@@ -788,7 +799,7 @@
     <!-- FEATURED -->
     <a href="blog/can-they-do-that.html" class="featured-post">
       <div class="featured-inner">
-        <div class="featured-label">Latest Post</div>
+        <div class="featured-label">Start Here</div>
         <div class="featured-title">"Can They Do That?" — 6 Things I Googled When a Debt Collector Came After Me</div>
         <p class="featured-desc">I had no idea what collectors were actually allowed to do. So I looked it up. Calling at work, contacting family, threatening arrest, how many calls is too many — here are the six questions I searched first and the answers I actually found.</p>
         <div class="featured-meta">
@@ -801,153 +812,412 @@
           <span class="share-label-text">Share this post:</span>
           <div class="share-wrap">
             <button class="share-btn" onclick="toggleShare(event, this)" data-url="blog/can-they-do-that.html" data-title='"Can They Do That?" — 6 Things I Googled When a Debt Collector Came After Me'>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-              Share
+              <svg class="icon"><use href="#icon-share"/></svg> Share
             </button>
             <div class="share-dropdown">
               <div class="share-dropdown-title">Share via</div>
-              <button class="share-option" onclick="shareVia(event, 'twitter', this)">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                X (Twitter)
-              </button>
-              <button class="share-option" onclick="shareVia(event, 'facebook', this)">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                Facebook
-              </button>
-              <button class="share-option" onclick="shareVia(event, 'linkedin', this)">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                LinkedIn
-              </button>
-              <button class="share-option" onclick="shareVia(event, 'copy', this)">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                Copy Link
-              </button>
+              <button class="share-option" onclick="shareVia(event, 'twitter', this)"><svg class="icon-sm"><use href="#icon-twitter"/></svg> X (Twitter)</button>
+              <button class="share-option" onclick="shareVia(event, 'facebook', this)"><svg class="icon-sm"><use href="#icon-facebook"/></svg> Facebook</button>
+              <button class="share-option" onclick="shareVia(event, 'linkedin', this)"><svg class="icon-sm"><use href="#icon-linkedin"/></svg> LinkedIn</button>
+              <button class="share-option" onclick="shareVia(event, 'copy', this)"><svg class="icon-sm"><use href="#icon-copy"/></svg> Copy Link</button>
             </div>
           </div>
         </div>
       </div>
     </a>
 
-
-    <!-- POST LIST -->
+    <!-- POST GRID -->
     <div class="section-divider">
       <span>All posts</span>
-      <button class="sort-link" id="sort-btn" onclick="sortNewest(this)">See all posts — newest first ↑</button>
+      <span id="results-count">21 posts</span>
     </div>
 
-    <div class="post-list" id="post-list">
+    <div class="post-grid" id="post-grid">
 
-      <a href="blog/cfpb-shutdown-explained.html" class="post-item" data-cat="news" data-date="2026-04-10">
-        <div class="post-item-num">02</div>
-        <div class="post-item-body">
-          <span class="post-item-tag" style="color:#d4870a;">News &amp; Context</span>
-          <div class="post-item-title">The Federal Watchdog Has Been Defanged. Here&rsquo;s What I Found Out.</div>
-          <p class="post-item-desc">The CFPB still exists — technically. But its mission has been changed, its staff gutted, and its headquarters closed. Here's what happened and what it means for you.</p>
-          <span class="post-item-meta">April 2026 · 9 min read</span>
-          <div class="post-share-row"><div class="share-wrap"><button class="share-btn" onclick="toggleShare(event,this)" data-url="blog/cfpb-shutdown-explained.html" data-title="The Federal Watchdog Has Been Defanged. Here&rsquo;s What I Found Out."><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>Share</button><div class="share-dropdown"><div class="share-dropdown-title">Share via</div><button class="share-option" onclick="shareVia(event,'twitter',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X (Twitter)</button><button class="share-option" onclick="shareVia(event,'facebook',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Facebook</button><button class="share-option" onclick="shareVia(event,'linkedin',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</button><button class="share-option" onclick="shareVia(event,'copy',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy Link</button></div></div></div>
+      <a href="blog/workplace-calls-after-stop.html" class="post-card" data-cat="violation" data-title="They Called My Boss After I Asked Them to Stop. Is That Illegal?">
+        <span class="post-card-tag red">Violation</span>
+        <div class="post-card-title">They Called My Boss After I Asked Them to Stop. Is That Illegal?</div>
+        <p class="post-card-desc">A collector called my job after I told them not to. I found out that's a clear FDCPA violation — and one of the easiest to prove. Here's exactly what I learned.</p>
+        <div class="post-card-meta">July 2026 · 7 min read</div>
+        <div class="post-share-row">
+          <div class="share-wrap">
+            <button class="share-btn" onclick="toggleShare(event, this)" data-url="blog/workplace-calls-after-stop.html" data-title="They Called My Boss After I Asked Them to Stop. Is That Illegal?"><svg class="icon"><use href="#icon-share"/></svg> Share</button>
+            <div class="share-dropdown">
+              <div class="share-dropdown-title">Share via</div>
+              <button class="share-option" onclick="shareVia(event, 'twitter', this)"><svg class="icon-sm"><use href="#icon-twitter"/></svg> X (Twitter)</button>
+              <button class="share-option" onclick="shareVia(event, 'facebook', this)"><svg class="icon-sm"><use href="#icon-facebook"/></svg> Facebook</button>
+              <button class="share-option" onclick="shareVia(event, 'linkedin', this)"><svg class="icon-sm"><use href="#icon-linkedin"/></svg> LinkedIn</button>
+              <button class="share-option" onclick="shareVia(event, 'copy', this)"><svg class="icon-sm"><use href="#icon-copy"/></svg> Copy Link</button>
+            </div>
+          </div>
         </div>
       </a>
-      <a href="blog/arrest-threat-illegal.html" class="post-item" data-cat="violation" data-date="2026-04-18">
-        <div class="post-item-num">03</div>
-        <div class="post-item-body">
-          <span class="post-item-tag red">Violation</span>
-          <div class="post-item-title">They Threatened to Arrest Me for Not Paying a Debt. Is That Legal?</div>
-          <p class="post-item-desc">A debt collector threatening you with arrest is one of the most common — and most explicitly illegal — tactics in the industry. Here's exactly what the law says and what to do next.</p>
-          <span class="post-item-meta">April 2026 · 8 min read</span>
-          <div class="post-share-row"><div class="share-wrap"><button class="share-btn" onclick="toggleShare(event,this)" data-url="blog/arrest-threat-illegal.html" data-title="They Threatened to Arrest Me for Not Paying a Debt. Is That Legal?"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>Share</button><div class="share-dropdown"><div class="share-dropdown-title">Share via</div><button class="share-option" onclick="shareVia(event,'twitter',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X (Twitter)</button><button class="share-option" onclick="shareVia(event,'facebook',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Facebook</button><button class="share-option" onclick="shareVia(event,'linkedin',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</button><button class="share-option" onclick="shareVia(event,'copy',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy Link</button></div></div></div>
+
+      <a href="blog/how-fdcpa-lawsuits-work.html" class="post-card" data-cat="lawsuit" data-title="How Suing a Debt Collector Works — Even If You've Never Been to Court">
+        <span class="post-card-tag green">Lawsuit</span>
+        <div class="post-card-title">How Suing a Debt Collector Works — Even If You've Never Been to Court</div>
+        <p class="post-card-desc">I had no idea what an FDCPA lawsuit actually looked like from the inside. Here's the step-by-step process I found out about, from the free consultation to how cases typically resolve.</p>
+        <div class="post-card-meta">July 2026 · 9 min read</div>
+        <div class="post-share-row">
+          <div class="share-wrap">
+            <button class="share-btn" onclick="toggleShare(event, this)" data-url="blog/how-fdcpa-lawsuits-work.html" data-title="How Suing a Debt Collector Works — Even If You've Never Been to Court"><svg class="icon"><use href="#icon-share"/></svg> Share</button>
+            <div class="share-dropdown">
+              <div class="share-dropdown-title">Share via</div>
+              <button class="share-option" onclick="shareVia(event, 'twitter', this)"><svg class="icon-sm"><use href="#icon-twitter"/></svg> X (Twitter)</button>
+              <button class="share-option" onclick="shareVia(event, 'facebook', this)"><svg class="icon-sm"><use href="#icon-facebook"/></svg> Facebook</button>
+              <button class="share-option" onclick="shareVia(event, 'linkedin', this)"><svg class="icon-sm"><use href="#icon-linkedin"/></svg> LinkedIn</button>
+              <button class="share-option" onclick="shareVia(event, 'copy', this)"><svg class="icon-sm"><use href="#icon-copy"/></svg> Copy Link</button>
+            </div>
+          </div>
         </div>
       </a>
-      <a href="#" class="post-item" data-cat="violation" data-date="">
-        <div class="post-item-num">04</div>
-        <div class="post-item-body">
-          <span class="post-item-tag red">Violation</span>
-          <div class="post-item-title">They Called My Boss After I Asked Them to Stop. Is That Illegal?</div>
-          <p class="post-item-desc">Workplace harassment after notice is a clear FDCPA violation — and one of the easiest to prove. Here's exactly what the law says and how to document it.</p>
-          <span class="post-item-meta">Coming soon</span>
-          <div class="post-share-row"><div class="share-wrap"><button class="share-btn" onclick="toggleShare(event,this)" data-url="#" data-title="They Called My Boss After I Asked Them to Stop. Is That Illegal?"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>Share</button><div class="share-dropdown"><div class="share-dropdown-title">Share via</div><button class="share-option" onclick="shareVia(event,'twitter',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X (Twitter)</button><button class="share-option" onclick="shareVia(event,'facebook',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Facebook</button><button class="share-option" onclick="shareVia(event,'linkedin',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</button><button class="share-option" onclick="shareVia(event,'copy',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy Link</button></div></div></div>
+
+      <a href="blog/fdcpa-vs-state-laws.html" class="post-card" data-cat="state" data-title="FDCPA vs. State Laws: Many States Give You Even More Protection">
+        <span class="post-card-tag blue">State Laws</span>
+        <div class="post-card-title">FDCPA vs. State Laws: Many States Give You Even More Protection</div>
+        <p class="post-card-desc">I assumed the FDCPA was the whole story. Then I found out my state had its own, sometimes stronger, rules layered on top. Here's what I learned about federal law as a floor, not a ceiling.</p>
+        <div class="post-card-meta">July 2026 · 8 min read</div>
+        <div class="post-share-row">
+          <div class="share-wrap">
+            <button class="share-btn" onclick="toggleShare(event, this)" data-url="blog/fdcpa-vs-state-laws.html" data-title="FDCPA vs. State Laws: Many States Give You Even More Protection"><svg class="icon"><use href="#icon-share"/></svg> Share</button>
+            <div class="share-dropdown">
+              <div class="share-dropdown-title">Share via</div>
+              <button class="share-option" onclick="shareVia(event, 'twitter', this)"><svg class="icon-sm"><use href="#icon-twitter"/></svg> X (Twitter)</button>
+              <button class="share-option" onclick="shareVia(event, 'facebook', this)"><svg class="icon-sm"><use href="#icon-facebook"/></svg> Facebook</button>
+              <button class="share-option" onclick="shareVia(event, 'linkedin', this)"><svg class="icon-sm"><use href="#icon-linkedin"/></svg> LinkedIn</button>
+              <button class="share-option" onclick="shareVia(event, 'copy', this)"><svg class="icon-sm"><use href="#icon-copy"/></svg> Copy Link</button>
+            </div>
+          </div>
         </div>
       </a>
-      <a href="blog/cease-and-desist-letter.html" class="post-item" data-cat="strategy" data-date="2026-05-03">
-        <div class="post-item-num">05</div>
-        <div class="post-item-body">
-          <span class="post-item-tag">Strategy</span>
-          <div class="post-item-title">I Sent a Cease and Desist Letter to a Debt Collector. The Calls Stopped.</div>
-          <p class="post-item-desc">One letter, sent certified mail, creates a legal obligation to stop all contact. Here's what I wrote, how I sent it, and what the law actually requires them to do next.</p>
-          <span class="post-item-meta">May 2026 · 9 min read · MEvsCO</span>
-          <div class="post-share-row"><div class="share-wrap"><button class="share-btn" onclick="toggleShare(event,this)" data-url="blog/cease-and-desist-letter.html" data-title="I Sent a Cease and Desist Letter to a Debt Collector. The Calls Stopped."><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>Share</button><div class="share-dropdown"><div class="share-dropdown-title">Share via</div><button class="share-option" onclick="shareVia(event,'twitter',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X (Twitter)</button><button class="share-option" onclick="shareVia(event,'facebook',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Facebook</button><button class="share-option" onclick="shareVia(event,'linkedin',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</button><button class="share-option" onclick="shareVia(event,'copy',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy Link</button></div></div></div>
+
+      <a href="blog/seven-calls-seven-days.html" class="post-card" data-cat="violation" data-title="They Called Me 11 Times This Week. The Law Has an Exact Number.">
+        <span class="post-card-tag red">Violation</span>
+        <div class="post-card-title">They Called Me 11 Times This Week. The Law Has an Exact Number.</div>
+        <p class="post-card-desc">I started counting the calls. Turns out federal law has an exact bright-line number for how many times a collector can call in a week — and I'd already blown past it.</p>
+        <div class="post-card-meta">July 2026 · 7 min read</div>
+        <div class="post-share-row">
+          <div class="share-wrap">
+            <button class="share-btn" onclick="toggleShare(event, this)" data-url="blog/seven-calls-seven-days.html" data-title="They Called Me 11 Times This Week. The Law Has an Exact Number."><svg class="icon"><use href="#icon-share"/></svg> Share</button>
+            <div class="share-dropdown">
+              <div class="share-dropdown-title">Share via</div>
+              <button class="share-option" onclick="shareVia(event, 'twitter', this)"><svg class="icon-sm"><use href="#icon-twitter"/></svg> X (Twitter)</button>
+              <button class="share-option" onclick="shareVia(event, 'facebook', this)"><svg class="icon-sm"><use href="#icon-facebook"/></svg> Facebook</button>
+              <button class="share-option" onclick="shareVia(event, 'linkedin', this)"><svg class="icon-sm"><use href="#icon-linkedin"/></svg> LinkedIn</button>
+              <button class="share-option" onclick="shareVia(event, 'copy', this)"><svg class="icon-sm"><use href="#icon-copy"/></svg> Copy Link</button>
+            </div>
+          </div>
         </div>
       </a>
-      <a href="#" class="post-item" data-cat="violation" data-date="">
-        <div class="post-item-num">06</div>
-        <div class="post-item-body">
-          <span class="post-item-tag red">Violation</span>
-          <div class="post-item-title">They Called Me 11 Times This Week. The Law Has an Exact Number.</div>
-          <p class="post-item-desc">The CFPB's 2021 Regulation F created a bright-line rule: 7 calls in 7 days. If they crossed it, that's a federal violation with a paper trail in your phone records.</p>
-          <span class="post-item-meta">Coming soon</span>
-          <div class="post-share-row"><div class="share-wrap"><button class="share-btn" onclick="toggleShare(event,this)" data-url="#" data-title="They Called Me 11 Times This Week. The Law Has an Exact Number."><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>Share</button><div class="share-dropdown"><div class="share-dropdown-title">Share via</div><button class="share-option" onclick="shareVia(event,'twitter',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X (Twitter)</button><button class="share-option" onclick="shareVia(event,'facebook',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Facebook</button><button class="share-option" onclick="shareVia(event,'linkedin',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</button><button class="share-option" onclick="shareVia(event,'copy',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy Link</button></div></div></div>
+
+      <a href="blog/statute-of-limitations-debt.html" class="post-card" data-cat="sol" data-title="The Statute of Limitations on Debt: Why Collectors Pray You Don't Ask">
+        <span class="post-card-tag teal">Statute of Limitations</span>
+        <div class="post-card-title">The Statute of Limitations on Debt: Why Collectors Pray You Don't Ask</div>
+        <p class="post-card-desc">Every debt has an expiration date for lawsuits. I found out mine had already passed — and that the collector calling me may not have been allowed to threaten a lawsuit at all.</p>
+        <div class="post-card-meta">July 2026 · 8 min read</div>
+        <div class="post-share-row">
+          <div class="share-wrap">
+            <button class="share-btn" onclick="toggleShare(event, this)" data-url="blog/statute-of-limitations-debt.html" data-title="The Statute of Limitations on Debt: Why Collectors Pray You Don't Ask"><svg class="icon"><use href="#icon-share"/></svg> Share</button>
+            <div class="share-dropdown">
+              <div class="share-dropdown-title">Share via</div>
+              <button class="share-option" onclick="shareVia(event, 'twitter', this)"><svg class="icon-sm"><use href="#icon-twitter"/></svg> X (Twitter)</button>
+              <button class="share-option" onclick="shareVia(event, 'facebook', this)"><svg class="icon-sm"><use href="#icon-facebook"/></svg> Facebook</button>
+              <button class="share-option" onclick="shareVia(event, 'linkedin', this)"><svg class="icon-sm"><use href="#icon-linkedin"/></svg> LinkedIn</button>
+              <button class="share-option" onclick="shareVia(event, 'copy', this)"><svg class="icon-sm"><use href="#icon-copy"/></svg> Copy Link</button>
+            </div>
+          </div>
         </div>
       </a>
-      <a href="#" class="post-item" data-cat="lawsuit" data-date="">
-        <div class="post-item-num">07</div>
-        <div class="post-item-body">
-          <span class="post-item-tag green">Lawsuit</span>
-          <div class="post-item-title">How Suing a Debt Collector Works — Even If You've Never Been to Court</div>
-          <p class="post-item-desc">A step-by-step look at the FDCPA lawsuit process: finding an attorney, the free consultation, how cases typically resolve, and what the timeline looks like.</p>
-          <span class="post-item-meta">Coming soon</span>
-          <div class="post-share-row"><div class="share-wrap"><button class="share-btn" onclick="toggleShare(event,this)" data-url="#" data-title="How Suing a Debt Collector Works — Even If You've Never Been to Court"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>Share</button><div class="share-dropdown"><div class="share-dropdown-title">Share via</div><button class="share-option" onclick="shareVia(event,'twitter',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X (Twitter)</button><button class="share-option" onclick="shareVia(event,'facebook',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Facebook</button><button class="share-option" onclick="shareVia(event,'linkedin',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</button><button class="share-option" onclick="shareVia(event,'copy',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy Link</button></div></div></div>
+
+      <a href="blog/can-debt-collector-garnish-wages.html" class="post-card" data-cat="violation" data-title="Can a Debt Collector Garnish My Wages? What I Found Out">
+        <span class="post-card-tag red">Violation</span>
+        <div class="post-card-title">Can a Debt Collector Garnish My Wages? What I Found Out</div>
+        <p class="post-card-desc">They can't garnish your wages without a court judgment — and even then, federal law limits how much. Here's what I found out, including when the threat itself is a violation.</p>
+        <div class="post-card-meta">June 2026 · 8 min read</div>
+        <div class="post-share-row">
+          <div class="share-wrap">
+            <button class="share-btn" onclick="toggleShare(event, this)" data-url="blog/can-debt-collector-garnish-wages.html" data-title="Can a Debt Collector Garnish My Wages? What I Found Out"><svg class="icon"><use href="#icon-share"/></svg> Share</button>
+            <div class="share-dropdown">
+              <div class="share-dropdown-title">Share via</div>
+              <button class="share-option" onclick="shareVia(event, 'twitter', this)"><svg class="icon-sm"><use href="#icon-twitter"/></svg> X (Twitter)</button>
+              <button class="share-option" onclick="shareVia(event, 'facebook', this)"><svg class="icon-sm"><use href="#icon-facebook"/></svg> Facebook</button>
+              <button class="share-option" onclick="shareVia(event, 'linkedin', this)"><svg class="icon-sm"><use href="#icon-linkedin"/></svg> LinkedIn</button>
+              <button class="share-option" onclick="shareVia(event, 'copy', this)"><svg class="icon-sm"><use href="#icon-copy"/></svg> Copy Link</button>
+            </div>
+          </div>
         </div>
       </a>
-      <a href="#" class="post-item" data-cat="debt-types" data-date="">
-        <div class="post-item-num">08</div>
-        <div class="post-item-body">
-          <span class="post-item-tag">Debt Types</span>
-          <div class="post-item-title">Medical Debt and the FDCPA: Special Rules Collectors Hope You Don't Know</div>
-          <p class="post-item-desc">Medical debt has unique protections — from credit reporting rules to validation requirements. Collectors violate these constantly. Here's what applies to your situation.</p>
-          <span class="post-item-meta">Coming soon</span>
-          <div class="post-share-row"><div class="share-wrap"><button class="share-btn" onclick="toggleShare(event,this)" data-url="#" data-title="Medical Debt and the FDCPA: Special Rules Collectors Hope You Don't Know"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>Share</button><div class="share-dropdown"><div class="share-dropdown-title">Share via</div><button class="share-option" onclick="shareVia(event,'twitter',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X (Twitter)</button><button class="share-option" onclick="shareVia(event,'facebook',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Facebook</button><button class="share-option" onclick="shareVia(event,'linkedin',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</button><button class="share-option" onclick="shareVia(event,'copy',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy Link</button></div></div></div>
+
+      <a href="blog/what-not-to-say-to-a-debt-collector.html" class="post-card" data-cat="strategy" data-title="What Not to Say to a Debt Collector — 7 Phrases That Can Hurt You">
+        <span class="post-card-tag amber">Strategy</span>
+        <div class="post-card-title">What Not to Say to a Debt Collector — 7 Phrases That Can Hurt You</div>
+        <p class="post-card-desc">I almost said the wrong things and gave collectors power I didn't have to give. Here are 7 phrases to never say — and what I learned to say instead.</p>
+        <div class="post-card-meta">June 2026 · 9 min read</div>
+        <div class="post-share-row">
+          <div class="share-wrap">
+            <button class="share-btn" onclick="toggleShare(event, this)" data-url="blog/what-not-to-say-to-a-debt-collector.html" data-title="What Not to Say to a Debt Collector — 7 Phrases That Can Hurt You"><svg class="icon"><use href="#icon-share"/></svg> Share</button>
+            <div class="share-dropdown">
+              <div class="share-dropdown-title">Share via</div>
+              <button class="share-option" onclick="shareVia(event, 'twitter', this)"><svg class="icon-sm"><use href="#icon-twitter"/></svg> X (Twitter)</button>
+              <button class="share-option" onclick="shareVia(event, 'facebook', this)"><svg class="icon-sm"><use href="#icon-facebook"/></svg> Facebook</button>
+              <button class="share-option" onclick="shareVia(event, 'linkedin', this)"><svg class="icon-sm"><use href="#icon-linkedin"/></svg> LinkedIn</button>
+              <button class="share-option" onclick="shareVia(event, 'copy', this)"><svg class="icon-sm"><use href="#icon-copy"/></svg> Copy Link</button>
+            </div>
+          </div>
         </div>
       </a>
-      <a href="blog/debt-validation-letter.html" class="post-item" data-cat="strategy" data-date="2026-05-04">
-        <div class="post-item-num">09</div>
-        <div class="post-item-body">
-          <span class="post-item-tag">Strategy</span>
-          <div class="post-item-title">They Said I Owed It. I Asked Them to Prove It.</div>
-          <p class="post-item-desc">A debt validation letter puts the whole collection on pause until they produce documentation. Most people never send one. Here's the letter, the 30-day window, and what happens when they can't verify.</p>
-          <span class="post-item-meta">May 2026 · 10 min read · MEvsCO</span>
-          <div class="post-share-row"><div class="share-wrap"><button class="share-btn" onclick="toggleShare(event,this)" data-url="blog/debt-validation-letter.html" data-title="They Said I Owed It. I Asked Them to Prove It."><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>Share</button><div class="share-dropdown"><div class="share-dropdown-title">Share via</div><button class="share-option" onclick="shareVia(event,'twitter',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X (Twitter)</button><button class="share-option" onclick="shareVia(event,'facebook',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Facebook</button><button class="share-option" onclick="shareVia(event,'linkedin',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</button><button class="share-option" onclick="shareVia(event,'copy',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy Link</button></div></div></div>
+
+      <a href="blog/what-happens-if-you-ignore-debt-collector.html" class="post-card" data-cat="strategy" data-title="What Happens If You Ignore a Debt Collector?">
+        <span class="post-card-tag amber">Strategy</span>
+        <div class="post-card-title">What Happens If You Ignore a Debt Collector?</div>
+        <p class="post-card-desc">I tried ignoring the calls for weeks. Here's what actually happened — and the one scenario where ignoring has serious consequences.</p>
+        <div class="post-card-meta">June 2026 · 8 min read</div>
+        <div class="post-share-row">
+          <div class="share-wrap">
+            <button class="share-btn" onclick="toggleShare(event, this)" data-url="blog/what-happens-if-you-ignore-debt-collector.html" data-title="What Happens If You Ignore a Debt Collector?"><svg class="icon"><use href="#icon-share"/></svg> Share</button>
+            <div class="share-dropdown">
+              <div class="share-dropdown-title">Share via</div>
+              <button class="share-option" onclick="shareVia(event, 'twitter', this)"><svg class="icon-sm"><use href="#icon-twitter"/></svg> X (Twitter)</button>
+              <button class="share-option" onclick="shareVia(event, 'facebook', this)"><svg class="icon-sm"><use href="#icon-facebook"/></svg> Facebook</button>
+              <button class="share-option" onclick="shareVia(event, 'linkedin', this)"><svg class="icon-sm"><use href="#icon-linkedin"/></svg> LinkedIn</button>
+              <button class="share-option" onclick="shareVia(event, 'copy', this)"><svg class="icon-sm"><use href="#icon-copy"/></svg> Copy Link</button>
+            </div>
+          </div>
         </div>
       </a>
-      <a href="blog/debt-collector-lawsuit.html" class="post-item" data-cat="strategy" data-date="2026-05-05">
-        <div class="post-item-num">10</div>
-        <div class="post-item-body">
-          <span class="post-item-tag">Strategy</span>
-          <div class="post-item-title">They're Threatening to Sue Me Over a Debt. Here's What Actually Happens Next.</div>
-          <p class="post-item-desc">Most people don't know the difference between a lawsuit threat and an actual lawsuit — or that being sued can actually work in your favor. The plain-English breakdown: default judgments, counterclaims, time-barred debt.</p>
-          <span class="post-item-meta">May 2026 · 11 min read · MEvsCO</span>
-          <div class="post-share-row"><div class="share-wrap"><button class="share-btn" onclick="toggleShare(event,this)" data-url="blog/debt-collector-lawsuit.html" data-title="They're Threatening to Sue Me Over a Debt. Here's What Actually Happens Next."><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>Share</button><div class="share-dropdown"><div class="share-dropdown-title">Share via</div><button class="share-option" onclick="shareVia(event,'twitter',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X (Twitter)</button><button class="share-option" onclick="shareVia(event,'facebook',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Facebook</button><button class="share-option" onclick="shareVia(event,'linkedin',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</button><button class="share-option" onclick="shareVia(event,'copy',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy Link</button></div></div></div>
+
+      <a href="blog/debt-collector-texting-me-legal.html" class="post-card" data-cat="violation" data-title="A Debt Collector Is Texting Me — Is That Legal?">
+        <span class="post-card-tag red">Violation</span>
+        <div class="post-card-title">A Debt Collector Is Texting Me — Is That Legal?</div>
+        <p class="post-card-desc">Texts from collectors are legal under Regulation F — but only with strict rules most collectors don't follow perfectly. Here's what I found out.</p>
+        <div class="post-card-meta">June 2026 · 7 min read</div>
+        <div class="post-share-row">
+          <div class="share-wrap">
+            <button class="share-btn" onclick="toggleShare(event, this)" data-url="blog/debt-collector-texting-me-legal.html" data-title="A Debt Collector Is Texting Me — Is That Legal?"><svg class="icon"><use href="#icon-share"/></svg> Share</button>
+            <div class="share-dropdown">
+              <div class="share-dropdown-title">Share via</div>
+              <button class="share-option" onclick="shareVia(event, 'twitter', this)"><svg class="icon-sm"><use href="#icon-twitter"/></svg> X (Twitter)</button>
+              <button class="share-option" onclick="shareVia(event, 'facebook', this)"><svg class="icon-sm"><use href="#icon-facebook"/></svg> Facebook</button>
+              <button class="share-option" onclick="shareVia(event, 'linkedin', this)"><svg class="icon-sm"><use href="#icon-linkedin"/></svg> LinkedIn</button>
+              <button class="share-option" onclick="shareVia(event, 'copy', this)"><svg class="icon-sm"><use href="#icon-copy"/></svg> Copy Link</button>
+            </div>
+          </div>
         </div>
       </a>
-      <a href="#" class="post-item" data-cat="violation" data-date="">
-        <div class="post-item-num">11</div>
-        <div class="post-item-body">
-          <span class="post-item-tag red">Violation</span>
-          <div class="post-item-title">The Statute of Limitations on Debt: Why Collectors Pray You Don't Ask</div>
-          <p class="post-item-desc">Every debt expires for legal purposes. Threatening to sue on time-barred debt is potentially illegal. Here's how to find out if your debt is past the limit — by state.</p>
-          <span class="post-item-meta">Coming soon</span>
-          <div class="post-share-row"><div class="share-wrap"><button class="share-btn" onclick="toggleShare(event,this)" data-url="#" data-title="The Statute of Limitations on Debt: Why Collectors Pray You Don't Ask"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>Share</button><div class="share-dropdown"><div class="share-dropdown-title">Share via</div><button class="share-option" onclick="shareVia(event,'twitter',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X (Twitter)</button><button class="share-option" onclick="shareVia(event,'facebook',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Facebook</button><button class="share-option" onclick="shareVia(event,'linkedin',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</button><button class="share-option" onclick="shareVia(event,'copy',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy Link</button></div></div></div>
+
+      <a href="blog/does-paying-old-debt-restart-statute-of-limitations.html" class="post-card" data-cat="sol" data-title="Does Paying Old Debt Restart the Statute of Limitations?">
+        <span class="post-card-tag teal">Statute of Limitations</span>
+        <div class="post-card-title">Does Paying Old Debt Restart the Statute of Limitations?</div>
+        <p class="post-card-desc">I almost paid $50 to make the calls stop. An attorney told me not to. Here's why that payment could have cost me the legal protection I already had.</p>
+        <div class="post-card-meta">June 2026 · 9 min read</div>
+        <div class="post-share-row">
+          <div class="share-wrap">
+            <button class="share-btn" onclick="toggleShare(event, this)" data-url="blog/does-paying-old-debt-restart-statute-of-limitations.html" data-title="Does Paying Old Debt Restart the Statute of Limitations?"><svg class="icon"><use href="#icon-share"/></svg> Share</button>
+            <div class="share-dropdown">
+              <div class="share-dropdown-title">Share via</div>
+              <button class="share-option" onclick="shareVia(event, 'twitter', this)"><svg class="icon-sm"><use href="#icon-twitter"/></svg> X (Twitter)</button>
+              <button class="share-option" onclick="shareVia(event, 'facebook', this)"><svg class="icon-sm"><use href="#icon-facebook"/></svg> Facebook</button>
+              <button class="share-option" onclick="shareVia(event, 'linkedin', this)"><svg class="icon-sm"><use href="#icon-linkedin"/></svg> LinkedIn</button>
+              <button class="share-option" onclick="shareVia(event, 'copy', this)"><svg class="icon-sm"><use href="#icon-copy"/></svg> Copy Link</button>
+            </div>
+          </div>
         </div>
       </a>
-      <a href="#" class="post-item" data-cat="state" data-date="">
-        <div class="post-item-num">12</div>
-        <div class="post-item-body">
-          <span class="post-item-tag">State Laws</span>
-          <div class="post-item-title">FDCPA vs. State Laws: Many States Give You Even More Protection</div>
-          <p class="post-item-desc">The FDCPA is a federal floor — many states have built additional protections on top. California, New York, and Texas all have stronger rules. Here's the full breakdown.</p>
-          <span class="post-item-meta">Coming soon</span>
-          <div class="post-share-row"><div class="share-wrap"><button class="share-btn" onclick="toggleShare(event,this)" data-url="#" data-title="FDCPA vs. State Laws: Many States Give You Even More Protection"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>Share</button><div class="share-dropdown"><div class="share-dropdown-title">Share via</div><button class="share-option" onclick="shareVia(event,'twitter',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X (Twitter)</button><button class="share-option" onclick="shareVia(event,'facebook',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Facebook</button><button class="share-option" onclick="shareVia(event,'linkedin',this)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</button><button class="share-option" onclick="shareVia(event,'copy',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy Link</button></div></div></div>
+
+      <a href="blog/debt-collector-showed-up-at-my-door.html" class="post-card" data-cat="violation" data-title="A Debt Collector Showed Up at My Door — What Are My Rights?">
+        <span class="post-card-tag red">Violation</span>
+        <div class="post-card-title">A Debt Collector Showed Up at My Door — What Are My Rights?</div>
+        <p class="post-card-desc">Someone knocked and identified themselves as a collector. Here's exactly what I found out about in-person contact rights — and what they cannot do.</p>
+        <div class="post-card-meta">June 2026 · 7 min read</div>
+        <div class="post-share-row">
+          <div class="share-wrap">
+            <button class="share-btn" onclick="toggleShare(event, this)" data-url="blog/debt-collector-showed-up-at-my-door.html" data-title="A Debt Collector Showed Up at My Door — What Are My Rights?"><svg class="icon"><use href="#icon-share"/></svg> Share</button>
+            <div class="share-dropdown">
+              <div class="share-dropdown-title">Share via</div>
+              <button class="share-option" onclick="shareVia(event, 'twitter', this)"><svg class="icon-sm"><use href="#icon-twitter"/></svg> X (Twitter)</button>
+              <button class="share-option" onclick="shareVia(event, 'facebook', this)"><svg class="icon-sm"><use href="#icon-facebook"/></svg> Facebook</button>
+              <button class="share-option" onclick="shareVia(event, 'linkedin', this)"><svg class="icon-sm"><use href="#icon-linkedin"/></svg> LinkedIn</button>
+              <button class="share-option" onclick="shareVia(event, 'copy', this)"><svg class="icon-sm"><use href="#icon-copy"/></svg> Copy Link</button>
+            </div>
+          </div>
         </div>
       </a>
+
+      <a href="blog/what-can-debt-collector-say-in-voicemail.html" class="post-card" data-cat="violation" data-title="What Can a Debt Collector Say in a Voicemail?">
+        <span class="post-card-tag red">Violation</span>
+        <div class="post-card-title">What Can a Debt Collector Say in a Voicemail?</div>
+        <p class="post-card-desc">There are very specific federal rules for what collectors can and cannot say in a voicemail. Here's what I found out — and why you should save every message.</p>
+        <div class="post-card-meta">June 2026 · 7 min read</div>
+        <div class="post-share-row">
+          <div class="share-wrap">
+            <button class="share-btn" onclick="toggleShare(event, this)" data-url="blog/what-can-debt-collector-say-in-voicemail.html" data-title="What Can a Debt Collector Say in a Voicemail?"><svg class="icon"><use href="#icon-share"/></svg> Share</button>
+            <div class="share-dropdown">
+              <div class="share-dropdown-title">Share via</div>
+              <button class="share-option" onclick="shareVia(event, 'twitter', this)"><svg class="icon-sm"><use href="#icon-twitter"/></svg> X (Twitter)</button>
+              <button class="share-option" onclick="shareVia(event, 'facebook', this)"><svg class="icon-sm"><use href="#icon-facebook"/></svg> Facebook</button>
+              <button class="share-option" onclick="shareVia(event, 'linkedin', this)"><svg class="icon-sm"><use href="#icon-linkedin"/></svg> LinkedIn</button>
+              <button class="share-option" onclick="shareVia(event, 'copy', this)"><svg class="icon-sm"><use href="#icon-copy"/></svg> Copy Link</button>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/can-debt-collector-contact-me-social-media.html" class="post-card" data-cat="violation" data-title="Can a Debt Collector Contact Me on Social Media?">
+        <span class="post-card-tag red">Violation</span>
+        <div class="post-card-title">Can a Debt Collector Contact Me on Social Media?</div>
+        <p class="post-card-desc">I got a DM from someone claiming to be a collector. Here's exactly what Regulation F says — and when a social media contact becomes a violation.</p>
+        <div class="post-card-meta">June 2026 · 7 min read</div>
+        <div class="post-share-row">
+          <div class="share-wrap">
+            <button class="share-btn" onclick="toggleShare(event, this)" data-url="blog/can-debt-collector-contact-me-social-media.html" data-title="Can a Debt Collector Contact Me on Social Media?"><svg class="icon"><use href="#icon-share"/></svg> Share</button>
+            <div class="share-dropdown">
+              <div class="share-dropdown-title">Share via</div>
+              <button class="share-option" onclick="shareVia(event, 'twitter', this)"><svg class="icon-sm"><use href="#icon-twitter"/></svg> X (Twitter)</button>
+              <button class="share-option" onclick="shareVia(event, 'facebook', this)"><svg class="icon-sm"><use href="#icon-facebook"/></svg> Facebook</button>
+              <button class="share-option" onclick="shareVia(event, 'linkedin', this)"><svg class="icon-sm"><use href="#icon-linkedin"/></svg> LinkedIn</button>
+              <button class="share-option" onclick="shareVia(event, 'copy', this)"><svg class="icon-sm"><use href="#icon-copy"/></svg> Copy Link</button>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/what-is-zombie-debt.html" class="post-card" data-cat="sol" data-title="What Is Zombie Debt — and How Collectors Use It Against You">
+        <span class="post-card-tag teal">Statute of Limitations</span>
+        <div class="post-card-title">What Is Zombie Debt — and How Collectors Use It Against You</div>
+        <p class="post-card-desc">Zombie debt is old, time-barred debt that collectors try to resurrect. Here's how the business model works — and the one move that can accidentally revive it.</p>
+        <div class="post-card-meta">June 2026 · 8 min read</div>
+        <div class="post-share-row">
+          <div class="share-wrap">
+            <button class="share-btn" onclick="toggleShare(event, this)" data-url="blog/what-is-zombie-debt.html" data-title="What Is Zombie Debt — and How Collectors Use It Against You"><svg class="icon"><use href="#icon-share"/></svg> Share</button>
+            <div class="share-dropdown">
+              <div class="share-dropdown-title">Share via</div>
+              <button class="share-option" onclick="shareVia(event, 'twitter', this)"><svg class="icon-sm"><use href="#icon-twitter"/></svg> X (Twitter)</button>
+              <button class="share-option" onclick="shareVia(event, 'facebook', this)"><svg class="icon-sm"><use href="#icon-facebook"/></svg> Facebook</button>
+              <button class="share-option" onclick="shareVia(event, 'linkedin', this)"><svg class="icon-sm"><use href="#icon-linkedin"/></svg> LinkedIn</button>
+              <button class="share-option" onclick="shareVia(event, 'copy', this)"><svg class="icon-sm"><use href="#icon-copy"/></svg> Copy Link</button>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/medical-debt-collector-rights.html" class="post-card" data-cat="debt-types" data-title="Medical Debt Collectors — Your Rights Are Different. Here's What I Found Out.">
+        <span class="post-card-tag purple">Debt Types</span>
+        <div class="post-card-title">Medical Debt Collectors — Your Rights Are Different. Here's What I Found Out.</div>
+        <p class="post-card-desc">A hospital bill went to collections and I assumed the rules were the same as credit card debt. They're not entirely. Here's what I found out about medical debt collector rights in 2026.</p>
+        <div class="post-card-meta">June 2026 · 9 min read</div>
+        <div class="post-share-row">
+          <div class="share-wrap">
+            <button class="share-btn" onclick="toggleShare(event, this)" data-url="blog/medical-debt-collector-rights.html" data-title="Medical Debt Collectors — Your Rights Are Different. Here's What I Found Out."><svg class="icon"><use href="#icon-share"/></svg> Share</button>
+            <div class="share-dropdown">
+              <div class="share-dropdown-title">Share via</div>
+              <button class="share-option" onclick="shareVia(event, 'twitter', this)"><svg class="icon-sm"><use href="#icon-twitter"/></svg> X (Twitter)</button>
+              <button class="share-option" onclick="shareVia(event, 'facebook', this)"><svg class="icon-sm"><use href="#icon-facebook"/></svg> Facebook</button>
+              <button class="share-option" onclick="shareVia(event, 'linkedin', this)"><svg class="icon-sm"><use href="#icon-linkedin"/></svg> LinkedIn</button>
+              <button class="share-option" onclick="shareVia(event, 'copy', this)"><svg class="icon-sm"><use href="#icon-copy"/></svg> Copy Link</button>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/debt-collector-lawsuit.html" class="post-card" data-cat="lawsuit" data-title="They're Threatening to Sue Me Over a Debt. Here's What Actually Happens Next.">
+        <span class="post-card-tag green">Lawsuit</span>
+        <div class="post-card-title">They're Threatening to Sue Me Over a Debt. Here's What Actually Happens Next.</div>
+        <p class="post-card-desc">A debt collector threatening to sue you is terrifying — but most people don't know what actually happens, when to worry, or that being sued can actually work in your favor.</p>
+        <div class="post-card-meta">May 2026 · 11 min read</div>
+        <div class="post-share-row">
+          <div class="share-wrap">
+            <button class="share-btn" onclick="toggleShare(event, this)" data-url="blog/debt-collector-lawsuit.html" data-title="They're Threatening to Sue Me Over a Debt. Here's What Actually Happens Next."><svg class="icon"><use href="#icon-share"/></svg> Share</button>
+            <div class="share-dropdown">
+              <div class="share-dropdown-title">Share via</div>
+              <button class="share-option" onclick="shareVia(event, 'twitter', this)"><svg class="icon-sm"><use href="#icon-twitter"/></svg> X (Twitter)</button>
+              <button class="share-option" onclick="shareVia(event, 'facebook', this)"><svg class="icon-sm"><use href="#icon-facebook"/></svg> Facebook</button>
+              <button class="share-option" onclick="shareVia(event, 'linkedin', this)"><svg class="icon-sm"><use href="#icon-linkedin"/></svg> LinkedIn</button>
+              <button class="share-option" onclick="shareVia(event, 'copy', this)"><svg class="icon-sm"><use href="#icon-copy"/></svg> Copy Link</button>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/debt-validation-letter.html" class="post-card" data-cat="strategy" data-title="Debt Validation Letter: How to Force a Collector to Prove You Owe It">
+        <span class="post-card-tag amber">Strategy</span>
+        <div class="post-card-title">Debt Validation Letter: How to Force a Collector to Prove You Owe It</div>
+        <p class="post-card-desc">A collector said I owed money. I asked them to prove it. Here's what a debt validation letter does, when to send it, what to write, and what happens if they can't verify the debt.</p>
+        <div class="post-card-meta">May 2026 · 10 min read</div>
+        <div class="post-share-row">
+          <div class="share-wrap">
+            <button class="share-btn" onclick="toggleShare(event, this)" data-url="blog/debt-validation-letter.html" data-title="Debt Validation Letter: How to Force a Collector to Prove You Owe It"><svg class="icon"><use href="#icon-share"/></svg> Share</button>
+            <div class="share-dropdown">
+              <div class="share-dropdown-title">Share via</div>
+              <button class="share-option" onclick="shareVia(event, 'twitter', this)"><svg class="icon-sm"><use href="#icon-twitter"/></svg> X (Twitter)</button>
+              <button class="share-option" onclick="shareVia(event, 'facebook', this)"><svg class="icon-sm"><use href="#icon-facebook"/></svg> Facebook</button>
+              <button class="share-option" onclick="shareVia(event, 'linkedin', this)"><svg class="icon-sm"><use href="#icon-linkedin"/></svg> LinkedIn</button>
+              <button class="share-option" onclick="shareVia(event, 'copy', this)"><svg class="icon-sm"><use href="#icon-copy"/></svg> Copy Link</button>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/cease-and-desist-letter.html" class="post-card" data-cat="strategy" data-title="How to Send a Cease and Desist Letter to a Debt Collector">
+        <span class="post-card-tag amber">Strategy</span>
+        <div class="post-card-title">How to Send a Cease and Desist Letter to a Debt Collector</div>
+        <p class="post-card-desc">I sent a cease and desist letter to stop debt collector calls — and it worked. Here's exactly what I wrote, what happened next, and what the law says they have to do.</p>
+        <div class="post-card-meta">May 2026 · 9 min read</div>
+        <div class="post-share-row">
+          <div class="share-wrap">
+            <button class="share-btn" onclick="toggleShare(event, this)" data-url="blog/cease-and-desist-letter.html" data-title="How to Send a Cease and Desist Letter to a Debt Collector"><svg class="icon"><use href="#icon-share"/></svg> Share</button>
+            <div class="share-dropdown">
+              <div class="share-dropdown-title">Share via</div>
+              <button class="share-option" onclick="shareVia(event, 'twitter', this)"><svg class="icon-sm"><use href="#icon-twitter"/></svg> X (Twitter)</button>
+              <button class="share-option" onclick="shareVia(event, 'facebook', this)"><svg class="icon-sm"><use href="#icon-facebook"/></svg> Facebook</button>
+              <button class="share-option" onclick="shareVia(event, 'linkedin', this)"><svg class="icon-sm"><use href="#icon-linkedin"/></svg> LinkedIn</button>
+              <button class="share-option" onclick="shareVia(event, 'copy', this)"><svg class="icon-sm"><use href="#icon-copy"/></svg> Copy Link</button>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/cfpb-shutdown-explained.html" class="post-card" data-cat="news" data-title="The Federal Watchdog Has Been Defanged. Here's What I Found Out.">
+        <span class="post-card-tag grey">News &amp; Context</span>
+        <div class="post-card-title">The Federal Watchdog Has Been Defanged. Here's What I Found Out.</div>
+        <p class="post-card-desc">The CFPB still exists — technically. But its mission has been changed, its staff gutted, and its headquarters closed. Here's what happened and what it means for you.</p>
+        <div class="post-card-meta">April 2026 · 9 min read</div>
+        <div class="post-share-row">
+          <div class="share-wrap">
+            <button class="share-btn" onclick="toggleShare(event, this)" data-url="blog/cfpb-shutdown-explained.html" data-title="The Federal Watchdog Has Been Defanged. Here's What I Found Out."><svg class="icon"><use href="#icon-share"/></svg> Share</button>
+            <div class="share-dropdown">
+              <div class="share-dropdown-title">Share via</div>
+              <button class="share-option" onclick="shareVia(event, 'twitter', this)"><svg class="icon-sm"><use href="#icon-twitter"/></svg> X (Twitter)</button>
+              <button class="share-option" onclick="shareVia(event, 'facebook', this)"><svg class="icon-sm"><use href="#icon-facebook"/></svg> Facebook</button>
+              <button class="share-option" onclick="shareVia(event, 'linkedin', this)"><svg class="icon-sm"><use href="#icon-linkedin"/></svg> LinkedIn</button>
+              <button class="share-option" onclick="shareVia(event, 'copy', this)"><svg class="icon-sm"><use href="#icon-copy"/></svg> Copy Link</button>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/arrest-threat-illegal.html" class="post-card" data-cat="violation" data-title="They Threatened to Arrest Me for Not Paying a Debt. Is That Legal?">
+        <span class="post-card-tag red">Violation</span>
+        <div class="post-card-title">They Threatened to Arrest Me for Not Paying a Debt. Is That Legal?</div>
+        <p class="post-card-desc">A debt collector threatening you with arrest is one of the most common — and most explicitly illegal — tactics in the industry. Here's exactly what the law says and what to do next.</p>
+        <div class="post-card-meta">April 2026 · 8 min read</div>
+        <div class="post-share-row">
+          <div class="share-wrap">
+            <button class="share-btn" onclick="toggleShare(event, this)" data-url="blog/arrest-threat-illegal.html" data-title="They Threatened to Arrest Me for Not Paying a Debt. Is That Legal?"><svg class="icon"><use href="#icon-share"/></svg> Share</button>
+            <div class="share-dropdown">
+              <div class="share-dropdown-title">Share via</div>
+              <button class="share-option" onclick="shareVia(event, 'twitter', this)"><svg class="icon-sm"><use href="#icon-twitter"/></svg> X (Twitter)</button>
+              <button class="share-option" onclick="shareVia(event, 'facebook', this)"><svg class="icon-sm"><use href="#icon-facebook"/></svg> Facebook</button>
+              <button class="share-option" onclick="shareVia(event, 'linkedin', this)"><svg class="icon-sm"><use href="#icon-linkedin"/></svg> LinkedIn</button>
+              <button class="share-option" onclick="shareVia(event, 'copy', this)"><svg class="icon-sm"><use href="#icon-copy"/></svg> Copy Link</button>
+            </div>
+          </div>
+        </div>
+      </a>
+
     </div>
+
+    <div class="no-results" id="no-results">No posts match your search. Try a different term or clear the filter.</div>
+
   </main>
 
   <!-- SIDEBAR -->
@@ -963,13 +1233,14 @@
 
     <div class="sidebar-card">
       <div class="sidebar-label">Browse by topic</div>
-      <div class="topics-list">
-        <a href="#" class="topic-item" onclick="filterPosts('violation', document.getElementById('tab-violation')); return false;">FDCPA Violations <span class="topic-count">4</span></a>
-        <a href="#" class="topic-item" onclick="filterPosts('strategy', document.getElementById('tab-strategy')); return false;">Strategy &amp; Templates <span class="topic-count">2 live</span></a>
-        <a href="#" class="topic-item" onclick="filterPosts('lawsuit', document.getElementById('tab-lawsuit')); return false;">Free Lawsuits Explained <span class="topic-count">1</span></a>
-        <a href="#" class="topic-item" onclick="filterPosts('news', document.getElementById('tab-news')); return false;">News &amp; Context <span class="topic-count">1 live</span></a>
-        <a href="#" class="topic-item" onclick="filterPosts('debt-types', document.getElementById('tab-debt-types')); return false;">Medical Debt <span class="topic-count">1</span></a>
-        <a href="#" class="topic-item" onclick="filterPosts('state', document.getElementById('tab-state')); return false;">State-by-State Laws <span class="topic-count">1</span></a>
+      <div class="topics-list" id="topics-list">
+        <button class="topic-item" onclick="filterFromSidebar('violation')">FDCPA Violations <span class="topic-count">9</span></button>
+        <button class="topic-item" onclick="filterFromSidebar('strategy')">Strategy &amp; Templates <span class="topic-count">4</span></button>
+        <button class="topic-item" onclick="filterFromSidebar('sol')">Statute of Limitations <span class="topic-count">3</span></button>
+        <button class="topic-item" onclick="filterFromSidebar('lawsuit')">Lawsuits Explained <span class="topic-count">2</span></button>
+        <button class="topic-item" onclick="filterFromSidebar('debt-types')">Medical &amp; Debt Types <span class="topic-count">1</span></button>
+        <button class="topic-item" onclick="filterFromSidebar('state')">State-by-State Laws <span class="topic-count">1</span></button>
+        <button class="topic-item" onclick="filterFromSidebar('news')">News &amp; Context <span class="topic-count">1</span></button>
       </div>
     </div>
 
@@ -993,9 +1264,6 @@
       <li><a href="/#checker">Violation Checker</a></li>
       <li><a href="/#rights">FDCPA Guide</a></li>
       <li><a href="/blog.html">Blog</a></li>
-      <li><a href="/blog/can-they-do-that.html">Featured Post</a></li>
-      <li><a href="/blog/cease-and-desist-letter.html">Cease &amp; Desist</a></li>
-      <li><a href="/blog/debt-validation-letter.html">Debt Validation</a></li>
       <li><a href="/glossary.html">Glossary</a></li>
       <li><a href="/about.html">About</a></li>
     </ul>
@@ -1004,14 +1272,44 @@
 </footer>
 
 <script>
-/* ── FILTER ── */
-function filterPosts(cat, btn) {
-  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
-  if (btn) btn.classList.add('active');
-  closeAllPostsPanel();
-  document.querySelectorAll('.post-item').forEach(item => {
-    item.style.display = (cat === 'all' || item.dataset.cat === cat) ? 'flex' : 'none';
+/* ── FILTER + SEARCH (pure DOM, no fetch — works everywhere, scales to any post count) ── */
+var currentCat = 'all';
+var currentSearch = '';
+
+function applyFilters() {
+  var cards = document.querySelectorAll('.post-card');
+  var visible = 0;
+  cards.forEach(function(card) {
+    var matchesCat = currentCat === 'all' || card.dataset.cat === currentCat;
+    var text = (card.dataset.title + ' ' + card.textContent).toLowerCase();
+    var matchesSearch = currentSearch === '' || text.indexOf(currentSearch) !== -1;
+    var show = matchesCat && matchesSearch;
+    card.style.display = show ? 'flex' : 'none';
+    if (show) visible++;
   });
+  document.getElementById('results-count').textContent = visible + (visible === 1 ? ' post' : ' posts');
+  document.getElementById('no-results').classList.toggle('show', visible === 0);
+
+  var featured = document.querySelector('.featured-post');
+  featured.style.display = (currentCat === 'all' && currentSearch === '') ? 'block' : 'none';
+}
+
+function filterPosts(cat, btn) {
+  currentCat = cat;
+  document.querySelectorAll('.filter-tab').forEach(function(t) { t.classList.remove('active'); });
+  btn.classList.add('active');
+  applyFilters();
+}
+
+function filterFromSidebar(cat) {
+  var btn = document.querySelector('.filter-tab[data-cat="' + cat + '"]');
+  if (btn) filterPosts(cat, btn);
+  document.querySelector('.blog-layout').scrollIntoView({ behavior: 'smooth' });
+}
+
+function searchPosts(value) {
+  currentSearch = value.trim().toLowerCase();
+  applyFilters();
 }
 
 /* ── EMAIL FORM ── */
@@ -1019,84 +1317,6 @@ function sidebarSubmit(btn) {
   const input = btn.previousElementSibling;
   if (!input.value || !input.value.includes('@')) { input.style.borderColor = '#c0392b'; return; }
   btn.parentElement.innerHTML = '<p style="font-size:0.9rem;color:var(--green);font-weight:600;text-align:center;padding:0.5rem 0;">✓ Check your inbox for Day 1.</p>';
-}
-
-/* ── SEE ALL POSTS PANEL ── */
-let panelOpen = false;
-
-function closeAllPostsPanel() {
-  const panel = document.getElementById('all-posts-panel');
-  if (panel) panel.remove();
-  const btn = document.getElementById('sort-btn');
-  if (btn) { btn.textContent = 'See all posts — newest first ↑'; btn.classList.remove('sorted'); }
-  panelOpen = false;
-}
-
-async function sortNewest(btn) {
-  if (panelOpen) { closeAllPostsPanel(); return; }
-
-  btn.textContent = 'Loading…';
-  btn.disabled = true;
-
-  try {
-    // 1. Fetch the manifest — only file you update when adding a new post
-    const res   = await fetch('/posts.json');
-    const posts = await res.json();
-
-    // 2. Sort newest first
-    posts.sort((a, b) => b.date.localeCompare(a.date));
-
-    // 3. Fetch title + description from each post's meta tags
-    const details = await Promise.all(posts.map(async p => {
-      try {
-        const r    = await fetch(p.url);
-        const html = await r.text();
-        const doc  = new DOMParser().parseFromString(html, 'text/html');
-        const title = doc.querySelector('h1')?.textContent?.trim()
-                   || doc.querySelector('title')?.textContent?.replace('| Me vs. Collector','').trim()
-                   || 'Untitled';
-        const desc  = doc.querySelector('meta[name="description"]')?.getAttribute('content')
-                   || doc.querySelector('meta[property="og:description"]')?.getAttribute('content')
-                   || '';
-        const tag   = doc.querySelector('.post-tag')?.textContent?.trim() || '';
-        const meta  = doc.querySelector('.post-meta')?.textContent?.replace(/\s+/g,' ').trim() || '';
-        return { url: p.url, title, desc, tag, meta };
-      } catch { return { url: p.url, title: p.url, desc: '', tag: '', meta: '' }; }
-    }));
-
-    // 4. Build and inject panel
-    const items = details.map(p => `
-      <a href="${p.url}" class="all-posts-item">
-        ${p.tag ? `<span class="all-posts-tag">${p.tag}</span>` : ''}
-        <div class="all-posts-title">${p.title}</div>
-        ${p.desc ? `<div class="all-posts-desc">${p.desc}</div>` : ''}
-        ${p.meta ? `<div class="all-posts-meta">${p.meta}</div>` : ''}
-      </a>`).join('');
-
-    const panel = document.createElement('div');
-    panel.id = 'all-posts-panel';
-    panel.innerHTML = `
-      <div class="all-posts-header">
-        <span>All posts — newest first</span>
-        <button class="all-posts-close" onclick="closeAllPostsPanel()">✕ Close</button>
-      </div>
-      ${items}`;
-
-    const divider = document.querySelector('.section-divider');
-    divider.insertAdjacentElement('afterend', panel);
-
-    btn.textContent = 'Close ✕';
-    btn.classList.add('sorted');
-    btn.disabled = false;
-    panelOpen = true;
-
-    panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-  } catch (err) {
-    console.error(err);
-    btn.textContent = 'See all posts — newest first ↑';
-    btn.disabled = false;
-  }
 }
 
 /* ── SHARE ── */
@@ -1124,10 +1344,11 @@ function shareVia(e, platform, btn) {
   if (platform === 'linkedin') window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${enc}`, '_blank', 'width=600,height=500');
   if (platform === 'copy') {
     navigator.clipboard.writeText(url).then(() => {
-      btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="15" height="15"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
+      const label = btn.querySelector('use') ? btn : null;
+      btn.innerHTML = '<svg class="icon-sm" style="fill:none;stroke:currentColor;stroke-width:2.5;"><use href="#icon-check"/></svg> Copied!';
       btn.classList.add('copied');
       setTimeout(() => {
-        btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy Link';
+        btn.innerHTML = '<svg class="icon-sm"><use href="#icon-copy"/></svg> Copy Link';
         btn.classList.remove('copied');
       }, 2000);
     });
