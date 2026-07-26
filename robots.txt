@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Disallow: /_archive/
+Disallow: /blog.htmll
+Disallow: /blog.htmllll
+Disallow: /blogb4json.html
+Disallow: /blogb4linkfix.html
+Disallow: /blogb4optim.html
+Disallow: /indexb4optim.html
+Disallow: /indexbeforecdpost.html
+Disallow: /default.php
+
+Sitemap: https://mevscollector.com/sitemap.xml
