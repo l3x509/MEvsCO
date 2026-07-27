@@ -16,7 +16,7 @@
 <meta name="description" content="Me vs. Collector exists because 77 million Americans are being harassed by debt collectors who know the federal watchdog is gone. We close the information gap.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%231a1a1a'/%3E%3Crect x='0' y='28' width='32' height='4' fill='%23d4870a'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='16' font-weight='bold' fill='%23f5a623'%3EM%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--ink:#0d0d0d;--page:#f5f2ec;--paper:#fffdf8;--amber:#d4870a;--amber-light:#f5a623;--amber-pale:#fef3dc;--red:#c0392b;--red-pale:#fdecea;--green:#1a6b3c;--green-pale:#e6f4ed;--charcoal:#1a1a1a;--muted:#6b6b6b;--border:#e0dbd0;--rule:#d0ccc0;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif}
@@ -36,40 +36,41 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--charcoal);b
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .mobile-nav{display:none;position:fixed;inset:0;z-index:190;background:var(--charcoal);flex-direction:column;align-items:center;justify-content:center;gap:2rem;padding:2rem}
 .mobile-nav.open{display:flex}
-.mobile-nav a{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:#fff;text-decoration:none}
+.mobile-nav a{font-family: var(--sans);font-size:1.8rem;font-weight:700;color:#fff;text-decoration:none}
 .mobile-nav .mob-cta{background:var(--amber);color:#fff!important;padding:.9rem 2.5rem;border-radius:4px;font-family:var(--sans);font-size:1rem!important;font-weight:700}
 .page-hero{background:var(--charcoal);color:#fff;padding:110px 2rem 70px;border-bottom:2px solid var(--amber)}
 .page-hero-inner{max-width:760px;margin:0 auto}
 .hero-eyebrow{font-size:.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber-light);margin-bottom:1rem}
-.page-hero h1{font-family:var(--serif);font-size:clamp(2rem,4.5vw,3.2rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:1rem}
+.page-hero h1{font-family: var(--sans);font-size:clamp(2rem,4.5vw,3.2rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:1rem}
 .page-hero p{font-size:1.1rem;color:#aaa;line-height:1.7;font-weight:300;max-width:580px}
 .about-wrap{max-width:760px;margin:0 auto;padding:4rem 2rem 6rem}
-.mission-block{background:var(--charcoal);color:#fff;border-radius:6px;padding:2.5rem 3rem;margin-bottom:4rem;border-left:4px solid var(--amber)}
+.mission-block{background:var(--charcoal);color:#fff;border-radius:6px;padding:2.5rem 3rem;margin-bottom:4rem;border-left:4px solid var(--amber);transform:rotate(.9deg);box-shadow:0 8px 20px rgba(0,0,0,.12)}
 .mission-label{font-size:.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber-light);margin-bottom:1rem}
-.mission-text{font-family:var(--serif);font-size:1.45rem;font-weight:700;line-height:1.4;color:#fff}
+.mission-text{font-family: var(--sans);font-size:1.45rem;font-weight:700;line-height:1.4;color:#fff}
 .mission-text em{font-style:italic;color:var(--amber-light)}
-.about-body h2{font-family:var(--serif);font-size:1.8rem;font-weight:700;line-height:1.2;letter-spacing:-.3px;margin:3rem 0 .75rem;color:var(--ink)}
+.about-body h2{font-family: var(--sans);font-size:1.8rem;font-weight:700;line-height:1.2;letter-spacing:-.3px;margin:3rem 0 .75rem;color:var(--ink)}
 .about-body p{font-size:1.02rem;color:#1e1e1e;line-height:1.8;margin-bottom:1.25rem}
 .about-body strong{font-weight:600}
 .rule{border:none;border-top:1px solid var(--rule);margin:3rem 0}
-.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden;margin:2.5rem 0}
-.stat-cell{background:var(--paper);padding:1.5rem;text-align:center}
-.stat-num{font-family:var(--serif);font-size:2.2rem;font-weight:900;color:var(--amber);line-height:1;margin-bottom:.25rem}
-.stat-desc{font-size:.8rem;color:var(--muted);line-height:1.4}
+.stats-grid{display:inline-flex;background:var(--paper);border:1px solid var(--border);border-radius:4px;overflow:hidden;margin:1.5rem 0 2.5rem}
+.stat-cell{padding:1.25rem 2.25rem;text-align:center}
+.stat-num{font-family: var(--sans);font-size:2.2rem;font-weight:900;color:var(--amber);line-height:1;margin-bottom:.25rem}
+.stat-desc{font-size:.8rem;color:var(--muted);line-height:1.4;max-width:220px}
+.stat-highlight{background:var(--amber-pale);color:#9a5c00;padding:.05rem .3rem;border-radius:2px;font-weight:600}
 .principles{display:flex;flex-direction:column;gap:0;margin:2.5rem 0}
 .principle{display:flex;gap:1.25rem;padding:1.5rem 0;border-bottom:1px solid var(--rule)}
 .principle:last-child{border-bottom:none}
 .p-icon{width:42px;height:42px;border-radius:4px;background:var(--charcoal);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;margin-top:2px}
-.p-body h4{font-family:var(--serif);font-size:1.05rem;font-weight:700;margin-bottom:.3rem}
+.p-body h4{font-family: var(--sans);font-size:1.05rem;font-weight:700;margin-bottom:.3rem}
 .p-body p{font-size:.9rem;color:var(--muted);line-height:1.6;margin-bottom:0}
 .team-card{background:var(--paper);border:1px solid var(--border);border-radius:6px;padding:2rem;margin:2.5rem 0;display:flex;gap:1.75rem;align-items:flex-start}
-.team-avatar{width:70px;height:70px;border-radius:50%;background:var(--charcoal);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.6rem;font-weight:700;color:var(--amber-light);flex-shrink:0}
-.team-name{font-family:var(--serif);font-size:1.15rem;font-weight:700;margin-bottom:.15rem}
+.team-avatar{width:70px;height:70px;border-radius:50%;background:var(--charcoal);display:flex;align-items:center;justify-content:center;font-family: var(--sans);font-size:1.6rem;font-weight:700;color:var(--amber-light);flex-shrink:0}
+.team-name{font-family: var(--sans);font-size:1.15rem;font-weight:700;margin-bottom:.15rem}
 .team-role{font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--amber);margin-bottom:.5rem}
 .team-bio{font-size:.9rem;color:var(--muted);line-height:1.65}
 .attorney-box{background:var(--amber-pale);border:1px solid #e8c47a;border-radius:6px;padding:2rem;margin:2.5rem 0}
 .atty-label{font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#9a5c00;margin-bottom:.75rem}
-.atty-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;margin-bottom:.5rem}
+.atty-title{font-family: var(--sans);font-size:1.3rem;font-weight:700;margin-bottom:.5rem}
 .atty-body{font-size:.9rem;color:#5a3800;line-height:1.7;margin-bottom:1rem}
 .atty-cta{display:inline-block;background:var(--amber);color:#fff;padding:.8rem 1.75rem;border-radius:4px;text-decoration:none;font-weight:700;font-size:.9rem;transition:background .2s}
 .atty-cta:hover{background:var(--amber-light);color:#fff}
@@ -80,7 +81,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--charcoal);b
 .sources li:last-child{border-bottom:none}
 .sources li::before{content:'→';color:var(--amber);flex-shrink:0}
 .about-cta{background:var(--charcoal);color:#fff;border-radius:6px;padding:2.5rem;text-align:center;margin-top:3rem}
-.about-cta h3{font-family:var(--serif);font-size:1.6rem;font-weight:700;margin-bottom:.6rem}
+.about-cta h3{font-family: var(--sans);font-size:1.6rem;font-weight:700;margin-bottom:.6rem}
 .about-cta p{color:#999;font-size:.95rem;margin-bottom:1.5rem;line-height:1.6}
 .about-cta a{display:inline-block;background:var(--amber);color:#fff;padding:.9rem 2rem;border-radius:4px;text-decoration:none;font-weight:700;font-size:1rem;transition:background .2s}
 .about-cta a:hover{background:var(--amber-light);color:#fff}
@@ -94,7 +95,7 @@ footer{background:#111;color:#888;padding:2.5rem 2rem}
 .footer-links a{color:#777;text-decoration:none;font-size:.85rem;transition:color .2s}
 .footer-links a:hover{color:var(--amber-light)}
 .footer-copy{max-width:960px;margin:1.5rem auto 0;padding-top:1.25rem;border-top:1px solid #222;font-size:.75rem;color:#555}
-@media(max-width:700px){.nav-links{display:none}.hamburger{display:flex}.stats-grid{grid-template-columns:1fr}.team-card{flex-direction:column}}
+@media(max-width:700px){.nav-links{display:none}.hamburger{display:flex}.team-card{flex-direction:column}}
 </style>
 </head>
 <body>
@@ -149,11 +150,9 @@ footer{background:#111;color:#888;padding:2.5rem 2rem}
 
     <p>But here's what nobody is saying out loud: <strong>the FDCPA doesn't need the CFPB to work.</strong> It's an Act of Congress. It gives you, personally, the right to sue a debt collector for violations — and the law requires the collector to pay your attorney fees when they lose. The lawsuit costs you nothing. Attorneys take these cases because the fee structure makes it viable for them, not out of charity.</p>
 
-    <p>The gap between what's legally available to people and what they actually know is enormous. That gap is this website.</p>
+    <p>The gap between what's legally available to people and what they actually know is enormous. That gap is this website. Right now, <span class="stat-highlight">77 million</span> Americans have debt in collections, and FDCPA complaints hit <span class="stat-highlight">over 200,000</span> in 2024 alone — up sharply from the year before.</p>
 
     <div class="stats-grid">
-      <div class="stat-cell"><div class="stat-num">77M</div><div class="stat-desc">Americans with debt in collections right now</div></div>
-      <div class="stat-cell"><div class="stat-num">208K</div><div class="stat-desc">FDCPA complaints filed in 2024 — up from 110K the year before</div></div>
       <div class="stat-cell"><div class="stat-num">$0</div><div class="stat-desc">What it costs to sue under the FDCPA when you win</div></div>
     </div>
 

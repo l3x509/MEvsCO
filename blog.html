@@ -31,7 +31,7 @@
 <meta name="twitter:description" content="Free FDCPA guides for the 77 million Americans in debt collections. Plain English, no lawyer needed." />
 <meta name="twitter:image"       content="https://mevscollector.com/og-image-final.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -145,7 +145,7 @@
   }
 
   .blog-header h1 {
-    font-family: var(--serif);
+    font-family: var(--sans);
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 900;
     line-height: 1.1;
@@ -241,6 +241,44 @@
     .search-input { width: 100%; }
   }
 
+  /* ── WRITER INTRO — a person, not another content block ── */
+  .blog-intro {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    max-width: 1180px;
+    margin: 2rem auto 0;
+    padding: 0 2rem;
+  }
+
+  .blog-intro-avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--amber);
+    color: var(--charcoal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+  }
+
+  .blog-intro-text {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.65;
+    font-style: italic;
+    max-width: 620px;
+  }
+
+  @media (max-width: 600px) {
+    .blog-intro { padding: 0 1.25rem; }
+    .blog-intro-text { font-size: 0.88rem; }
+  }
+
   /* ── MAIN LAYOUT ── */
   .blog-layout {
     max-width: 1180px;
@@ -298,7 +336,7 @@
   }
 
   .featured-title {
-    font-family: var(--serif);
+    font-family: var(--sans);
     font-size: 1.7rem;
     font-weight: 700;
     line-height: 1.2;
@@ -386,7 +424,7 @@
   .share-dropdown {
     display: none;
     position: absolute;
-    bottom: calc(100% + 6px);
+    top: calc(100% + 6px);
     left: 0;
     background: var(--paper);
     border: 1px solid var(--border);
@@ -395,6 +433,13 @@
     min-width: 170px;
     z-index: 200;
     overflow: hidden;
+  }
+
+  /* Fallback for buttons near the bottom of the viewport — JS adds this
+     class when there isn't room to open downward without going offscreen. */
+  .share-dropdown.open-upward {
+    top: auto;
+    bottom: calc(100% + 6px);
   }
 
   .share-dropdown.open { display: block; }
@@ -463,26 +508,23 @@
   .post-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
+    gap: 1.75rem 1.5rem;
   }
 
+  /* Deliberately plain — no card border/shadow/background. Only the featured
+     post above gets a boxed treatment; these read as a loose, minimal list
+     so the page doesn't feel like a wall of identical bordered tiles. */
   .post-card {
     display: flex;
     flex-direction: column;
-    background: var(--paper);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 1.4rem;
+    padding: 0 0 1.5rem;
     text-decoration: none;
     color: var(--ink);
-    transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+    border-bottom: 1px solid var(--rule);
+    transition: opacity 0.15s;
   }
 
-  .post-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-    border-color: var(--amber);
-  }
+  .post-card:hover { opacity: 0.8; }
 
   .post-card:hover .post-card-title { color: var(--amber); }
 
@@ -506,7 +548,7 @@
   .post-card-tag.grey   { background: var(--border);      color: var(--muted); }
 
   .post-card-title {
-    font-family: var(--serif);
+    font-family: var(--sans);
     font-size: 1.05rem;
     font-weight: 700;
     line-height: 1.32;
@@ -529,8 +571,7 @@
     margin-top: auto;
     font-size: 0.73rem;
     color: #b3a998;
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--rule);
+    padding-top: 0.5rem;
   }
 
   .post-card .post-share-row .share-btn { font-size: 0.68rem; padding: 0.25rem 0.55rem; }
@@ -583,7 +624,7 @@
   .sidebar-checker .sidebar-label { color: var(--amber-light); border-bottom-color: rgba(255,255,255,0.1); }
 
   .checker-prompt {
-    font-family: var(--serif);
+    font-family: var(--sans);
     font-size: 1.15rem;
     font-weight: 700;
     color: #fff;
@@ -799,6 +840,12 @@
     <svg class="search-icon icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
     <input type="text" class="search-input" id="post-search" placeholder="Search all posts…" oninput="searchPosts(this.value)">
   </div>
+</div>
+
+<!-- WRITER INTRO -->
+<div class="blog-intro">
+  <div class="blog-intro-avatar" aria-hidden="true">M</div>
+  <p class="blog-intro-text">I'm not a lawyer. I got harassed by a debt collector and started writing down everything I found out about what they're actually allowed to do. This is that research — plain English, no legalese, updated as I learn more.</p>
 </div>
 
 <!-- MAIN LAYOUT -->
@@ -1056,7 +1103,7 @@
         <span class="post-card-tag red">Violation</span>
         <div class="post-card-title">What Can a Debt Collector Say in a Voicemail?</div>
         <p class="post-card-desc">There are very specific federal rules for what collectors can and cannot say in a voicemail. Here's what I found out — and why you should save every message.</p>
-        <div class="post-card-meta">June 2026 · 7 min read</div>
+        <div class="post-card-meta">June 2026 · 8 min read</div>
         <div class="post-share-row">
           <div class="share-wrap">
             <button class="share-btn" onclick="toggleShare(event, this)" data-url="blog/what-can-debt-collector-say-in-voicemail.html" data-title="What Can a Debt Collector Say in a Voicemail?"><svg class="icon"><use href="#icon-share"/></svg> Share</button>
@@ -1075,7 +1122,7 @@
         <span class="post-card-tag red">Violation</span>
         <div class="post-card-title">Can a Debt Collector Contact Me on Social Media?</div>
         <p class="post-card-desc">I got a DM from someone claiming to be a collector. Here's exactly what Regulation F says — and when a social media contact becomes a violation.</p>
-        <div class="post-card-meta">June 2026 · 7 min read</div>
+        <div class="post-card-meta">June 2026 · 6 min read</div>
         <div class="post-share-row">
           <div class="share-wrap">
             <button class="share-btn" onclick="toggleShare(event, this)" data-url="blog/can-debt-collector-contact-me-social-media.html" data-title="Can a Debt Collector Contact Me on Social Media?"><svg class="icon"><use href="#icon-share"/></svg> Share</button>
@@ -1333,8 +1380,18 @@ function toggleShare(e, btn) {
   e.preventDefault(); e.stopPropagation();
   const dd = btn.nextElementSibling;
   const open = dd.classList.contains('open');
-  document.querySelectorAll('.share-dropdown.open').forEach(d => d.classList.remove('open'));
-  if (!open) dd.classList.add('open');
+  document.querySelectorAll('.share-dropdown.open').forEach(d => d.classList.remove('open', 'open-upward'));
+  if (!open) {
+    dd.classList.add('open');
+    // Open below by default; flip above only if there isn't room below
+    // the button in the current viewport (e.g. buttons near page bottom).
+    const btnRect = btn.getBoundingClientRect();
+    const ddHeight = dd.offsetHeight;
+    const spaceBelow = window.innerHeight - btnRect.bottom;
+    if (spaceBelow < ddHeight + 12) {
+      dd.classList.add('open-upward');
+    }
+  }
 }
 
 function shareVia(e, platform, btn) {
