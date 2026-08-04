@@ -835,6 +835,7 @@
     <button class="filter-tab" data-cat="state" onclick="filterPosts('state', this)">State Laws</button>
     <button class="filter-tab" data-cat="sol" onclick="filterPosts('sol', this)">Statute of Limitations</button>
     <button class="filter-tab" data-cat="news" onclick="filterPosts('news', this)">News &amp; Context</button>
+    <button class="filter-tab" data-cat="scams" onclick="filterPosts('scams', this)">Scams</button>
   </div>
   <div class="search-wrap">
     <svg class="search-icon icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
@@ -885,10 +886,86 @@
     <!-- POST GRID -->
     <div class="section-divider">
       <span>All posts</span>
-      <span id="results-count">21 posts</span>
+      <span id="results-count">25 posts</span>
     </div>
 
     <div class="post-grid" id="post-grid">
+
+      <a href="blog/debt-collection-complaints-data-2026.html" class="post-card" data-cat="news" data-title="Debt Collection Complaints Doubled in 2025. Here's What the Data Shows.">
+        <span class="post-card-tag grey">News &amp; Context</span>
+        <div class="post-card-title">Debt Collection Complaints Doubled in 2025. Here's What the Data Shows.</div>
+        <p class="post-card-desc">Complaints jumped from 220,424 to 471,142 in a single year — and nearly half were flagged as abusive or threatening. Here's what the federal data actually says.</p>
+        <div class="post-card-meta">August 2026 · 7 min read</div>
+        <div class="post-share-row">
+          <div class="share-wrap">
+            <button class="share-btn" onclick="toggleShare(event, this)" data-url="blog/debt-collection-complaints-data-2026.html" data-title="Debt Collection Complaints Doubled in 2025. Here's What the Data Shows."><svg class="icon"><use href="#icon-share"/></svg> Share</button>
+            <div class="share-dropdown">
+              <div class="share-dropdown-title">Share via</div>
+              <button class="share-option" onclick="shareVia(event, 'twitter', this)"><svg class="icon-sm"><use href="#icon-twitter"/></svg> X (Twitter)</button>
+              <button class="share-option" onclick="shareVia(event, 'facebook', this)"><svg class="icon-sm"><use href="#icon-facebook"/></svg> Facebook</button>
+              <button class="share-option" onclick="shareVia(event, 'linkedin', this)"><svg class="icon-sm"><use href="#icon-linkedin"/></svg> LinkedIn</button>
+              <button class="share-option" onclick="shareVia(event, 'copy', this)"><svg class="icon-sm"><use href="#icon-copy"/></svg> Copy Link</button>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/debt-i-dont-recognize.html" class="post-card" data-cat="strategy" data-title="A Collector Called About a Debt I Don't Recognize. Here's What I Found Out.">
+        <span class="post-card-tag amber">Strategy</span>
+        <div class="post-card-title">A Collector Called About a Debt I Don't Recognize. Here's What I Found Out.</div>
+        <p class="post-card-desc">A collector called me about a debt I'd never heard of. Here's what I found out about validation notices, the 30-day dispute window, and why you should never pay before you verify.</p>
+        <div class="post-card-meta">August 2026 · 9 min read</div>
+        <div class="post-share-row">
+          <div class="share-wrap">
+            <button class="share-btn" onclick="toggleShare(event, this)" data-url="blog/debt-i-dont-recognize.html" data-title="A Collector Called About a Debt I Don't Recognize. Here's What I Found Out."><svg class="icon"><use href="#icon-share"/></svg> Share</button>
+            <div class="share-dropdown">
+              <div class="share-dropdown-title">Share via</div>
+              <button class="share-option" onclick="shareVia(event, 'twitter', this)"><svg class="icon-sm"><use href="#icon-twitter"/></svg> X (Twitter)</button>
+              <button class="share-option" onclick="shareVia(event, 'facebook', this)"><svg class="icon-sm"><use href="#icon-facebook"/></svg> Facebook</button>
+              <button class="share-option" onclick="shareVia(event, 'linkedin', this)"><svg class="icon-sm"><use href="#icon-linkedin"/></svg> LinkedIn</button>
+              <button class="share-option" onclick="shareVia(event, 'copy', this)"><svg class="icon-sm"><use href="#icon-copy"/></svg> Copy Link</button>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/fake-debt-collector-scam.html" class="post-card" data-cat="scams" data-title="How to Tell If a Debt Collector Is Real or a Scam">
+        <span class="post-card-tag red">Scams</span>
+        <div class="post-card-title">How to Tell If a Debt Collector Is Real or a Scam</div>
+        <p class="post-card-desc">A caller knew my name and an old address. I couldn't tell if it was real. Here's the checklist I used to find out — and the red flags that mean you're being scammed.</p>
+        <div class="post-card-meta">August 2026 · 8 min read</div>
+        <div class="post-share-row">
+          <div class="share-wrap">
+            <button class="share-btn" onclick="toggleShare(event, this)" data-url="blog/fake-debt-collector-scam.html" data-title="How to Tell If a Debt Collector Is Real or a Scam"><svg class="icon"><use href="#icon-share"/></svg> Share</button>
+            <div class="share-dropdown">
+              <div class="share-dropdown-title">Share via</div>
+              <button class="share-option" onclick="shareVia(event, 'twitter', this)"><svg class="icon-sm"><use href="#icon-twitter"/></svg> X (Twitter)</button>
+              <button class="share-option" onclick="shareVia(event, 'facebook', this)"><svg class="icon-sm"><use href="#icon-facebook"/></svg> Facebook</button>
+              <button class="share-option" onclick="shareVia(event, 'linkedin', this)"><svg class="icon-sm"><use href="#icon-linkedin"/></svg> LinkedIn</button>
+              <button class="share-option" onclick="shareVia(event, 'copy', this)"><svg class="icon-sm"><use href="#icon-copy"/></svg> Copy Link</button>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog/re-aged-debt-credit-report.html" class="post-card" data-cat="violation" data-title="The Collection Account Came Back on My Credit Report. Is That Legal?">
+        <span class="post-card-tag red">Violation</span>
+        <div class="post-card-title">The Collection Account Came Back on My Credit Report. Is That Legal?</div>
+        <p class="post-card-desc">An old collection account disappeared, then reappeared looking brand new. I found out there's a name for that — re-aging — and it's illegal under federal law.</p>
+        <div class="post-card-meta">August 2026 · 8 min read</div>
+        <div class="post-share-row">
+          <div class="share-wrap">
+            <button class="share-btn" onclick="toggleShare(event, this)" data-url="blog/re-aged-debt-credit-report.html" data-title="The Collection Account Came Back on My Credit Report. Is That Legal?"><svg class="icon"><use href="#icon-share"/></svg> Share</button>
+            <div class="share-dropdown">
+              <div class="share-dropdown-title">Share via</div>
+              <button class="share-option" onclick="shareVia(event, 'twitter', this)"><svg class="icon-sm"><use href="#icon-twitter"/></svg> X (Twitter)</button>
+              <button class="share-option" onclick="shareVia(event, 'facebook', this)"><svg class="icon-sm"><use href="#icon-facebook"/></svg> Facebook</button>
+              <button class="share-option" onclick="shareVia(event, 'linkedin', this)"><svg class="icon-sm"><use href="#icon-linkedin"/></svg> LinkedIn</button>
+              <button class="share-option" onclick="shareVia(event, 'copy', this)"><svg class="icon-sm"><use href="#icon-copy"/></svg> Copy Link</button>
+            </div>
+          </div>
+        </div>
+      </a>
 
       <a href="blog/workplace-calls-after-stop.html" class="post-card" data-cat="violation" data-title="They Called My Boss After I Asked Them to Stop. Is That Illegal?">
         <span class="post-card-tag red">Violation</span>
@@ -1290,13 +1367,14 @@
     <div class="sidebar-card">
       <div class="sidebar-label">Browse by topic</div>
       <div class="topics-list" id="topics-list">
-        <button class="topic-item" onclick="filterFromSidebar('violation')">FDCPA Violations <span class="topic-count">9</span></button>
-        <button class="topic-item" onclick="filterFromSidebar('strategy')">Strategy &amp; Templates <span class="topic-count">4</span></button>
+        <button class="topic-item" onclick="filterFromSidebar('violation')">FDCPA Violations <span class="topic-count">10</span></button>
+        <button class="topic-item" onclick="filterFromSidebar('strategy')">Strategy &amp; Templates <span class="topic-count">5</span></button>
         <button class="topic-item" onclick="filterFromSidebar('sol')">Statute of Limitations <span class="topic-count">3</span></button>
         <button class="topic-item" onclick="filterFromSidebar('lawsuit')">Lawsuits Explained <span class="topic-count">2</span></button>
         <button class="topic-item" onclick="filterFromSidebar('debt-types')">Medical &amp; Debt Types <span class="topic-count">1</span></button>
         <button class="topic-item" onclick="filterFromSidebar('state')">State-by-State Laws <span class="topic-count">1</span></button>
-        <button class="topic-item" onclick="filterFromSidebar('news')">News &amp; Context <span class="topic-count">1</span></button>
+        <button class="topic-item" onclick="filterFromSidebar('news')">News &amp; Context <span class="topic-count">2</span></button>
+        <button class="topic-item" onclick="filterFromSidebar('scams')">Scams <span class="topic-count">1</span></button>
       </div>
     </div>
 
