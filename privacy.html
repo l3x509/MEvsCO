@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XPHXSLHTTJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XPHXSLHTTJ');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | Me vs. Collector</title>
+<link rel="canonical" href="https://mevscollector.com/privacy.html">
+<meta name="description" content="How Me vs. Collector collects, uses, and protects your information, including analytics, advertising cookies, and case-review requests.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%231a1a1a'/%3E%3Crect x='0' y='28' width='32' height='4' fill='%23d4870a'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='16' font-weight='bold' fill='%23f5a623'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0d0d0d;--page:#f5f2ec;--paper:#fffdf8;--amber:#d4870a;--amber-light:#f5a623;--amber-pale:#fef3dc;--red:#c0392b;--red-pale:#fdecea;--green:#1a6b3c;--green-pale:#e6f4ed;--charcoal:#1a1a1a;--muted:#6b6b6b;--border:#e0dbd0;--rule:#d0ccc0;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--page);color:var(--ink);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--charcoal);border-bottom:2px solid var(--amber);padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:#fff;text-decoration:none;letter-spacing:-.5px}
+.nav-logo span{color:var(--amber-light)}
+.nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center}
+.nav-links a{color:#ccc;text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.5px;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--amber-light)}
+.nav-cta{background:var(--amber)!important;color:#fff!important;padding:.45rem 1.1rem;border-radius:3px}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .25s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-nav{display:none;position:fixed;inset:0;z-index:190;background:var(--charcoal);flex-direction:column;align-items:center;justify-content:center;gap:2rem;padding:2rem}
+.mobile-nav.open{display:flex}
+.mobile-nav a{font-family: var(--sans);font-size:1.8rem;font-weight:700;color:#fff;text-decoration:none}
+.mobile-nav .mob-cta{background:var(--amber);color:#fff!important;padding:.9rem 2.5rem;border-radius:4px;font-family:var(--sans);font-size:1rem!important;font-weight:700}
+.page-hero{background:var(--charcoal);color:#fff;padding:110px 2rem 70px;border-bottom:2px solid var(--amber)}
+.page-hero-inner{max-width:760px;margin:0 auto}
+.hero-eyebrow{font-size:.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber-light);margin-bottom:1rem}
+.page-hero h1{font-family: var(--sans);font-size:clamp(2rem,4.5vw,3.2rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:1rem}
+.page-hero p{font-size:1.1rem;color:#aaa;line-height:1.7;font-weight:300;max-width:580px}
+.about-wrap{max-width:760px;margin:0 auto;padding:4rem 2rem 6rem}
+.mission-block{background:var(--charcoal);color:#fff;border-radius:6px;padding:2.5rem 3rem;margin-bottom:4rem;border-left:4px solid var(--amber);transform:rotate(.9deg);box-shadow:0 8px 20px rgba(0,0,0,.12)}
+.mission-label{font-size:.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber-light);margin-bottom:1rem}
+.mission-text{font-family: var(--sans);font-size:1.45rem;font-weight:700;line-height:1.4;color:#fff}
+.mission-text em{font-style:italic;color:var(--amber-light)}
+.about-body h2{font-family: var(--sans);font-size:1.8rem;font-weight:700;line-height:1.2;letter-spacing:-.3px;margin:3rem 0 .75rem;color:var(--ink)}
+.about-body p{font-size:1.02rem;color:#1e1e1e;line-height:1.8;margin-bottom:1.25rem}
+.about-body strong{font-weight:600}
+.rule{border:none;border-top:1px solid var(--rule);margin:3rem 0}
+.stats-grid{display:inline-flex;background:var(--paper);border:1px solid var(--border);border-radius:4px;overflow:hidden;margin:1.5rem 0 2.5rem}
+.stat-cell{padding:1.25rem 2.25rem;text-align:center}
+.stat-num{font-family: var(--sans);font-size:2.2rem;font-weight:900;color:var(--amber);line-height:1;margin-bottom:.25rem}
+.stat-desc{font-size:.8rem;color:var(--muted);line-height:1.4;max-width:220px}
+.stat-highlight{background:var(--amber-pale);color:#9a5c00;padding:.05rem .3rem;border-radius:2px;font-weight:600}
+.principles{display:flex;flex-direction:column;gap:0;margin:2.5rem 0}
+.principle{display:flex;gap:1.25rem;padding:1.5rem 0;border-bottom:1px solid var(--rule)}
+.principle:last-child{border-bottom:none}
+.p-icon{width:42px;height:42px;border-radius:4px;background:var(--charcoal);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;margin-top:2px}
+.p-body h4{font-family: var(--sans);font-size:1.05rem;font-weight:700;margin-bottom:.3rem}
+.p-body p{font-size:.9rem;color:var(--muted);line-height:1.6;margin-bottom:0}
+.team-card{background:var(--paper);border:1px solid var(--border);border-radius:6px;padding:2rem;margin:2.5rem 0;display:flex;gap:1.75rem;align-items:flex-start}
+.team-avatar{width:70px;height:70px;border-radius:50%;background:var(--charcoal);display:flex;align-items:center;justify-content:center;font-family: var(--sans);font-size:1.6rem;font-weight:700;color:var(--amber-light);flex-shrink:0}
+.team-name{font-family: var(--sans);font-size:1.15rem;font-weight:700;margin-bottom:.15rem}
+.team-role{font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--amber);margin-bottom:.5rem}
+.team-bio{font-size:.9rem;color:var(--muted);line-height:1.65}
+.attorney-box{background:var(--amber-pale);border:1px solid #e8c47a;border-radius:6px;padding:2rem;margin:2.5rem 0}
+.atty-label{font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#9a5c00;margin-bottom:.75rem}
+.atty-title{font-family: var(--sans);font-size:1.3rem;font-weight:700;margin-bottom:.5rem}
+.atty-body{font-size:.9rem;color:#5a3800;line-height:1.7;margin-bottom:1rem}
+.atty-cta{display:inline-block;background:var(--amber);color:#fff;padding:.8rem 1.75rem;border-radius:4px;text-decoration:none;font-weight:700;font-size:.9rem;transition:background .2s}
+.atty-cta:hover{background:var(--amber-light);color:#fff}
+.sources{background:#f0ece3;border:1px solid var(--border);border-radius:4px;padding:1.5rem 1.75rem;margin:2.5rem 0}
+.sources-label{font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem}
+.sources ul{list-style:none}
+.sources li{font-size:.82rem;color:var(--muted);padding:.3rem 0;border-bottom:1px solid var(--rule);display:flex;gap:.5rem;align-items:flex-start;line-height:1.45}
+.sources li:last-child{border-bottom:none}
+.sources li::before{content:'→';color:var(--amber);flex-shrink:0}
+.about-cta{background:var(--charcoal);color:#fff;border-radius:6px;padding:2.5rem;text-align:center;margin-top:3rem}
+.about-cta h3{font-family: var(--sans);font-size:1.6rem;font-weight:700;margin-bottom:.6rem}
+.about-cta p{color:#999;font-size:.95rem;margin-bottom:1.5rem;line-height:1.6}
+.about-cta a{display:inline-block;background:var(--amber);color:#fff;padding:.9rem 2rem;border-radius:4px;text-decoration:none;font-weight:700;font-size:1rem;transition:background .2s}
+.about-cta a:hover{background:var(--amber-light);color:#fff}
+.page-disclaimer{background:#f0ece3;border:1px solid var(--border);border-radius:4px;padding:1.25rem 1.5rem;margin-top:2rem;font-size:.8rem;color:var(--muted);line-height:1.65}
+.page-disclaimer strong{color:var(--ink);font-size:.72rem;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:.25rem}
+footer{background:#111;color:#888;padding:2.5rem 2rem}
+.footer-inner{max-width:960px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap}
+.footer-brand{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:#fff}
+.footer-brand span{color:var(--amber-light)}
+.footer-links{display:flex;gap:1.5rem;list-style:none;flex-wrap:wrap}
+.footer-links a{color:#777;text-decoration:none;font-size:.85rem;transition:color .2s}
+.footer-links a:hover{color:var(--amber-light)}
+.footer-copy{max-width:960px;margin:1.5rem auto 0;padding-top:1.25rem;border-top:1px solid #222;font-size:.75rem;color:#555}
+@media(max-width:700px){.nav-links{display:none}.hamburger{display:flex}.team-card{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html" onclick="closeMobileNav()">Home</a>
+  <a href="index.html#checker" onclick="closeMobileNav()">Check My Case</a>
+  <a href="index.html#rights" onclick="closeMobileNav()">FDCPA Guide</a>
+  <a href="blog.html" onclick="closeMobileNav()">Blog</a>
+  <a href="glossary.html" onclick="closeMobileNav()">Glossary</a>
+  <a href="about.html" onclick="closeMobileNav()">About</a>
+  <a href="index.html#checker" class="mob-cta" onclick="closeMobileNav()">Get Free Review</a>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">Me <span>vs.</span> Collector</a>
+  <ul class="nav-links">
+    <li><a href="index.html#checker">Check My Rights</a></li>
+    <li><a href="index.html#rights">FDCPA Guide</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="glossary.html">Glossary</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#checker" class="nav-cta">Free Review &#x2192;</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="hero-eyebrow">Legal</div>
+    <h1>Privacy Policy</h1>
+    <p>What we collect, why, who sees it, and the choices you have. Plain English.</p>
+  </div>
+</div>
+
+<div class="about-wrap">
+  <div class="about-body">
+
+    <p><strong>Effective date: October 11, 2026</strong></p>
+    <p>This Privacy Policy explains what information Me vs. Collector ("we", "us") collects when you use mevscollector.com (the "Site"), how we use it, and the choices you have. Me vs. Collector is an educational resource. We are not a law firm and nothing on the Site is legal advice.</p>
+
+    <h2>Information we collect</h2>
+    <p><strong>Information you choose to give us.</strong> If you use the case-review request or the email sign-up on the Site, you may provide: your first and last name, email address, phone number, preferred time to be contacted, your state, and the types of collector conduct you tell us about. You decide whether to submit this information. You can read all of our guides without providing any.</p>
+    <p><strong>Information collected automatically.</strong> When you visit, our analytics and advertising providers may collect technical information such as your IP address, device and browser type, pages viewed, time on page, referring page, and approximate location. They do this using cookies and similar technologies.</p>
+
+    <h2>How we use information</h2>
+    <p>We use information to operate and improve the Site, understand which guides are useful, and show advertising that keeps the Site free. If you request a case review, we use your submission to arrange it. If you sign up for our emails, we use your email address to send you the emails you asked for. You can unsubscribe at any time.</p>
+
+    <h2>Who we share it with</h2>
+    <p><strong>Attorneys.</strong> If you request a case review, we share the details you submitted with the independent attorney or law firm who will evaluate your case, so they can contact you. These attorneys are independent of us and handle your information under their own policies and professional duties.</p>
+    <p><strong>Service providers.</strong> We use Google Analytics to measure Site usage and Google AdSense to display ads. These providers process data on our behalf or on their own account under their own privacy policies. We may also use hosting, email, and similar vendors to run the Site.</p>
+    <p><strong>Legal and safety.</strong> We may disclose information if required by law or to protect the rights, safety, or property of our visitors or the Site.</p>
+    <p><strong>We do not sell your personal information</strong> for money, and we do not share your submitted contact details with advertisers.</p>
+
+    <h2>Cookies and advertising</h2>
+    <p>Google and its partners use cookies to serve and measure ads on this Site, including ads based on your prior visits to this or other websites. You can manage personalized advertising in Google's <a href="https://adssettings.google.com/" rel="noopener">Ads Settings</a>, learn more at <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">How Google uses information from sites that use its services</a>, or opt out of many third-party advertising cookies at <a href="https://optout.aboutads.info/" rel="noopener">aboutads.info</a>. You can also block or delete cookies in your browser settings. Blocking cookies may limit some features. Google offers a browser add-on to opt out of Google Analytics at <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">tools.google.com/dlpage/gaoptout</a>.</p>
+
+    <h2>Information you share is not privileged</h2>
+    <p>Submitting a form on this Site does not create an attorney-client relationship, and what you send us is not protected by attorney-client privilege. Please do not include sensitive details such as Social Security numbers, account numbers, or full descriptions of your legal situation in forms. Share those only with an attorney you have retained.</p>
+
+    <h2>How long we keep information</h2>
+    <p>We keep submitted information only as long as needed for the purpose you gave it, to meet legal obligations, or to resolve disputes. Analytics data is retained according to our Google Analytics settings.</p>
+
+    <h2>Your choices and rights</h2>
+    <p>You may ask us to access, correct, or delete the personal information you submitted, or to stop emailing you, by contacting us at the address below. Depending on where you live (for example California and several other states), you may have additional rights under local privacy laws, including the right to know what we collect and to request deletion. We will not discriminate against you for exercising these rights. We will respond within the time required by law.</p>
+
+    <h2>Security</h2>
+    <p>We take reasonable steps to protect information, but no website or transmission method is completely secure, so we cannot guarantee absolute security.</p>
+
+    <h2>Children</h2>
+    <p>The Site is intended for adults. We do not knowingly collect personal information from anyone under 13. If you believe a child has given us information, contact us and we will delete it.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>We may update this policy from time to time. The effective date above shows when it last changed. Continuing to use the Site after an update means you accept the revised policy.</p>
+
+    <h2>Contact us</h2>
+    <p>Questions or requests about this policy: <a href="mailto:YOUR-CONTACT-EMAIL">YOUR-CONTACT-EMAIL</a>.</p>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Me <span>vs.</span> Collector</div>
+    <ul class="footer-links">
+      <li><a href="index.html#checker">Violation Checker</a></li>
+      <li><a href="index.html#rights">FDCPA Guide</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="glossary.html">Glossary</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
+  <div class="footer-copy">© 2026 Me vs. Collector. Not a law firm. Not legal advice.</div>
+</footer>
+
+<script>
+function toggleMobileNav(){const n=document.getElementById('mobile-nav'),b=document.getElementById('hamburger');n.classList.toggle('open');b.classList.toggle('open');document.body.style.overflow=n.classList.contains('open')?'hidden':'';}
+function closeMobileNav(){document.getElementById('mobile-nav').classList.remove('open');document.getElementById('hamburger').classList.remove('open');document.body.style.overflow='';}
+</script>
+</body>
+</html>
